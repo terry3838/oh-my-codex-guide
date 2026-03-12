@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 998.695 636" width="998.695" height="636" style="--bg:#ffffff;--fg:#1f2328;--line:#d1d9e0;--accent:#0969da;--muted:#59636e">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+  text { font-family: 'Inter', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="seq-arrow" markerWidth="8" markerHeight="5" refX="8" refY="2.5" orient="auto-start-reverse">
+    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" />
+  </marker>
+  <marker id="seq-arrow-open" markerWidth="8" markerHeight="5" refX="8" refY="2.5" orient="auto-start-reverse">
+    <polyline points="0 0, 8 2.5, 0 5" fill="none" stroke="var(--_arrow)" stroke-width="1" />
+  </marker>
+</defs>
+<g class="block" data-type="alt" data-label="tmux-hook 활성화 (allowed_modes 매칭)">
+  <rect x="30" y="188" width="433.04200000000003" height="170" rx="0" ry="0" fill="none" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="30" y="188" width="250.62999999999997" height="18" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="36" y="197" font-size="11" font-weight="600" fill="var(--_text-sec)" dy="3.8499999999999996">alt [tmux-hook 활성화 (allowed_modes 매칭)]</text>
+</g>
+<g class="block" data-type="alt" data-label="OMX_HOOK_PLUGINS=1">
+  <rect x="165.45299999999997" y="366" width="803.2420000000001" height="180" rx="0" ry="0" fill="none" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="165.45299999999997" y="366" width="168.12999999999994" height="18" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="171.45299999999997" y="375" font-size="11" font-weight="600" fill="var(--_text-sec)" dy="3.8499999999999996">alt [OMX_HOOK_PLUGINS=1]</text>
+</g>
+<line class="lifeline" data-actor="Codex" x1="87.7265" y1="70" x2="87.7265" y2="606" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="NotifyHook" x1="231.33049999999997" y1="70" x2="231.33049999999997" y2="606" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="TmuxHook" x1="390.125" y1="70" x2="390.125" y2="606" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="PluginDispatch" x1="570.4085" y1="70" x2="570.4085" y2="606" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="Plugin" x1="755.138" y1="70" x2="755.138" y2="606" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="State" x1="910.5980000000001" y1="70" x2="910.5980000000001" y2="606" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<g class="message" data-from="Codex" data-to="NotifyHook" data-label="turn-complete 이벤트
+(JSON payload)" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="87.7265" y1="90" x2="231.33049999999997" y2="90" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="159.52849999999998" y="80" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)"><tspan x="159.52849999999998" dy="-3.3000000000000007">turn-complete 이벤트</tspan><tspan x="159.52849999999998" dy="14.3">(JSON payload)</tspan></text>
+</g>
+<g class="message" data-from="NotifyHook" data-to="NotifyHook" data-label="모드 상태 확인
+(ralph/ultrawork/team 활성?)" data-line-style="solid" data-arrow-head="filled" data-self="true">
+  <polyline points="231.33049999999997,130 261.3305,130 261.3305,150 231.33049999999997,150" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="269.3305" y="140" font-size="11" text-anchor="start" font-weight="400" fill="var(--_text-muted)"><tspan x="269.3305" dy="-3.3000000000000007">모드 상태 확인</tspan><tspan x="269.3305" dy="14.3">(ralph/ultrawork/team 활성?)</tspan></text>
+</g>
+<g class="message" data-from="NotifyHook" data-to="TmuxHook" data-label="훅 엔진 실행" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="231.33049999999997" y1="228" x2="390.125" y2="228" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="310.72775" y="218" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">훅 엔진 실행</text>
+</g>
+<g class="message" data-from="TmuxHook" data-to="TmuxHook" data-label="cooldown 확인
+max_injections 확인
+스크롤 상태 확인" data-line-style="solid" data-arrow-head="filled" data-self="true">
+  <polyline points="390.125,268 420.125,268 420.125,288 390.125,288" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="428.125" y="278" font-size="11" text-anchor="start" font-weight="400" fill="var(--_text-muted)"><tspan x="428.125" dy="-10.450000000000001">cooldown 확인</tspan><tspan x="428.125" dy="14.3">max_injections 확인</tspan><tspan x="428.125" dy="14.3">스크롤 상태 확인</tspan></text>
+</g>
+<g class="message" data-from="TmuxHook" data-to="Codex" data-label="tmux send-keys
+&quot;Continue from current mode state.&quot;" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="390.125" y1="338" x2="87.7265" y2="338" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="238.92575" y="328" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)"><tspan x="238.92575" dy="-3.3000000000000007">tmux send-keys</tspan><tspan x="238.92575" dy="14.3">&quot;Continue from current mode state.&quot;</tspan></text>
+</g>
+<g class="message" data-from="NotifyHook" data-to="PluginDispatch" data-label="플러그인 이벤트 디스패치" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="231.33049999999997" y1="406" x2="570.4085" y2="406" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="400.8695" y="396" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">플러그인 이벤트 디스패치</text>
+</g>
+<g class="message" data-from="PluginDispatch" data-to="Plugin" data-label="onHookEvent(event, sdk) 호출" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="570.4085" y1="446" x2="755.138" y2="446" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="662.77325" y="436" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">onHookEvent(event, sdk) 호출</text>
+</g>
+<g class="message" data-from="Plugin" data-to="PluginDispatch" data-label="처리 완료" data-line-style="dashed" data-arrow-head="filled" data-self="false">
+  <line x1="755.138" y1="486" x2="570.4085" y2="486" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <text x="662.77325" y="476" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">처리 완료</text>
+</g>
+<g class="message" data-from="PluginDispatch" data-to="State" data-label="플러그인 상태 기록" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="570.4085" y1="526" x2="910.5980000000001" y2="526" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="740.50325" y="516" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">플러그인 상태 기록</text>
+</g>
+<g class="message" data-from="NotifyHook" data-to="State" data-label=".omx/logs/ JSONL 기록" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="231.33049999999997" y1="566" x2="910.5980000000001" y2="566" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="570.96425" y="556" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">.omx/logs/ JSONL 기록</text>
+</g>
+<g class="actor" data-id="Codex" data-label="Codex CLI" data-type="participant">
+  <rect x="40" y="30" width="95.453" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="87.7265" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">Codex CLI</text>
+</g>
+<g class="actor" data-id="NotifyHook" data-label="notify-hook.js" data-type="participant">
+  <rect x="175.45299999999997" y="30" width="111.755" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="231.33049999999997" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">notify-hook.js</text>
+</g>
+<g class="actor" data-id="TmuxHook" data-label="tmux-hook 엔진" data-type="participant">
+  <rect x="327.20799999999997" y="30" width="125.834" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="390.125" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">tmux-hook 엔진</text>
+</g>
+<g class="actor" data-id="PluginDispatch" data-label="플러그인 디스패치" data-type="participant">
+  <rect x="493.04200000000003" y="30" width="154.733" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="570.4085" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">플러그인 디스패치</text>
+</g>
+<g class="actor" data-id="Plugin" data-label=".omx/hooks/*.mjs" data-type="participant">
+  <rect x="687.7750000000001" y="30" width="134.726" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="755.138" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">.omx/hooks/*.mjs</text>
+</g>
+<g class="actor" data-id="State" data-label=".omx/state/" data-type="participant">
+  <rect x="862.5010000000001" y="30" width="96.194" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="910.5980000000001" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">.omx/state/</text>
+</g>
+</svg>

@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 366.66525 617.4" width="366.66525" height="617.4" style="--bg:#ffffff;--fg:#1f2328;--line:#d1d9e0;--accent:#0969da;--muted:#59636e">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+  text { font-family: 'Inter', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="8" markerHeight="5" refX="7" refY="2.5" orient="auto">
+    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+  <marker id="arrowhead-start" markerWidth="8" markerHeight="5" refX="1" refY="2.5" orient="auto-start-reverse">
+    <polygon points="8 0, 0 2.5, 8 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+</defs>
+<polyline class="edge" data-from="_start" data-to="team-plan" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="88.76249999999999,72.45 88.7625,124.9" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="team-plan" data-to="team-prd" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="88.7625,161.8 88.76250000000002,221.8" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="team-prd" data-to="team-exec" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="88.76250000000002,258.70000000000005 88.7625,294.70000000000005" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="team-exec" data-to="team-verify" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="105.75766666666667,331.6 105.75766666666667,367.6 129.34283333333337,367.6 129.34283333333337,379.6" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="team-verify" data-to="team-fix" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="155.94708333333335,379.6 155.94708333333335,367.6 173.13770833333336,367.6 173.13770833333336,355.6 240.27916666666667,355.6 240.27916666666667,258.70000000000005" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="team-verify" data-to="complete" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="155.94708333333335,416.5 155.94708333333335,437.5 178.68325000000002,437.5 178.68325000000002,458.5" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="team-verify" data-to="failed" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="155.94708333333335,416.5 155.94708333333335,437.5 290.12925,437.5 290.12925,458.5" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="team-fix" data-to="team-exec" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="254.55733333333336,258.70000000000005 254.55733333333336,276.70000000000005 105.75766666666667,276.70000000000005 105.75766666666667,294.70000000000005" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="team-fix" data-to="team-verify" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="254.55733333333336,258.70000000000005 254.55733333333336,276.70000000000005 155.94708333333335,276.70000000000005 155.94708333333335,379.6" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="team-fix" data-to="complete" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="254.55733333333336,258.70000000000005 254.55733333333336,276.70000000000005 178.68325000000002,276.70000000000005 178.68325000000002,458.5" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="team-fix" data-to="failed" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="254.55733333333336,258.70000000000005 254.55733333333336,276.70000000000005 290.12925,276.70000000000005 290.12925,458.5" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="complete" data-to="_end" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="178.68325000000002,495.4 178.68325000000002,543.4" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="failed" data-to="_end2" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="290.12925,495.4 290.12925,543.4" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="cancelled" data-to="_end3" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="180.6365,81.35000000000001 180.6365,221.8" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<g class="node" data-id="_start" data-label="" data-shape="state-start">
+  <circle cx="88.76249999999999" cy="58.45" r="12" fill="var(--_text)" stroke="none" />
+</g>
+<g class="node" data-id="team-plan" data-label="team-plan" data-shape="rounded">
+  <rect x="40" y="124.9" width="97.525" height="36.900000000000006" rx="6" ry="6" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="88.7625" y="143.35000000000002" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">team-plan</text>
+</g>
+<g class="node" data-id="team-prd" data-label="team-prd" data-shape="rounded">
+  <rect x="42.22300000000001" y="221.8" width="93.079" height="36.900000000000006" rx="6" ry="6" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="88.76250000000002" y="240.25" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">team-prd</text>
+</g>
+<g class="node" data-id="team-exec" data-label="team-exec" data-shape="rounded">
+  <rect x="54.772166666666664" y="294.70000000000005" width="101.971" height="36.900000000000006" rx="6" ry="6" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="105.75766666666667" y="313.15000000000003" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">team-exec</text>
+</g>
+<g class="node" data-id="team-verify" data-label="team-verify" data-shape="rounded">
+  <rect x="102.73858333333337" y="379.6" width="106.41699999999999" height="36.900000000000006" rx="6" ry="6" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="155.94708333333335" y="398.05" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">team-verify</text>
+</g>
+<g class="node" data-id="team-fix" data-label="team-fix" data-shape="rounded">
+  <rect x="211.72283333333334" y="221.8" width="85.66900000000001" height="36.900000000000006" rx="6" ry="6" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="254.55733333333336" y="240.25" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">team-fix</text>
+</g>
+<g class="node" data-id="complete" data-label="complete" data-shape="rounded">
+  <rect x="131.77325000000002" y="458.5" width="93.82000000000001" height="36.900000000000006" rx="6" ry="6" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="178.68325000000002" y="476.95" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">complete</text>
+</g>
+<g class="node" data-id="failed" data-label="failed" data-shape="rounded">
+  <rect x="253.59325" y="458.5" width="73.072" height="36.900000000000006" rx="6" ry="6" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="290.12925" y="476.95" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">failed</text>
+</g>
+<g class="node" data-id="_end" data-label="" data-shape="state-end">
+  <circle cx="178.68325000000002" cy="557.4" r="12" fill="none" stroke="var(--_text)" stroke-width="1.5" />
+  <circle cx="178.68325000000002" cy="557.4" r="8" fill="var(--_text)" stroke="none" />
+</g>
+<g class="node" data-id="_end2" data-label="" data-shape="state-end">
+  <circle cx="290.12925" cy="557.4" r="12" fill="none" stroke="var(--_text)" stroke-width="1.5" />
+  <circle cx="290.12925" cy="557.4" r="8" fill="var(--_text)" stroke="none" />
+</g>
+<g class="node" data-id="cancelled" data-label="cancelled" data-shape="rounded">
+  <rect x="130.7625" y="44.45" width="99.748" height="36.900000000000006" rx="6" ry="6" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="180.63649999999998" y="62.900000000000006" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">cancelled</text>
+</g>
+<g class="node" data-id="_end3" data-label="" data-shape="state-end">
+  <circle cx="180.6365" cy="235.8" r="12" fill="none" stroke="var(--_text)" stroke-width="1.5" />
+  <circle cx="180.6365" cy="235.8" r="8" fill="var(--_text)" stroke="none" />
+</g>
+</svg>

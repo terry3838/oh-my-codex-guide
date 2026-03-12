@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810.8959999999998 515" width="810.8959999999998" height="515" style="--bg:#ffffff;--fg:#1f2328;--line:#d1d9e0;--accent:#0969da;--muted:#59636e">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+  text { font-family: 'Inter', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="seq-arrow" markerWidth="8" markerHeight="5" refX="8" refY="2.5" orient="auto-start-reverse">
+    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" />
+  </marker>
+  <marker id="seq-arrow-open" markerWidth="8" markerHeight="5" refX="8" refY="2.5" orient="auto-start-reverse">
+    <polyline points="0 0, 8 2.5, 0 5" fill="none" stroke="var(--_arrow)" stroke-width="1" />
+  </marker>
+</defs>
+<line class="lifeline" data-actor="User" x1="70" y1="70" x2="70" y2="485" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="Codex" x1="216.9925" y1="70" x2="216.9925" y2="485" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="AGENTS" x1="419.1355" y1="70" x2="419.1355" y2="485" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="Skill" x1="667.5909999999999" y1="70" x2="667.5909999999999" y2="485" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<g class="message" data-from="User" data-to="Codex" data-label="ralph: 이 기능 완성될 때까지 계속해" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="70" y1="90" x2="216.9925" y2="90" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="143.49625" y="80" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">ralph: 이 기능 완성될 때까지 계속해</text>
+</g>
+<g class="message" data-from="Codex" data-to="AGENTS" data-label="키워드 감지 규칙 확인" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="216.9925" y1="130" x2="419.1355" y2="130" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="318.06399999999996" y="120" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">키워드 감지 규칙 확인</text>
+</g>
+<g class="message" data-from="AGENTS" data-to="AGENTS" data-label="&quot;ralph&quot; 키워드 → $ralph 스킬 매핑" data-line-style="solid" data-arrow-head="filled" data-self="true">
+  <polyline points="419.1355,170 449.1355,170 449.1355,190 419.1355,190" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="457.1355" y="180" font-size="11" text-anchor="start" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">&quot;ralph&quot; 키워드 → $ralph 스킬 매핑</text>
+</g>
+<g class="message" data-from="Codex" data-to="Skill" data-label="./.agents/skills/ralph/SKILL.md 읽기" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="216.9925" y1="240" x2="667.5909999999999" y2="240" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="442.29175" y="230" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">./.agents/skills/ralph/SKILL.md 읽기</text>
+</g>
+<g class="message" data-from="Skill" data-to="Codex" data-label="스킬 지시 내용 로드" data-line-style="dashed" data-arrow-head="filled" data-self="false">
+  <line x1="667.5909999999999" y1="280" x2="216.9925" y2="280" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <text x="442.29175" y="270" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">스킬 지시 내용 로드</text>
+</g>
+<g class="message" data-from="Codex" data-to="Codex" data-label="스킬 워크플로우 실행
+(ralph 루프 시작)" data-line-style="solid" data-arrow-head="filled" data-self="true">
+  <polyline points="216.9925,320 246.9925,320 246.9925,340 216.9925,340" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="254.9925" y="330" font-size="11" text-anchor="start" font-weight="400" fill="var(--_text-muted)"><tspan x="254.9925" dy="-3.3000000000000007">스킬 워크플로우 실행</tspan><tspan x="254.9925" dy="14.3">(ralph 루프 시작)</tspan></text>
+</g>
+<g class="message" data-from="User" data-to="Codex" data-label="$ralph 계속 진행해" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="70" y1="405" x2="216.9925" y2="405" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="143.49625" y="395" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">$ralph 계속 진행해</text>
+</g>
+<g class="message" data-from="Codex" data-to="Skill" data-label="스킬 직접 로드" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="216.9925" y1="445" x2="667.5909999999999" y2="445" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="442.29175" y="435" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">스킬 직접 로드</text>
+</g>
+<g class="note" data-position="over" data-actors="Codex">
+  <polygon points="159.6175,358 268.36750000000006,358 274.36750000000006,364 274.36750000000006,381 159.6175,381" fill="var(--bg)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <polygon points="268.36750000000006,358 274.36750000000006,364 268.36750000000006,364" fill="var(--_inner-stroke)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="216.9925" y="369.5" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">또는 명시적 호출:</text>
+</g>
+<g class="actor" data-id="User" data-label="사용자" data-type="participant">
+  <rect x="30" y="30" width="80" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="70" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">사용자</text>
+</g>
+<g class="actor" data-id="Codex" data-label="Codex 에이전트" data-type="participant">
+  <rect x="150" y="30" width="133.985" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="216.9925" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">Codex 에이전트</text>
+</g>
+<g class="actor" data-id="AGENTS" data-label="AGENTS.md
+키워드 감지" data-type="participant">
+  <rect x="323.985" y="30" width="190.301" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="419.1355" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)"><tspan x="419.1355" dy="-3.9000000000000012">AGENTS.md</tspan><tspan x="419.1355" dy="16.900000000000002">키워드 감지</tspan></text>
+</g>
+<g class="actor" data-id="Skill" data-label="~/.agents/skills/
+ralph/SKILL.md" data-type="participant">
+  <rect x="554.286" y="30" width="226.60999999999993" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="667.5909999999999" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)"><tspan x="667.5909999999999" dy="-3.9000000000000012">~/.agents/skills/</tspan><tspan x="667.5909999999999" dy="16.900000000000002">ralph/SKILL.md</tspan></text>
+</g>
+</svg>

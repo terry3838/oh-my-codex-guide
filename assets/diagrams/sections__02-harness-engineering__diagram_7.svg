@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 706.4499999999999 997.1019999999999" width="706.4499999999999" height="997.1019999999999" style="--bg:#ffffff;--fg:#1f2328;--line:#d1d9e0;--accent:#0969da;--muted:#59636e">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+  text { font-family: 'Inter', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="8" markerHeight="5" refX="7" refY="2.5" orient="auto">
+    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+  <marker id="arrowhead-start" markerWidth="8" markerHeight="5" refX="1" refY="2.5" orient="auto-start-reverse">
+    <polygon points="8 0, 0 2.5, 8 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+</defs>
+<polyline class="edge" data-from="A" data-to="B" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="363.22849999999994,76.9 363.22849999999994,124.9" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="B" data-to="C" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="363.22849999999994,178.70000000000002 363.22849999999994,226.70000000000002" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="C" data-to="D" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="363.22849999999994,280.5 363.2285,328.5" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="D" data-to="E" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="frontier-orchestrator" points="333.40299999999996,417.9765 333.40299999999996,483.802 139.8915,483.802 139.8915,576.102" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="D" data-to="F" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="deep-worker" points="363.2285,447.802 363.22849999999994,576.102" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="D" data-to="G" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="fast-lane" points="393.054,417.97650000000004 393.054,483.802 576.5619999999999,483.802 576.562,576.102" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="E" data-to="H" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="139.8915,663.702 139.8915,698.602 358.22675,698.602 358.22675,716.602" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="F" data-to="H" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="363.22849999999994,680.602 363.22849999999994,698.602 358.22675,698.602 358.22675,716.602" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="G" data-to="H" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="576.562,680.602 576.562,698.602 358.22675,698.602 358.22675,716.602" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="H" data-to="I" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="358.22675,770.4019999999999 358.22675,818.4019999999999" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="I" data-to="J" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="358.22675,855.3019999999999 358.22675,903.3019999999999" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<g class="edge-label" data-from="D" data-to="E" data-label="frontier-orchestrator">
+  <rect x="81.89150000000001" y="507.702" width="115.66000000000001" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="139.72150000000002" y="522.852" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">frontier-orchestrator</text>
+</g>
+<g class="edge-label" data-from="D" data-to="F" data-label="deep-worker">
+  <rect x="323.72849999999994" y="490.802" width="78.83200000000001" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="363.14449999999994" y="505.952" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">deep-worker</text>
+</g>
+<g class="edge-label" data-from="D" data-to="G" data-label="fast-lane">
+  <rect x="547.5619999999999" y="514.802" width="57.44799999999999" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="576.286" y="529.952" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">fast-lane</text>
+</g>
+<g class="node" data-id="A" data-label="작업 요청" data-shape="rectangle">
+  <rect x="311.50199999999995" y="40" width="103.453" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="363.22849999999994" y="58.45" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">작업 요청</text>
+</g>
+<g class="node" data-id="B" data-label="에이전트 롤 결정
+예: planner, executor, writer" data-shape="rectangle">
+  <rect x="260.373" y="124.9" width="205.71099999999996" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="363.22849999999994" y="151.8" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="363.22849999999994" dy="-3.9000000000000012">에이전트 롤 결정</tspan><tspan x="363.22849999999994" dy="16.900000000000002">예: planner, executor, writer</tspan></text>
+</g>
+<g class="node" data-id="C" data-label="AGENT_DEFINITIONS 조회
+posture / modelClass / reasoningEffort" data-shape="rectangle">
+  <rect x="231.1035" y="226.70000000000002" width="264.24999999999994" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="363.22849999999994" y="253.60000000000002" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="363.22849999999994" dy="-3.9000000000000012">AGENT_DEFINITIONS 조회</tspan><tspan x="363.22849999999994" dy="16.900000000000002">posture / modelClass / reasoningEffort</tspan></text>
+</g>
+<g class="node" data-id="D" data-label="posture?" data-shape="diamond">
+  <polygon points="363.2285,328.5 422.8795,388.151 363.2285,447.802 303.5775,388.151" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="363.2285" y="388.151" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">posture?</text>
+</g>
+<g class="node" data-id="E" data-label="&lt;posture_overlay&gt;
+라우팅 우선, 위임 적극적
+가정에 도전, 경계 보존
+&lt;/posture_overlay&gt;" data-shape="rectangle">
+  <rect x="40" y="576.102" width="199.783" height="87.60000000000001" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="139.8915" y="619.9019999999999" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="139.8915" dy="-20.8">&lt;posture_overlay&gt;</tspan><tspan x="139.8915" dy="16.900000000000002">라우팅 우선, 위임 적극적</tspan><tspan x="139.8915" dy="16.900000000000002">가정에 도전, 경계 보존</tspan><tspan x="139.8915" dy="16.900000000000002">&lt;/posture_overlay&gt;</tspan></text>
+</g>
+<g class="node" data-id="F" data-label="&lt;posture_overlay&gt;
+직접 실행 우선
+탐색 후 최소 변경
+검증 필수 (테스트/빌드)
+&lt;/posture_overlay&gt;" data-shape="rectangle">
+  <rect x="267.78299999999996" y="576.102" width="190.891" height="104.50000000000001" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="363.22849999999994" y="628.352" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="363.22849999999994" dy="-29.250000000000004">&lt;posture_overlay&gt;</tspan><tspan x="363.22849999999994" dy="16.900000000000002">직접 실행 우선</tspan><tspan x="363.22849999999994" dy="16.900000000000002">탐색 후 최소 변경</tspan><tspan x="363.22849999999994" dy="16.900000000000002">검증 필수 (테스트/빌드)</tspan><tspan x="363.22849999999994" dy="16.900000000000002">&lt;/posture_overlay&gt;</tspan></text>
+</g>
+<g class="node" data-id="G" data-label="&lt;posture_overlay&gt;
+빠른 분류/검색
+확장 시 에스컬레이션
+보수적 응답
+&lt;/posture_overlay&gt;" data-shape="rectangle">
+  <rect x="486.674" y="576.102" width="179.77599999999998" height="104.50000000000001" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="576.562" y="628.352" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="576.562" dy="-29.250000000000004">&lt;posture_overlay&gt;</tspan><tspan x="576.562" dy="16.900000000000002">빠른 분류/검색</tspan><tspan x="576.562" dy="16.900000000000002">확장 시 에스컬레이션</tspan><tspan x="576.562" dy="16.900000000000002">보수적 응답</tspan><tspan x="576.562" dy="16.900000000000002">&lt;/posture_overlay&gt;</tspan></text>
+</g>
+<g class="node" data-id="H" data-label="네이티브 에이전트 .toml 생성
+model_reasoning_effort 포함" data-shape="rectangle">
+  <rect x="247.22025" y="716.602" width="222.01299999999995" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="358.22675" y="743.502" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="358.22675" dy="-3.9000000000000012">네이티브 에이전트 .toml 생성</tspan><tspan x="358.22675" dy="16.900000000000002">model_reasoning_effort 포함</tspan></text>
+</g>
+<g class="node" data-id="I" data-label="&quot;config.toml [agents.&lt;name&gt;" data-shape="rectangle">
+  <rect x="257.59425" y="818.4019999999999" width="201.26500000000001" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="358.22675" y="836.852" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">&quot;config.toml [agents.&lt;name&gt;</text>
+</g>
+<g class="node" data-id="J" data-label="Codex가 /prompts:&lt;name&gt; 호출 시
+해당 .toml 로드" data-shape="rectangle">
+  <rect x="234.99374999999998" y="903.3019999999999" width="246.46599999999998" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="358.22675" y="930.2019999999999" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="358.22675" dy="-3.9000000000000012">Codex가 /prompts:&lt;name&gt; 호출 시</tspan><tspan x="358.22675" dy="16.900000000000002">해당 .toml 로드</tspan></text>
+</g>
+</svg>

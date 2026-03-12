@@ -52,55 +52,11 @@ OMX는 3개의 플레인(plane)으로 구성된 레이어드 아키텍처를 사
 
 ### 3-Plane 아키텍처 다이어그램
 
-```mermaid
-graph TB
-    subgraph "실행 플레인 (Execution Plane)"
-        CODEX[Codex CLI<br/>실제 에이전트 작업 실행]
-    end
-
-    subgraph "제어 플레인 (Control Plane)"
-        OMX_RUNTIME[omx runtime<br/>팀 워커 관리]
-        TEAM[Team Mode<br/>omx team]
-        HUD[HUD / tmux 통합]
-        LIFECYCLE[생명주기 제어<br/>start / resume / cancel]
-        RECOVERY["복구 (Recovery)<br/>ralph / ultrawork"]
-    end
-
-    subgraph "상태 플레인 (State Plane)"
-        MCP_STATE[MCP: omx_state<br/>실행 모드 상태]
-        MCP_MEMORY[MCP: omx_memory<br/>크로스 세션 메모리]
-        MCP_TRACE[MCP: omx_trace<br/>추적 및 진단]
-        MCP_INTEL[MCP: omx_code_intel<br/>코드 인텔리전스]
-        OMX_DIR[.omx/ 디렉토리<br/>plans / logs / state]
-    end
-
-    USER[사용자 / 운영자] --> OMX_RUNTIME
-    OMX_RUNTIME --> TEAM
-    OMX_RUNTIME --> HUD
-    OMX_RUNTIME --> LIFECYCLE
-    OMX_RUNTIME --> RECOVERY
-    OMX_RUNTIME --> CODEX
-    CODEX --> MCP_STATE
-    CODEX --> MCP_MEMORY
-    CODEX --> MCP_TRACE
-    CODEX --> MCP_INTEL
-    MCP_STATE --> OMX_DIR
-    MCP_MEMORY --> OMX_DIR
-    MCP_TRACE --> OMX_DIR
-```
+![Diagram 1](assets/diagrams/README__diagram_1.svg)
 
 ### 사용자에서 실행까지: 전체 흐름
 
-```mermaid
-flowchart LR
-    USER[사용자] --> OMX[OMX Runtime<br/>omx / omx team]
-    OMX --> CODEX_CLI[Codex CLI<br/>실행 엔진]
-    CODEX_CLI --> AGENTS_MD[AGENTS.md<br/>오케스트레이션 브레인]
-    AGENTS_MD --> PROMPTS[~/.codex/prompts/*.md<br/>역할 프롬프트 카탈로그]
-    AGENTS_MD --> SKILLS[~/.agents/skills/*/SKILL.md<br/>스킬 카탈로그]
-    AGENTS_MD --> CONFIG[~/.codex/config.toml<br/>기능, 알림, MCP 설정]
-    AGENTS_MD --> OMX_STATE[.omx/<br/>런타임 상태, 메모리, 플랜]
-```
+![Diagram 2](assets/diagrams/README__diagram_2.svg)
 
 ### 핵심 모델 계층 구조
 
@@ -228,40 +184,7 @@ oh-my-codex-guide/
 
 이것이 OMX의 **가장 강력한 고제어 워크플로우**입니다. `autopilot`보다 더 세밀한 제어가 필요하고, `$ultrawork`보다 더 나은 조율이 필요할 때 사용합니다.
 
-```mermaid
-flowchart TD
-    REQUEST[작업 요청] --> RALPLAN
-
-    subgraph RALPLAN["ralplan 단계"]
-        RP1[거친 요청을<br/>스펙으로 변환]
-        RP2[수용 기준 정의]
-        RP3[워커 레인 분해]
-        RP1 --> RP2 --> RP3
-    end
-
-    RALPLAN --> TEAM
-
-    subgraph TEAM["team 단계"]
-        T1[영속 워커 조율]
-        T2[가시적 런타임 상태]
-        T3[블로커 처리]
-        T4[병렬 실행]
-        T1 --> T2
-        T2 --> T3
-        T3 --> T4
-    end
-
-    TEAM --> RALPH
-
-    subgraph RALPH["ralph 단계"]
-        R1[검증이 실재할 때까지<br/>루프 유지]
-        R2[증거 수집]
-        R3[명시적 정리]
-        R1 --> R2 --> R3
-    end
-
-    RALPH --> COMPLETE[작업 완료<br/>검증됨]
-```
+![Diagram 3](assets/diagrams/README__diagram_3.svg)
 
 ### 각 단계의 역할
 
@@ -295,16 +218,7 @@ omx team status <team-name>
 
 ### Team Mode vs. Ultrawork 선택 기준
 
-```mermaid
-flowchart TD
-    Q1{작업이 독립적인가?} -->|예| Q2{결과 병합이 간단한가?}
-    Q1 -->|아니오| TEAM[Team Mode 사용<br/>omx team]
-    Q2 -->|예| ULTRA[Ultrawork 사용<br/>$ultrawork]
-    Q2 -->|아니오| TEAM
-
-    TEAM --> TN["- 공유 컨텍스트 필요<br/>- 블로커 처리 중요<br/>- 핸드오프 가능성<br/>- 영속 런타임 제어 필요"]
-    ULTRA --> UN["- 하위 작업이 독립적<br/>- 리더가 결과 병합<br/>- 빠른 팬아웃<br/>- 경량 병렬 처리"]
-```
+![Diagram 4](assets/diagrams/README__diagram_4.svg)
 
 ---
 

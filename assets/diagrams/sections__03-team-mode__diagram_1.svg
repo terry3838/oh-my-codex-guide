@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 718.8539166666666 1275.1730000000002" width="718.8539166666666" height="1275.1730000000002" style="--bg:#ffffff;--fg:#1f2328;--line:#d1d9e0;--accent:#0969da;--muted:#59636e">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+  text { font-family: 'Inter', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="8" markerHeight="5" refX="7" refY="2.5" orient="auto">
+    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+  <marker id="arrowhead-start" markerWidth="8" markerHeight="5" refX="1" refY="2.5" orient="auto-start-reverse">
+    <polygon points="8 0, 0 2.5, 8 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+</defs>
+<polyline class="edge" data-from="A" data-to="B" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="176.20049999999998,76.9 176.20049999999998,124.9" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="B" data-to="C" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="176.20049999999998,161.8 176.2005,209.8" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="C" data-to="D" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="176.2005,246.70000000000002 176.20049999999998,294.70000000000005" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="D" data-to="E" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="176.20049999999998,348.5 176.20049999999998,396.5" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="E" data-to="F" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="176.20049999999998,450.30000000000007 176.20049999999998,498.30000000000007" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="F" data-to="G" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="176.20049999999998,552.1 176.20049999999998,682.0365" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="G" data-to="H" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="176.20049999999998,735.8365 176.20049999999998,780.873" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="H" data-to="I" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="176.20049999999998,834.673 176.2005,882.673" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="I" data-to="J" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="176.2005,919.573 176.2005,931.573 379.09475,931.573 379.09475,967.6556666666667" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="J" data-to="K" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="403.17741666666666,1088.069 403.17741666666666,1124.069 402.26058333333333,1124.069 402.26058333333333,1124.721" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="K" data-to="L" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="320.84624999999994,1124.721 320.84624999999994,1124.069 319.9294166666666,1124.069 319.9294166666666,919.573 404.8745833333333,919.573 404.8745833333333,637" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="L" data-to="M" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="487.52391666666665,637 487.52391666666665,673 511.7206666666666,673 511.7206666666666,682.0365000000002" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="M" data-to="J" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="No" points="488.00849999999997,800.5973333333334 488.00849999999997,863.273 427.26008333333334,863.273 427.26008333333334,967.6556666666668" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="M" data-to="N" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="Yes" points="535.4328333333333,800.5973333333334 535.4328333333333,863.2730000000001 595.2644166666666,863.2730000000001 595.2644166666666,943.5730000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="N" data-to="O" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="595.2644166666666,980.4730000000001 595.2644166666666,1028.4730000000002" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="O" data-to="P" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="595.2644166666666,1065.373 595.2644166666666,1124.721" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="P" data-to="Q" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="595.2644166666666,1161.621 595.2644166666666,1198.2730000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<g class="edge-label" data-from="M" data-to="J" data-label="No">
+  <rect x="411.76008333333334" y="870.273" width="30.718000000000004" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="427.1190833333333" y="885.423" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">No</text>
+</g>
+<g class="edge-label" data-from="M" data-to="N" data-label="Yes">
+  <rect x="576.7644166666666" y="870.2730000000001" width="36.658" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="595.0934166666666" y="885.4230000000001" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Yes</text>
+</g>
+<g class="node" data-id="A" data-label="omx team 실행" data-shape="stadium">
+  <rect x="112.98849999999999" y="40" width="126.424" height="36.900000000000006" rx="18.450000000000003" ry="18.450000000000003" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="176.20049999999998" y="58.45" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">omx team 실행</text>
+</g>
+<g class="node" data-id="B" data-label="팀 이름 및 태스크 파싱" data-shape="rectangle">
+  <rect x="84.08949999999999" y="124.9" width="184.22199999999998" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="176.20049999999998" y="143.35000000000002" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">팀 이름 및 태스크 파싱</text>
+</g>
+<g class="node" data-id="C" data-label=".omx/state/team/name/ 초기화" data-shape="rectangle">
+  <rect x="68.15800000000002" y="209.8" width="216.08499999999998" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="176.2005" y="228.25" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">.omx/state/team/name/ 초기화</text>
+</g>
+<g class="node" data-id="D" data-label="worker-agents.md 생성
+ AGENTS.md + 워커 오버레이" data-shape="rectangle">
+  <rect x="66.3055" y="294.70000000000005" width="219.79" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="176.20049999999998" y="321.6" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="176.20049999999998" dy="-3.9000000000000012">worker-agents.md 생성</tspan><tspan x="176.20049999999998" dy="16.900000000000002"> AGENTS.md + 워커 오버레이</tspan></text>
+</g>
+<g class="node" data-id="E" data-label="tmux 창 분할
+워커 pane 생성" data-shape="rectangle">
+  <rect x="108.54249999999996" y="396.5" width="135.316" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="176.20049999999998" y="423.4" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="176.20049999999998" dy="-3.9000000000000012">tmux 창 분할</tspan><tspan x="176.20049999999998" dy="16.900000000000002">워커 pane 생성</tspan></text>
+</g>
+<g class="node" data-id="F" data-label="워커 CLI 실행
+OMX_TEAM_WORKER 환경변수 주입" data-shape="rectangle">
+  <rect x="40" y="498.30000000000007" width="272.40099999999995" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="176.20049999999998" y="525.2" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="176.20049999999998" dy="-3.9000000000000012">워커 CLI 실행</tspan><tspan x="176.20049999999998" dy="16.900000000000002">OMX_TEAM_WORKER 환경변수 주입</tspan></text>
+</g>
+<g class="node" data-id="G" data-label="워커 준비 대기
+capture-pane 폴링" data-shape="rectangle">
+  <rect x="99.65049999999997" y="682.0365" width="153.1" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="176.20049999999998" y="708.9365" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="176.20049999999998" dy="-3.9000000000000012">워커 준비 대기</tspan><tspan x="176.20049999999998" dy="16.900000000000002">capture-pane 폴링</tspan></text>
+</g>
+<g class="node" data-id="H" data-label="inbox.md 작성
+태스크 할당" data-shape="rectangle">
+  <rect x="113.35899999999998" y="780.873" width="125.68299999999999" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="176.20049999999998" y="807.773" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="176.20049999999998" dy="-3.9000000000000012">inbox.md 작성</tspan><tspan x="176.20049999999998" dy="16.900000000000002">태스크 할당</tspan></text>
+</g>
+<g class="node" data-id="I" data-label="tmux send-keys 트리거" data-shape="rectangle">
+  <rect x="85.94200000000001" y="882.673" width="180.517" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="176.2005" y="901.123" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">tmux send-keys 트리거</text>
+</g>
+<g class="node" data-id="J" data-label="워커 작업 중" data-shape="diamond">
+  <polygon points="403.1774166666666,943.573 475.4254166666666,1015.821 403.1774166666666,1088.069 330.9294166666666,1015.821" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="403.1774166666666" y="1015.821" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">워커 작업 중</text>
+</g>
+<g class="node" data-id="K" data-label="워커 ACK → leader-fixed 메일박스" data-shape="rectangle">
+  <rect x="239.43191666666664" y="1124.721" width="244.243" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="361.55341666666664" y="1143.171" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">워커 ACK → leader-fixed 메일박스</text>
+</g>
+<g class="node" data-id="L" data-label="태스크 클레임 → 작업 → 완료 전환" data-shape="rectangle">
+  <rect x="322.22524999999996" y="600.1" width="247.94799999999998" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="446.19924999999995" y="618.5500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">태스크 클레임 → 작업 → 완료 전환</text>
+</g>
+<g class="node" data-id="M" data-label="모든 태스크
+완료?" data-shape="diamond">
+  <polygon points="511.72066666666666,682.0365 582.8571666666667,753.173 511.72066666666666,824.3095 440.58416666666665,753.173" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="511.72066666666666" y="753.173" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="511.72066666666666" dy="-3.9000000000000012">모든 태스크</tspan><tspan x="511.72066666666666" dy="16.900000000000002">완료?</tspan></text>
+</g>
+<g class="node" data-id="N" data-label="omx team shutdown" data-shape="rectangle">
+  <rect x="518.7144166666666" y="943.5730000000001" width="153.1" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="595.2644166666665" y="962.0230000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">omx team shutdown</text>
+</g>
+<g class="node" data-id="O" data-label="워커 종료 신호 전송" data-shape="rectangle">
+  <rect x="511.6749166666666" y="1028.4730000000002" width="167.179" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="595.2644166666666" y="1046.9230000000002" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">워커 종료 신호 전송</text>
+</g>
+<g class="node" data-id="P" data-label="tmux 세션 정리" data-shape="rectangle">
+  <rect x="529.0884166666666" y="1124.721" width="132.352" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="595.2644166666666" y="1143.171" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">tmux 세션 정리</text>
+</g>
+<g class="node" data-id="Q" data-label="완료" data-shape="stadium">
+  <rect x="559.4694166666666" y="1198.2730000000001" width="71.59" height="36.900000000000006" rx="18.450000000000003" ry="18.450000000000003" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="595.2644166666665" y="1216.7230000000002" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">완료</text>
+</g>
+</svg>

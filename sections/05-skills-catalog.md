@@ -6,20 +6,7 @@ OMX 스킬은 특정 키워드나 `/스킬명` 형태로 호출하는 실행 단
 
 ## 스킬 호출 Mermaid
 
-```mermaid
-flowchart LR
-    A[사용자가 트리거 입력\n예: ralph, $team, /plan] --> B[OMX 키워드 감지]
-    B --> C{스킬 파일 탐색}
-    C --> D1["~/.codex/skills/{name}/SKILL.md"]
-    C --> D2["~/.agents/skills/{name}/SKILL.md"]
-    C --> D3["./.agents/skills/{name}/SKILL.md"]
-    C --> D4["./skills/{name}/SKILL.md"]
-    D1 & D2 & D3 & D4 --> E{파일 존재?}
-    E -->|Yes| F[SKILL.md 로드]
-    F --> G[Codex/Claude가 지시사항 실행]
-    G --> H([태스크 완료])
-    E -->|No| I[다음 경로 시도]
-```
+![Diagram 1](../assets/diagrams/sections__05-skills-catalog__diagram_1.svg)
 
 ---
 

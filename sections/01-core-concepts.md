@@ -6,41 +6,7 @@ OMX(oh-my-codex)는 OpenAI Codex CLI를 위한 **운영 런타임(operational ru
 
 ### Mermaid: 3-Plane Architecture
 
-```mermaid
-graph TB
-    subgraph "Execution Plane"
-        CODEX[Codex CLI<br/>실행 엔진]
-    end
-
-    subgraph "Control Plane"
-        OMX[omx CLI<br/>런타임 관리자]
-        TEAM[Team Workers<br/>tmux 기반]
-        HUD[HUD / StatusLine<br/>가시성]
-        LIFECYCLE[lifecycle commands<br/>start / cancel / resume]
-    end
-
-    subgraph "State Plane"
-        MCP_STATE[omx_state MCP<br/>모드 상태]
-        MCP_MEM[omx_memory MCP<br/>영구 메모리]
-        MCP_INTEL[omx_code_intel MCP<br/>코드 분석]
-        MCP_TRACE[omx_trace MCP<br/>실행 추적]
-        MCP_TEAM[omx_team_run MCP<br/>팀 작업 라이프사이클]
-        OMX_DIR[".omx/ 파일시스템"]
-    end
-
-    OMX --> CODEX
-    OMX --> TEAM
-    OMX --> HUD
-    OMX --> LIFECYCLE
-    CODEX <--> MCP_STATE
-    CODEX <--> MCP_MEM
-    CODEX <--> MCP_INTEL
-    CODEX <--> MCP_TRACE
-    CODEX <--> MCP_TEAM
-    MCP_STATE --> OMX_DIR
-    MCP_MEM --> OMX_DIR
-    MCP_TRACE --> OMX_DIR
-```
+![Diagram 1](../assets/diagrams/sections__01-core-concepts__diagram_1.svg)
 
 세 플레인의 역할 요약:
 
@@ -154,31 +120,7 @@ User / Operator
 
 `omx` 명령을 실행할 때 내부적으로 어떤 일이 일어나는지 보여주는 플로우다.
 
-```mermaid
-sequenceDiagram
-    participant User as 사용자
-    participant OMX as omx CLI
-    participant Overlay as agents-overlay
-    participant Codex as Codex CLI
-    participant MCP as MCP Servers
-
-    User->>OMX: omx [flags]
-    OMX->>OMX: 세션 ID 생성
-    OMX->>Overlay: generateOverlay(cwd, sessionId)
-    Overlay->>Overlay: 활성 모드 상태 읽기
-    Overlay->>Overlay: notepad PRIORITY 섹션 읽기
-    Overlay->>Overlay: project-memory 요약 읽기
-    Overlay->>Overlay: 코드베이스 맵 생성
-    Overlay-->>OMX: 오버레이 콘텐츠 반환
-    OMX->>OMX: 세션 전용 AGENTS.md 작성
-    OMX->>Codex: codex 실행<br/>-c model_instructions_file="<sessionPath>/AGENTS.md"
-    Codex->>MCP: MCP 서버 연결 (config.toml 기반)
-    Note over Codex,MCP: omx_state, omx_memory,<br/>omx_code_intel, omx_trace,<br/>omx_team_run 활성화
-    Codex-->>User: 에이전트 세션 시작
-    User->>OMX: 세션 종료
-    OMX->>Overlay: 세션 전용 AGENTS.md 정리
-    OMX->>OMX: session-end 상태 기록
-```
+![Diagram 2](../assets/diagrams/sections__01-core-concepts__diagram_2.svg)
 
 💡 `OMX_BYPASS_DEFAULT_SYSTEM_PROMPT=0 omx`로 AGENTS.md 주입을 비활성화할 수 있다.
 

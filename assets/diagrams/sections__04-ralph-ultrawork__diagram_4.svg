@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 828.8580000000001 944.3389999999999" width="828.8580000000001" height="944.3389999999999" style="--bg:#ffffff;--fg:#1f2328;--line:#d1d9e0;--accent:#0969da;--muted:#59636e">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+  text { font-family: 'Inter', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="8" markerHeight="5" refX="7" refY="2.5" orient="auto">
+    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+  <marker id="arrowhead-start" markerWidth="8" markerHeight="5" refX="1" refY="2.5" orient="auto-start-reverse">
+    <polygon points="8 0, 0 2.5, 8 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+</defs>
+<polyline class="edge" data-from="A" data-to="B" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="377.552,76.9 377.552,124.9" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="B" data-to="C" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="Yes, 빠른 완료" points="353.83983333333333,243.4608333333333 353.83983333333333,279.173 156.3415,279.173 156.3415,359.473" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="C" data-to="D" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="No" points="131.27083333333337,484.8263333333334 131.27083333333337,545.8969999999999 89.87399999999997,545.8969999999999 89.87400000000002,626.1969999999999" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="C" data-to="E" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="Yes" points="181.41216666666668,484.82633333333337 181.41216666666668,545.8969999999999 222.80899999999997,545.8969999999999 222.80899999999997,626.1969999999999" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="B" data-to="F" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="아니오/순차" points="401.26416666666665,243.46083333333337 401.26416666666665,279.173 526.614,279.173 526.614,359.473" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="F" data-to="G" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="Yes" points="505.37183333333337,465.6838333333334 505.37183333333337,498.92600000000004 391.8265,498.92600000000004 391.8265,579.2260000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="G" data-to="H" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="Yes" points="363.1743333333334,722.4868333333335 363.1743333333334,787.1390000000001 335.733,787.1390000000001 335.733,867.4390000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="G" data-to="I" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="No" points="420.4786666666667,722.4868333333334 420.4786666666667,787.1390000000001 447.9200000000001,787.1390000000001 447.92,867.4390000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="F" data-to="J" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="No" points="547.8561666666667,465.6838333333334 547.8561666666667,498.92600000000004 633.614,498.92600000000004 633.614,579.2260000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="J" data-to="K" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="Yes" points="613.1128333333334,681.7318333333335 613.1128333333334,738.2330000000002 557.884,738.2330000000002 557.884,818.5330000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="J" data-to="L" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="No" points="654.1151666666667,681.7318333333335 654.1151666666667,738.2330000000002 709.344,738.2330000000002 709.344,818.5330000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<g class="edge-label" data-from="B" data-to="C" data-label="Yes, 빠른 완료">
+  <rect x="110.84150000000001" y="286.173" width="90.11800000000002" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="155.90050000000002" y="301.323" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Yes, 빠른 완료</text>
+</g>
+<g class="edge-label" data-from="C" data-to="D" data-label="No">
+  <rect x="74.37399999999997" y="552.8969999999999" width="30.718000000000004" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="89.73299999999998" y="568.0469999999999" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">No</text>
+</g>
+<g class="edge-label" data-from="C" data-to="E" data-label="Yes">
+  <rect x="204.30899999999997" y="552.8969999999999" width="36.658" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="222.63799999999998" y="568.0469999999999" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Yes</text>
+</g>
+<g class="edge-label" data-from="B" data-to="F" data-label="아니오/순차">
+  <rect x="486.11400000000003" y="286.173" width="80.02000000000001" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="526.124" y="301.323" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">아니오/순차</text>
+</g>
+<g class="edge-label" data-from="F" data-to="G" data-label="Yes">
+  <rect x="373.3265" y="505.92600000000004" width="36.658" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="391.6555" y="521.076" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Yes</text>
+</g>
+<g class="edge-label" data-from="G" data-to="H" data-label="Yes">
+  <rect x="317.233" y="794.1390000000001" width="36.658" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="335.562" y="809.2890000000001" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Yes</text>
+</g>
+<g class="edge-label" data-from="G" data-to="I" data-label="No">
+  <rect x="432.4200000000001" y="794.1390000000001" width="30.718000000000004" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="447.77900000000005" y="809.2890000000001" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">No</text>
+</g>
+<g class="edge-label" data-from="F" data-to="J" data-label="No">
+  <rect x="618.114" y="505.92600000000004" width="30.718000000000004" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="633.4730000000001" y="521.076" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">No</text>
+</g>
+<g class="edge-label" data-from="J" data-to="K" data-label="Yes">
+  <rect x="539.384" y="745.2330000000002" width="36.658" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="557.713" y="760.3830000000002" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Yes</text>
+</g>
+<g class="edge-label" data-from="J" data-to="L" data-label="No">
+  <rect x="693.844" y="745.2330000000002" width="30.718000000000004" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="709.2030000000001" y="760.3830000000002" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">No</text>
+</g>
+<g class="node" data-id="A" data-label="태스크 시작" data-shape="rectangle">
+  <rect x="318.4155" y="40" width="118.273" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="377.552" y="58.45" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">태스크 시작</text>
+</g>
+<g class="node" data-id="B" data-label="독립적 병렬
+태스크?" data-shape="diamond">
+  <polygon points="377.552,124.89999999999999 448.68850000000003,196.0365 377.552,267.173 306.4155,196.0365" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="377.552" y="196.0365" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="377.552" dy="-3.9000000000000012">독립적 병렬</tspan><tspan x="377.552" dy="16.900000000000002">태스크?</tspan></text>
+</g>
+<g class="node" data-id="C" data-label="별도 CLI 세션
+필요?" data-shape="diamond">
+  <polygon points="156.3415,359.473 231.55349999999999,434.685 156.3415,509.897 81.1295,434.685" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="156.3415" y="434.685" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="156.3415" dy="-3.9000000000000012">별도 CLI 세션</tspan><tspan x="156.3415" dy="16.900000000000002">필요?</tspan></text>
+</g>
+<g class="node" data-id="D" data-label="Ultrawork" data-shape="rectangle">
+  <rect x="40" y="626.1969999999999" width="99.74799999999999" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="89.874" y="644.6469999999999" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Ultrawork</text>
+</g>
+<g class="node" data-id="E" data-label="Team Mode" data-shape="rectangle">
+  <rect x="167.748" y="626.1969999999999" width="110.122" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="222.809" y="644.6469999999999" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Team Mode</text>
+</g>
+<g class="node" data-id="F" data-label="완료 보장
+필요?" data-shape="diamond">
+  <polygon points="526.614,359.473 590.3405,423.1995 526.614,486.926 462.88750000000005,423.1995" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="526.614" y="423.1995" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="526.614" dy="-3.9000000000000012">완료 보장</tspan><tspan x="526.614" dy="16.900000000000002">필요?</tspan></text>
+</g>
+<g class="node" data-id="G" data-label="전체 파이프라인
+자동화?" data-shape="diamond">
+  <polygon points="391.8265,579.2260000000001 477.783,665.1825000000001 391.8265,751.1390000000001 305.87,665.1825000000001" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="391.8265" y="665.1825000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="391.8265" dy="-3.9000000000000012">전체 파이프라인</tspan><tspan x="391.8265" dy="16.900000000000002">자동화?</tspan></text>
+</g>
+<g class="node" data-id="H" data-label="Autopilot" data-shape="rectangle">
+  <rect x="289.564" y="867.4390000000001" width="92.338" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="335.733" y="885.8890000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Autopilot</text>
+</g>
+<g class="node" data-id="I" data-label="Ralph" data-shape="rectangle">
+  <rect x="409.90200000000004" y="867.4390000000001" width="76.036" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="447.9200000000001" y="885.8890000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Ralph</text>
+</g>
+<g class="node" data-id="J" data-label="QA 반복?" data-shape="diamond">
+  <polygon points="633.614,579.2260000000001 695.1175000000001,640.7295000000001 633.614,702.2330000000002 572.1105,640.7295000000001" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="633.614" y="640.7295000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">QA 반복?</text>
+</g>
+<g class="node" data-id="K" data-label="UltraQA" data-shape="rectangle">
+  <rect x="513.938" y="818.5330000000001" width="87.892" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="557.884" y="836.9830000000002" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">UltraQA</text>
+</g>
+<g class="node" data-id="L" data-label="직접 executor 위임" data-shape="rectangle">
+  <rect x="629.83" y="818.5330000000001" width="159.02800000000002" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="709.344" y="836.9830000000002" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">직접 executor 위임</text>
+</g>
+</svg>

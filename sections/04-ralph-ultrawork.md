@@ -44,28 +44,7 @@ $ralph "implement the approved plan"
 
 ## 2. Ralph 실행 Mermaid
 
-```mermaid
-flowchart TD
-    A([Ralph 시작]) --> B[Pre-context Intake\n.omx/context/slug-timestamp.md]
-    B --> C[상태 초기화\nstate_write mode=ralph active=true]
-    C --> D[프로그레스 확인\nTODO + 이전 이터레이션 상태]
-    D --> E[태스크 병렬 위임\nexecutor / test-engineer / etc]
-    E --> F{비주얼 태스크\n있음?}
-    F -->|Yes| G[$visual-verdict 실행\nscore >= 90 기준]
-    G --> H{통과?}
-    H -->|No| E
-    H -->|Yes| I
-    F -->|No| I[검증 실행\nbuild / test / lint]
-    I --> J{모든 검증\n통과?}
-    J -->|No| K[수정 후 재검증]
-    K --> I
-    J -->|Yes| L[Architect 검증\nSTANDARD tier 최소]
-    L --> M{Architect\n승인?}
-    M -->|Reject| N[이슈 수정]
-    N --> I
-    M -->|Approve| O[$cancel 실행\n상태 파일 정리]
-    O --> P([완료])
-```
+![Diagram 1](../assets/diagrams/sections__04-ralph-ultrawork__diagram_1.svg)
 
 ### Ralph 페이즈 상태
 
@@ -167,25 +146,7 @@ $cancel --force
 
 ### 일반 팀 vs Ralph 팀 cleanup 차이
 
-```mermaid
-flowchart TD
-    subgraph "일반 omx team 취소"
-        A1[cancel 호출] --> B1[워커 graceful shutdown]
-        B1 --> C1[tmux 세션 kill]
-        C1 --> D1[.omx/state/team/name/ 삭제]
-        D1 --> E1[team state 정리]
-    end
-
-    subgraph "omx team ralph 취소 (linked)"
-        A2[cancel 호출] --> B2[팀 먼저 취소]
-        B2 --> C2[워커 graceful shutdown]
-        C2 --> D2[tmux 세션 kill]
-        D2 --> E2[.omx/state/team/name/ 삭제]
-        E2 --> F2[ralph state terminalize]
-        F2 --> G2[linked ultrawork 정리]
-        G2 --> H2[ralph completed_at 설정]
-    end
-```
+![Diagram 2](../assets/diagrams/sections__04-ralph-ultrawork__diagram_2.svg)
 
 ### skipBranchDeletion 동작
 
@@ -223,22 +184,7 @@ autopilot (autonomous execution)
 
 ## 6. Ultrawork 실행 Mermaid
 
-```mermaid
-flowchart TD
-    A([ulw / ultrawork 트리거]) --> B[태스크 독립성 분류]
-    B --> C{병렬 가능?}
-    C -->|Yes| D[병렬 팬아웃\n동시 에이전트 위임]
-    C -->|No - 의존성 있음| E[순차 실행]
-    D --> F1[LOW tier\n단순 변경]
-    D --> F2[STANDARD tier\n표준 구현]
-    D --> F3[THOROUGH tier\n복잡한 분석]
-    E --> G[선행 태스크 완료 후\n다음 태스크 시작]
-    F1 & F2 & F3 & G --> H[결과 수집]
-    H --> I[경량 검증\nbuild + test pass]
-    I --> J{통과?}
-    J -->|Yes| K([완료])
-    J -->|No| L[오류 보고]
-```
+![Diagram 3](../assets/diagrams/sections__04-ralph-ultrawork__diagram_3.svg)
 
 ### tier 선택 기준
 
@@ -275,20 +221,7 @@ result2 = delegate(executor, STANDARD, "Implement caching")  # 대기...
 
 ### 의사결정 트리
 
-```mermaid
-flowchart TD
-    A[태스크 시작] --> B{독립적 병렬\n태스크?}
-    B -->|Yes, 빠른 완료| C{별도 CLI 세션\n필요?}
-    C -->|No| D[Ultrawork]
-    C -->|Yes| E[Team Mode]
-    B -->|아니오/순차| F{완료 보장\n필요?}
-    F -->|Yes| G{전체 파이프라인\n자동화?}
-    G -->|Yes| H[Autopilot]
-    G -->|No| I[Ralph]
-    F -->|No| J{QA 반복?}
-    J -->|Yes| K[UltraQA]
-    J -->|No| L[직접 executor 위임]
-```
+![Diagram 4](../assets/diagrams/sections__04-ralph-ultrawork__diagram_4.svg)
 
 ---
 

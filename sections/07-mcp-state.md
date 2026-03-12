@@ -19,22 +19,7 @@ OMX는 Model Context Protocol(MCP)을 통해 Codex 에이전트에 상태 관리
 
 ## 2. MCP 데이터 플로우
 
-```mermaid
-sequenceDiagram
-    participant Agent as Codex 에이전트
-    participant MCP as MCP 서버
-    participant FS as .omx/ 파일시스템
-
-    Agent->>MCP: tool call (state_write / memory_read / etc.)
-    MCP->>FS: 파일 읽기/쓰기 (.omx/state/, .omx/notepad.md 등)
-    FS-->>MCP: 파일 내용 반환
-    MCP-->>Agent: tool response
-
-    Note over FS: .omx/state/{mode}-state.json
-    Note over FS: .omx/project-memory.json
-    Note over FS: .omx/notepad.md
-    Note over FS: .omx/logs/turns-*.jsonl
-```
+![Diagram 1](../assets/diagrams/sections__07-mcp-state__diagram_1.svg)
 
 ---
 
@@ -305,36 +290,7 @@ env = {}
 
 ## 9. 세션 생명주기에서 MCP 역할
 
-```mermaid
-sequenceDiagram
-    participant User as 사용자
-    participant OMX as omx 런타임
-    participant Codex as Codex CLI
-    participant MCP as MCP 서버들
-    participant FS as .omx/ 파일시스템
-
-    User->>OMX: omx team 3:executor "task"
-    OMX->>MCP: MCP 서버 시작 (4개)
-    MCP->>FS: .omx/ 디렉토리 초기화
-
-    OMX->>Codex: Codex 실행 (AGENTS.md 주입)
-    Codex->>MCP: state_write(mode=team, active=true)
-    MCP->>FS: team-state.json 저장
-
-    loop 작업 실행
-        Codex->>MCP: state_read / memory_read
-        MCP-->>Codex: 현재 상태 반환
-        Codex->>MCP: state_write (진행 상황 업데이트)
-        MCP->>FS: 상태 파일 업데이트
-    end
-
-    Codex->>MCP: state_write(active=false)
-    MCP->>FS: 최종 상태 저장
-    OMX-->>User: 작업 완료 보고
-
-    Note over FS: 상태는 세션 종료 후에도 유지됨
-    Note over FS: omx team resume 으로 재개 가능
-```
+![Diagram 2](../assets/diagrams/sections__07-mcp-state__diagram_2.svg)
 
 ---
 

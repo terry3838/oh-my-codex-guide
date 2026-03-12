@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 311.64599999999996 1388.4289999999999" width="311.64599999999996" height="1388.4289999999999" style="--bg:#ffffff;--fg:#1f2328;--line:#d1d9e0;--accent:#0969da;--muted:#59636e">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+  text { font-family: 'Inter', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="8" markerHeight="5" refX="7" refY="2.5" orient="auto">
+    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+  <marker id="arrowhead-start" markerWidth="8" markerHeight="5" refX="1" refY="2.5" orient="auto-start-reverse">
+    <polygon points="8 0, 0 2.5, 8 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+</defs>
+<polyline class="edge" data-from="Start" data-to="ScopeDetect" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="155.82299999999998,76.9 155.82299999999998,124.9" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="ScopeDetect" data-to="ReadExisting" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="155.82299999999998,195.60000000000002 155.82299999999998,243.60000000000002" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="ReadExisting" data-to="Backup" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="155.82299999999998,297.40000000000003 155.82299999999998,345.40000000000003" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="Backup" data-to="InstallPrompts" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="155.82299999999998,399.20000000000005 155.82299999999998,447.20000000000005" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="InstallPrompts" data-to="InstallSkills" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="155.82299999999998,501.00000000000006 155.82299999999998,549" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="InstallSkills" data-to="InstallAgents" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="155.82299999999998,602.8000000000001 155.82299999999998,650.8000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="InstallAgents" data-to="InstallConfig" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="155.82299999999998,704.6 155.82299999999998,752.6" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="InstallConfig" data-to="InitOMX" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="155.82299999999998,789.5 155.82299999999998,837.5" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="InitOMX" data-to="ProjectScope" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="155.82299999999998,891.3 155.82299999999998,939.3" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="ProjectScope" data-to="InstallAgentsMD" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="Yes" points="130.13483333333332,1067.7408333333333 130.13483333333332,1129.4289999999999 114.21524999999998,1129.4289999999999 114.21524999999998,1209.7289999999998" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="ProjectScope" data-to="Done" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="No" points="181.51116666666664,1067.7408333333333 181.51116666666664,1129.4289999999999 197.43075,1129.4289999999999 197.43075,1282.629 173.06516666666664,1282.629 173.06516666666664,1294.629" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="InstallAgentsMD" data-to="Done" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="114.21524999999998,1246.629 114.21524999999998,1282.629 138.58083333333332,1282.629 138.58083333333332,1294.629" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<g class="edge-label" data-from="ProjectScope" data-to="InstallAgentsMD" data-label="Yes">
+  <rect x="95.71524999999997" y="1136.4289999999999" width="36.658" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="114.04424999999998" y="1151.579" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Yes</text>
+</g>
+<g class="edge-label" data-from="ProjectScope" data-to="Done" data-label="No">
+  <rect x="181.93075" y="1136.4289999999999" width="30.718000000000004" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="197.28975" y="1151.579" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">No</text>
+</g>
+<g class="node" data-id="Start" data-label="omx setup 실행" data-shape="rectangle">
+  <rect x="89.64699999999998" y="40" width="132.352" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="155.82299999999998" y="58.45" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">omx setup 실행</text>
+</g>
+<g class="node" data-id="ScopeDetect" data-label="범위(scope) 감지
+--scope user|project
+또는 대화형 선택" data-shape="rectangle">
+  <rect x="75.19749999999998" y="124.9" width="161.251" height="70.7" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="155.82299999999998" y="160.25" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="155.82299999999998" dy="-12.350000000000001">범위(scope) 감지</tspan><tspan x="155.82299999999998" dy="16.900000000000002">--scope user|project</tspan><tspan x="155.82299999999998" dy="16.900000000000002">또는 대화형 선택</tspan></text>
+</g>
+<g class="node" data-id="ReadExisting" data-label="기존 설정 읽기
+(setup-scope.json 확인)" data-shape="rectangle">
+  <rect x="64.45299999999999" y="243.60000000000002" width="182.73999999999998" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="155.82299999999998" y="270.5" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="155.82299999999998" dy="-3.9000000000000012">기존 설정 읽기</tspan><tspan x="155.82299999999998" dy="16.900000000000002">(setup-scope.json 확인)</tspan></text>
+</g>
+<g class="node" data-id="Backup" data-label="백업 생성
+.omx/backups/setup/{timestamp}/" data-shape="rectangle">
+  <rect x="40" y="345.40000000000003" width="231.64599999999996" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="155.82299999999998" y="372.3" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="155.82299999999998" dy="-3.9000000000000012">백업 생성</tspan><tspan x="155.82299999999998" dy="16.900000000000002">.omx/backups/setup/{timestamp}/</tspan></text>
+</g>
+<g class="node" data-id="InstallPrompts" data-label="prompts 설치
+~/.codex/prompts/*.md" data-shape="rectangle">
+  <rect x="68.52849999999998" y="447.20000000000005" width="174.589" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="155.82299999999998" y="474.1" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="155.82299999999998" dy="-3.9000000000000012">prompts 설치</tspan><tspan x="155.82299999999998" dy="16.900000000000002">~/.codex/prompts/*.md</tspan></text>
+</g>
+<g class="node" data-id="InstallSkills" data-label="skills 설치
+~/.agents/skills/" data-shape="rectangle">
+  <rect x="88.53549999999997" y="549" width="134.57500000000002" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="155.82299999999998" y="575.9" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="155.82299999999998" dy="-3.9000000000000012">skills 설치</tspan><tspan x="155.82299999999998" dy="16.900000000000002">~/.agents/skills/</tspan></text>
+</g>
+<g class="node" data-id="InstallAgents" data-label="native agents 설치
+~/.omx/agents/*.toml" data-shape="rectangle">
+  <rect x="75.93849999999998" y="650.8000000000001" width="159.769" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="155.82299999999998" y="677.7" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="155.82299999999998" dy="-3.9000000000000012">native agents 설치</tspan><tspan x="155.82299999999998" dy="16.900000000000002">~/.omx/agents/*.toml</tspan></text>
+</g>
+<g class="node" data-id="InstallConfig" data-label="config.toml 생성/업데이트" data-shape="rectangle">
+  <rect x="57.04299999999999" y="752.6" width="197.55999999999997" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="155.82299999999998" y="771.0500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">config.toml 생성/업데이트</text>
+</g>
+<g class="node" data-id="InitOMX" data-label=".omx/ 디렉토리 초기화
+(state/, plans/, logs/)" data-shape="rectangle">
+  <rect x="65.5645" y="837.5" width="180.51699999999997" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="155.82299999999998" y="864.4" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="155.82299999999998" dy="-3.9000000000000012">.omx/ 디렉토리 초기화</tspan><tspan x="155.82299999999998" dy="16.900000000000002">(state/, plans/, logs/)</tspan></text>
+</g>
+<g class="node" data-id="ProjectScope" data-label="project scope?" data-shape="diamond">
+  <polygon points="155.82299999999998,939.3 232.8875,1016.3644999999999 155.82299999999998,1093.4289999999999 78.75849999999998,1016.3644999999999" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="155.82299999999998" y="1016.3644999999999" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">project scope?</text>
+</g>
+<g class="node" data-id="InstallAgentsMD" data-label="AGENTS.md 설치" data-shape="rectangle">
+  <rect x="40.99974999999999" y="1209.7289999999998" width="146.43099999999998" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="114.21524999999998" y="1228.1789999999999" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">AGENTS.md 설치</text>
+</g>
+<g class="node" data-id="Done" data-label="설치 완료
+요약 출력" data-shape="rectangle">
+  <rect x="104.09649999999996" y="1294.629" width="103.453" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="155.82299999999998" y="1321.529" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="155.82299999999998" dy="-3.9000000000000012">설치 완료</tspan><tspan x="155.82299999999998" dy="16.900000000000002">요약 출력</tspan></text>
+</g>
+</svg>

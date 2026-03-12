@@ -68,46 +68,11 @@ omx team api transition-task-status --input '{"team_name":"my-team","task_id":"1
 
 ## 3. Team Mode 라이프사이클
 
-```mermaid
-flowchart TD
-    A([omx team 실행]) --> B[팀 이름 및 태스크 파싱]
-    B --> C[.omx/state/team/name/ 초기화]
-    C --> D[worker-agents.md 생성\n AGENTS.md + 워커 오버레이]
-    D --> E[tmux 창 분할\n워커 pane 생성]
-    E --> F[워커 CLI 실행\nOMX_TEAM_WORKER 환경변수 주입]
-    F --> G[워커 준비 대기\ncapture-pane 폴링]
-    G --> H[inbox.md 작성\n태스크 할당]
-    H --> I[tmux send-keys 트리거]
-    I --> J{워커 작업 중}
-    J --> K[워커 ACK → leader-fixed 메일박스]
-    K --> L[태스크 클레임 → 작업 → 완료 전환]
-    L --> M{모든 태스크\n완료?}
-    M -->|No| J
-    M -->|Yes| N[omx team shutdown]
-    N --> O[워커 종료 신호 전송]
-    O --> P[tmux 세션 정리]
-    P --> Q([완료])
-```
+![Diagram 1](../assets/diagrams/sections__03-team-mode__diagram_1.svg)
 
 ### 상태 전환 규칙 (orchestrator.ts 기준)
 
-```mermaid
-stateDiagram-v2
-    [*] --> team-plan
-    team-plan --> team-prd
-    team-prd --> team-exec
-    team-exec --> team-verify
-    team-verify --> team-fix
-    team-verify --> complete
-    team-verify --> failed
-    team-fix --> team-exec
-    team-fix --> team-verify
-    team-fix --> complete
-    team-fix --> failed
-    complete --> [*]
-    failed --> [*]
-    cancelled --> [*]
-```
+![Diagram 2](../assets/diagrams/sections__03-team-mode__diagram_2.svg)
 
 각 페이즈의 권장 에이전트:
 
@@ -127,22 +92,7 @@ stateDiagram-v2
 
 가장 강력한 조합이다. ralplan으로 계획하고, team으로 병렬 실행하고, ralph로 완료를 보장한다.
 
-```mermaid
-flowchart LR
-    A[사용자 요청] --> B[$ralplan]
-    B --> C{합의 완료?}
-    C -->|Planner + Architect\n+ Critic 승인| D[승인된 플랜\n.omx/plans/]
-    D --> E[$team N:executor]
-    E --> F[병렬 워커들\n독립 태스크 실행]
-    F --> G{모든 태스크\n완료?}
-    G -->|Yes| H[omx team shutdown]
-    H --> I[$ralph]
-    I --> J[검증 루프\narchitect verify]
-    J --> K{통과?}
-    K -->|Pass| L([완료])
-    K -->|Fail| M[수정 후 재검증]
-    M --> J
-```
+![Diagram 3](../assets/diagrams/sections__03-team-mode__diagram_3.svg)
 
 ### 사용 예시
 
@@ -192,26 +142,7 @@ omx team status <team-name>
 | tmux 세션 | 즉시 kill | 워커 graceful shutdown 후 kill |
 | skipBranchDeletion | 없음 | ralph linked_team에 기록 |
 
-```mermaid
-sequenceDiagram
-    participant U as 사용자
-    participant L as Leader
-    participant W as Workers
-    participant R as Ralph
-
-    U->>L: omx team ralph 3:executor "task"
-    L->>L: team state 초기화 (linked_ralph=true)
-    L->>L: ralph state 초기화 (linked_team=true)
-    L->>W: tmux pane 생성 + inbox 전달
-    W->>L: ACK 메시지 (leader-fixed mailbox)
-    W->>W: 태스크 클레임 → 작업 → 완료
-    W->>L: 태스크 완료 전환
-    L->>W: shutdown 신호
-    W->>W: shutdown ACK 작성 후 종료
-    L->>L: 팀 state 정리
-    R->>R: 검증 루프 시작 (architect verify)
-    R->>U: 최종 완료 또는 수정 요청
-```
+![Diagram 4](../assets/diagrams/sections__03-team-mode__diagram_4.svg)
 
 ---
 

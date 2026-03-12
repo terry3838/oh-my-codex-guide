@@ -6,37 +6,7 @@
 
 ## 학습 경로 개요
 
-```mermaid
-flowchart TD
-    START([시작]) --> B1
-
-    subgraph BEGINNER["초급 (1-2주)"]
-        B1[OMX 설치 및 설정<br/>omx setup / omx doctor]
-        B2[기본 팀 모드 사용<br/>omx team N:executor]
-        B3[핵심 커맨드 이해<br/>omx ralph / cancel / status]
-        B1 --> B2 --> B3
-    end
-
-    B3 --> I1
-
-    subgraph INTERMEDIATE["중급 (3-4주)"]
-        I1[ralplan → team 워크플로우<br/>계획 후 실행]
-        I2[스킬 및 프롬프트 커스터마이즈<br/>$ralph / $autopilot / $ultrawork]
-        I3[MCP 상태 활용<br/>omx_state / omx_memory / omx_trace]
-        I1 --> I2 --> I3
-    end
-
-    I3 --> A1
-
-    subgraph ADVANCED["고급 (5주+)"]
-        A1[하네스 엔지니어링<br/>훅 시스템 / MCP 확장]
-        A2[포스처 라우팅 이해<br/>frontier-orchestrator / deep-worker / fast-lane]
-        A3[팀+랄프 연계<br/>omx team ralph 고급 워크플로우]
-        A1 --> A2 --> A3
-    end
-
-    A3 --> EXPERT([전문가])
-```
+![Diagram 1](assets/diagrams/01-learning-paths__diagram_1.svg)
 
 ---
 
@@ -435,24 +405,7 @@ role (책임) x tier (추론 깊이) x posture (스타일)
 
 **포스처별 특성**
 
-```mermaid
-graph LR
-    subgraph POSTURES["포스처 유형"]
-        FO["frontier-orchestrator<br/>프론티어 모델 리더/라우터<br/>planner, architect, critic"]
-        DW["deep-worker<br/>구현 우선<br/>executor, build-fixer, test-engineer"]
-        FL["fast-lane<br/>경량 트리아지/검색<br/>explore, writer"]
-    end
-
-    subgraph TIERS["추론 티어"]
-        LOW["LOW<br/>gpt-5.3-codex-spark"]
-        STD["STANDARD<br/>기본 모델"]
-        THOROUGH["THOROUGH<br/>xhigh 추론"]
-    end
-
-    FO --> THOROUGH
-    DW --> STD
-    FL --> LOW
-```
+![Diagram 2](assets/diagrams/01-learning-paths__diagram_2.svg)
 
 **포스처별 적합 역할**
 
@@ -490,26 +443,7 @@ node --test dist/agents/__tests__/definitions.test.js dist/agents/__tests__/nati
 
 **연계 생명주기 다이어그램**
 
-```mermaid
-stateDiagram-v2
-    [*] --> TeamStart: omx team ralph ...
-
-    TeamStart --> TeamExec: 워커 할당
-
-    TeamExec --> TeamVerify: 모든 작업 완료
-
-    TeamVerify --> RalphLoop: 검증 통과
-    TeamVerify --> TeamFix: 결함 발견
-
-    TeamFix --> TeamExec: 수정 후 재실행
-
-    RalphLoop --> RalphVerify: 루프 반복
-
-    RalphVerify --> Complete: 증거 수집 완료
-    RalphVerify --> RalphLoop: 검증 미완료
-
-    Complete --> [*]: linked_ralph 정리
-```
+![Diagram 3](assets/diagrams/01-learning-paths__diagram_3.svg)
 
 **연계 생명주기의 차이점**
 
@@ -588,55 +522,7 @@ $visual-verdict  # 매 이터레이션 전 실행
 
 어떤 개념을 어떤 순서로 학습해야 하는지 보여주는 의존성 그래프입니다.
 
-```mermaid
-graph TD
-    INSTALL[OMX 설치<br/>npm install -g oh-my-codex]
-    SETUP[omx setup<br/>환경 구성]
-    DOCTOR[omx doctor<br/>진단]
-    TEAM_BASIC[기본 팀 모드<br/>omx team N:role]
-    STATUS[상태 관리<br/>omx status / cancel]
-    CODEX_SKILLS[Codex 내 스킬<br/>$ralph / $cancel]
-    RALPH[Ralph 루프<br/>$ralph / omx ralph]
-    RALPLAN[Ralplan 워크플로우<br/>$ralplan]
-    MCP[MCP 상태 이해<br/>omx_state / omx_memory]
-    POSTURE[포스처 라우팅<br/>frontier / deep-worker / fast-lane]
-    HOOKS[훅 시스템<br/>omx hooks / tmux-hook]
-    TEAM_RALPH[team + ralph 연계<br/>omx team ralph]
-    AGENTS_INIT[AGENTS.md 부트스트랩<br/>omx agents-init]
-    NOTIFY[알림 설정<br/>$configure-notifications]
-
-    INSTALL --> SETUP
-    SETUP --> DOCTOR
-    DOCTOR --> TEAM_BASIC
-    DOCTOR --> STATUS
-    TEAM_BASIC --> CODEX_SKILLS
-    CODEX_SKILLS --> RALPH
-    CODEX_SKILLS --> RALPLAN
-    RALPH --> RALPLAN
-    RALPLAN --> MCP
-    TEAM_BASIC --> MCP
-    MCP --> POSTURE
-    MCP --> HOOKS
-    POSTURE --> TEAM_RALPH
-    HOOKS --> TEAM_RALPH
-    HOOKS --> AGENTS_INIT
-    TEAM_RALPH --> NOTIFY
-
-    style INSTALL fill:#4CAF50,color:#fff
-    style SETUP fill:#4CAF50,color:#fff
-    style DOCTOR fill:#4CAF50,color:#fff
-    style TEAM_BASIC fill:#2196F3,color:#fff
-    style STATUS fill:#2196F3,color:#fff
-    style CODEX_SKILLS fill:#2196F3,color:#fff
-    style RALPH fill:#FF9800,color:#fff
-    style RALPLAN fill:#FF9800,color:#fff
-    style MCP fill:#FF9800,color:#fff
-    style POSTURE fill:#9C27B0,color:#fff
-    style HOOKS fill:#9C27B0,color:#fff
-    style TEAM_RALPH fill:#9C27B0,color:#fff
-    style AGENTS_INIT fill:#9C27B0,color:#fff
-    style NOTIFY fill:#9C27B0,color:#fff
-```
+![Diagram 4](assets/diagrams/01-learning-paths__diagram_4.svg)
 
 **범례:**
 - 초록 — 초급 필수

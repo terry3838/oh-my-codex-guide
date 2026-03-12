@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 604.0456666666666 696.8" width="604.0456666666666" height="696.8" style="--bg:#ffffff;--fg:#1f2328;--line:#d1d9e0;--accent:#0969da;--muted:#59636e">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+  text { font-family: 'Inter', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="8" markerHeight="5" refX="7" refY="2.5" orient="auto">
+    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+  <marker id="arrowhead-start" markerWidth="8" markerHeight="5" refX="1" refY="2.5" orient="auto-start-reverse">
+    <polygon points="8 0, 0 2.5, 8 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+</defs>
+<polyline class="edge" data-from="_start" data-to="TeamStart" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="omx team ralph ..." points="91.356,72.45 91.356,181.2" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="TeamStart" data-to="TeamExec" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="워커 할당" points="91.356,218.10000000000002 91.356,310.40000000000003 186.79300000000003,310.40000000000003 186.79300000000003,322.40000000000003" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="TeamExec" data-to="TeamVerify" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="모든 작업 완료" points="213.21200000000002,322.40000000000003 213.212,112.9 302.5855,112.9 302.5855,81.35000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="TeamVerify" data-to="RalphLoop" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="검증 통과" points="357.6465,81.35000000000001 357.6465,88.9 465.65366666666665,88.9 465.65366666666665,181.2" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="TeamVerify" data-to="TeamFix" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="결함 발견" points="330.116,81.35000000000001 330.11600000000004,181.2" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="TeamFix" data-to="TeamExec" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="수정 후 재실행" points="330.11600000000004,218.10000000000002 330.116,310.40000000000003 239.63100000000003,310.40000000000003 239.63100000000003,322.40000000000003" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="RalphLoop" data-to="RalphVerify" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="루프 반복" points="447.794,218.10000000000002 447.794,242.10000000000002 427.1776666666667,242.10000000000002 427.1776666666667,310.40000000000003 447.053,310.40000000000003 447.053,322.40000000000003" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="RalphVerify" data-to="Complete" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="증거 수집 완료" points="465.6536666666667,359.3 465.6536666666667,475.6000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="RalphVerify" data-to="RalphLoop" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="검증 미완료" points="484.25433333333336,322.40000000000003 484.25433333333336,310.40000000000003 504.1296666666667,310.40000000000003 504.1296666666667,242.10000000000002 483.5133333333333,242.10000000000002 483.5133333333333,218.10000000000002" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="Complete" data-to="_end" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="linked_ralph 정리" points="465.6536666666667,512.5 465.6536666666667,628.8" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<g class="edge-label" data-from="_start" data-to="TeamStart" data-label="omx team ralph ...">
+  <rect x="43.355999999999995" y="119.9" width="95.46400000000003" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="91.08800000000001" y="135.05" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">omx team ralph ...</text>
+</g>
+<g class="edge-label" data-from="TeamStart" data-to="TeamExec" data-label="워커 할당">
+  <rect x="57.855999999999995" y="273.1" width="66.952" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="91.332" y="288.25" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">워커 할당</text>
+</g>
+<g class="edge-label" data-from="TeamExec" data-to="TeamVerify" data-label="모든 작업 완료">
+  <rect x="166.712" y="249.1" width="92.49400000000003" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="212.959" y="264.25" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">모든 작업 완료</text>
+</g>
+<g class="edge-label" data-from="TeamVerify" data-to="RalphLoop" data-label="검증 통과">
+  <rect x="432.15366666666665" y="95.9" width="66.952" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="465.62966666666665" y="111.05000000000001" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">검증 통과</text>
+</g>
+<g class="edge-label" data-from="TeamVerify" data-to="TeamFix" data-label="결함 발견">
+  <rect x="296.61600000000004" y="119.9" width="66.952" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="330.09200000000004" y="135.05" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">결함 발견</text>
+</g>
+<g class="edge-label" data-from="TeamFix" data-to="TeamExec" data-label="수정 후 재실행">
+  <rect x="283.616" y="273.1" width="92.49400000000001" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="329.863" y="288.25" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">수정 후 재실행</text>
+</g>
+<g class="edge-label" data-from="RalphLoop" data-to="RalphVerify" data-label="루프 반복">
+  <rect x="393.67766666666665" y="249.1" width="66.952" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="427.15366666666665" y="264.25" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">루프 반복</text>
+</g>
+<g class="edge-label" data-from="RalphVerify" data-to="Complete" data-label="증거 수집 완료">
+  <rect x="419.1536666666667" y="402.30000000000007" width="92.49400000000003" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="465.4006666666667" y="417.45000000000005" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">증거 수집 완료</text>
+</g>
+<g class="edge-label" data-from="RalphVerify" data-to="RalphLoop" data-label="검증 미완료">
+  <rect x="464.6296666666667" y="249.1" width="78.83200000000001" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="504.0456666666667" y="264.25" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">검증 미완료</text>
+</g>
+<g class="edge-label" data-from="Complete" data-to="_end" data-label="linked_ralph 정리">
+  <rect x="414.1536666666667" y="555.5" width="102.59200000000001" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="465.4496666666667" y="570.65" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">linked_ralph 정리</text>
+</g>
+<g class="node" data-id="_start" data-label="" data-shape="state-start">
+  <circle cx="91.356" cy="58.45" r="12" fill="var(--_text)" stroke="none" />
+</g>
+<g class="node" data-id="TeamStart" data-label="TeamStart" data-shape="rounded">
+  <rect x="40" y="181.2" width="102.712" height="36.900000000000006" rx="6" ry="6" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="91.356" y="199.64999999999998" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">TeamStart</text>
+</g>
+<g class="node" data-id="TeamExec" data-label="TeamExec" data-shape="rounded">
+  <rect x="160.37400000000002" y="322.40000000000003" width="105.676" height="36.900000000000006" rx="6" ry="6" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="213.21200000000002" y="340.85" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">TeamExec</text>
+</g>
+<g class="node" data-id="TeamVerify" data-label="TeamVerify" data-shape="rounded">
+  <rect x="275.055" y="44.45" width="110.122" height="36.900000000000006" rx="6" ry="6" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="330.116" y="62.900000000000006" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">TeamVerify</text>
+</g>
+<g class="node" data-id="RalphLoop" data-label="RalphLoop" data-shape="rounded">
+  <rect x="412.07466666666664" y="181.2" width="107.158" height="36.900000000000006" rx="6" ry="6" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="465.65366666666665" y="199.64999999999998" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">RalphLoop</text>
+</g>
+<g class="node" data-id="TeamFix" data-label="TeamFix" data-shape="rounded">
+  <rect x="283.206" y="181.2" width="93.82000000000001" height="36.900000000000006" rx="6" ry="6" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="330.11600000000004" y="199.64999999999998" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">TeamFix</text>
+</g>
+<g class="node" data-id="RalphVerify" data-label="RalphVerify" data-shape="rounded">
+  <rect x="409.8516666666667" y="322.40000000000003" width="111.604" height="36.900000000000006" rx="6" ry="6" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="465.6536666666667" y="340.85" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">RalphVerify</text>
+</g>
+<g class="node" data-id="Complete" data-label="Complete" data-shape="rounded">
+  <rect x="418.0026666666667" y="475.6000000000001" width="95.30199999999999" height="36.900000000000006" rx="6" ry="6" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="465.6536666666667" y="494.05000000000007" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Complete</text>
+</g>
+<g class="node" data-id="_end" data-label="" data-shape="state-end">
+  <circle cx="465.6536666666667" cy="642.8" r="12" fill="none" stroke="var(--_text)" stroke-width="1.5" />
+  <circle cx="465.6536666666667" cy="642.8" r="8" fill="var(--_text)" stroke="none" />
+</g>
+</svg>

@@ -25,21 +25,7 @@
 
 ## 2. omx setup 설치 플로우
 
-```mermaid
-flowchart TD
-    Start["omx setup 실행"] --> ScopeDetect["범위(scope) 감지\n--scope user|project\n또는 대화형 선택"]
-    ScopeDetect --> ReadExisting["기존 설정 읽기\n(setup-scope.json 확인)"]
-    ReadExisting --> Backup["백업 생성\n.omx/backups/setup/{timestamp}/"]
-    Backup --> InstallPrompts["prompts 설치\n~/.codex/prompts/*.md"]
-    InstallPrompts --> InstallSkills["skills 설치\n~/.agents/skills/"]
-    InstallSkills --> InstallAgents["native agents 설치\n~/.omx/agents/*.toml"]
-    InstallAgents --> InstallConfig["config.toml 생성/업데이트"]
-    InstallConfig --> InitOMX[".omx/ 디렉토리 초기화\n(state/, plans/, logs/)"]
-    InitOMX --> ProjectScope{project scope?}
-    ProjectScope -- "Yes" --> InstallAgentsMD["AGENTS.md 설치"]
-    ProjectScope -- "No" --> Done["설치 완료\n요약 출력"]
-    InstallAgentsMD --> Done
-```
+![Diagram 1](../assets/diagrams/sections__08-setup-config__diagram_1.svg)
 
 ### 기존 설정 처리
 

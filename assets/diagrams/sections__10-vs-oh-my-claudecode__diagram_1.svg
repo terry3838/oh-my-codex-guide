@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 665.0909999999999 870.8000000000001" width="665.0909999999999" height="870.8000000000001" style="--bg:#ffffff;--fg:#1f2328;--line:#d1d9e0;--accent:#0969da;--muted:#59636e">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+  text { font-family: 'Inter', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="8" markerHeight="5" refX="7" refY="2.5" orient="auto">
+    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+  <marker id="arrowhead-start" markerWidth="8" markerHeight="5" refX="1" refY="2.5" orient="auto-start-reverse">
+    <polygon points="8 0, 0 2.5, 8 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+</defs>
+<g class="subgraph" data-id="OMC" data-label="oh-my-claudecode (OMC)">
+  <rect x="40" y="40" width="544.336" height="385.40000000000003" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="40" y="40" width="544.336" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="52" y="54" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">oh-my-claudecode (OMC)</text>
+</g>
+<g class="subgraph" data-id="OMX" data-label="oh-my-codex (OMX)">
+  <rect x="40" y="445.40000000000003" width="585.0909999999999" height="385.40000000000003" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="40" y="445.40000000000003" width="585.0909999999999" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="52" y="459.40000000000003" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">oh-my-codex (OMX)</text>
+</g>
+<polyline class="edge" data-from="OMC_User" data-to="OMC_Runtime" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="221.43274999999997,120.9 221.43274999999997,168.9" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="OMC_Runtime" data-to="OMC_CLI" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="241.02141666666665,205.8 241.02141666666665,217.8 315.87299999999993,217.8 315.87299999999993,266.475" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="OMC_CLI" data-to="OMC_Agents" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="315.87299999999993,303.375 315.87299999999993,319.6 294.38399999999996,319.6 294.38399999999996,355.6" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="OMC_CLI" data-to="OMC_Prompts" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="345.07075,303.375 345.07075,319.6 483.26449999999994,319.6 483.2645,355.6" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="OMC_CLI" data-to="OMC_Skills" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="286.67524999999995,303.375 286.67524999999995,319.6 134.773,319.6 134.773,355.6" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="OMC_Runtime" data-to="OMC_State" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="201.84408333333332,205.8 201.84408333333332,217.8 145.51749999999998,217.8 145.51749999999998,253.8" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="OMX_User" data-to="OMX_Runtime" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="229.95424999999997,526.3000000000001 229.95424999999997,574.3000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="OMX_Runtime" data-to="OMX_CLI" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="252.50691666666668,611.2 252.50691666666668,623.2 314.76149999999996,623.2 309.204,671.875" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="OMX_CLI" data-to="OMX_Agents" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="309.204,708.7750000000001 318.4665,761" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="OMX_CLI" data-to="OMX_Prompts" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="335.06725,708.7750000000001 340.62474999999995,725 524.0195,725 524.0195,761" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="OMX_CLI" data-to="OMX_Skills" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="283.34074999999996,708.7750000000001 283.34074999999996,725 123.28750000000001,725 128.84500000000003,761" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="OMX_Runtime" data-to="OMX_State" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="213.32958333333335,611.2 213.32958333333335,623.2 145.5175,623.2 145.5175,659.2" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<g class="node" data-id="OMC_User" data-label="사용자/운영자" data-shape="rectangle">
+  <rect x="151.18124999999998" y="84" width="134.575" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="218.46874999999997" y="102.45" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">사용자/운영자</text>
+</g>
+<g class="node" data-id="OMC_Runtime" data-label="OMC 런타임" data-shape="rectangle">
+  <rect x="162.66674999999998" y="168.9" width="117.532" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="221.43274999999997" y="187.35000000000002" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">OMC 런타임</text>
+</g>
+<g class="node" data-id="OMC_CLI" data-label="Claude Code" data-shape="rectangle">
+  <rect x="257.47749999999996" y="266.475" width="116.79099999999998" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="315.87299999999993" y="284.925" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Claude Code</text>
+</g>
+<g class="node" data-id="OMC_Agents" data-label="CLAUDE.md
+에이전트 정의" data-shape="rectangle">
+  <rect x="227.83749999999998" y="355.6" width="133.09300000000002" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="294.384" y="382.5" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="294.384" dy="-3.9000000000000012">CLAUDE.md</tspan><tspan x="294.384" dy="16.900000000000002">에이전트 정의</tspan></text>
+</g>
+<g class="node" data-id="OMC_Prompts" data-label="~/.claude/prompts/
+(에이전트 프롬프트)" data-shape="rectangle">
+  <rect x="398.193" y="355.6" width="170.14299999999997" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="483.2645" y="382.5" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="483.2645" dy="-3.9000000000000012">~/.claude/prompts/</tspan><tspan x="483.2645" dy="16.900000000000002">(에이전트 프롬프트)</tspan></text>
+</g>
+<g class="node" data-id="OMC_Skills" data-label="~/.claude/plugins/
+(스킬)" data-shape="rectangle">
+  <rect x="61.55750000000001" y="355.6" width="146.43099999999998" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="134.773" y="382.5" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="134.773" dy="-3.9000000000000012">~/.claude/plugins/</tspan><tspan x="134.773" dy="16.900000000000002">(스킬)</tspan></text>
+</g>
+<g class="node" data-id="OMC_State" data-label=".omc/
+(상태·메모리·로그)" data-shape="rectangle">
+  <rect x="61.55750000000001" y="253.8" width="167.92" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="145.5175" y="280.7" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="145.5175" dy="-3.9000000000000012">.omc/</tspan><tspan x="145.5175" dy="16.900000000000002">(상태·메모리·로그)</tspan></text>
+</g>
+<g class="node" data-id="OMX_User" data-label="사용자/운영자" data-shape="rectangle">
+  <rect x="162.66674999999998" y="489.40000000000003" width="134.575" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="229.95424999999997" y="507.85" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">사용자/운영자</text>
+</g>
+<g class="node" data-id="OMX_Runtime" data-label="OMX 런타임" data-shape="rectangle">
+  <rect x="174.15225" y="574.3000000000001" width="117.532" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="232.91825" y="592.7500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">OMX 런타임</text>
+</g>
+<g class="node" data-id="OMX_CLI" data-label="Codex CLI" data-shape="rectangle">
+  <rect x="257.47749999999996" y="671.875" width="103.453" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="309.20399999999995" y="690.325" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Codex CLI</text>
+</g>
+<g class="node" data-id="OMX_Agents" data-label="AGENTS.md
+오케스트레이션 가이드" data-shape="rectangle">
+  <rect x="227.83749999999998" y="761" width="192.373" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="324.024" y="787.9" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="324.024" dy="-3.9000000000000012">AGENTS.md</tspan><tspan x="324.024" dy="16.900000000000002">오케스트레이션 가이드</tspan></text>
+</g>
+<g class="node" data-id="OMX_Prompts" data-label="~/.codex/prompts/
+(에이전트 프롬프트)" data-shape="rectangle">
+  <rect x="438.948" y="761" width="170.14299999999997" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="524.0195" y="787.9" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="524.0195" dy="-3.9000000000000012">~/.codex/prompts/</tspan><tspan x="524.0195" dy="16.900000000000002">(에이전트 프롬프트)</tspan></text>
+</g>
+<g class="node" data-id="OMX_Skills" data-label="~/.agents/skills/
+(스킬)" data-shape="rectangle">
+  <rect x="61.55750000000001" y="761" width="134.57500000000002" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="128.84500000000003" y="787.9" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="128.84500000000003" dy="-3.9000000000000012">~/.agents/skills/</tspan><tspan x="128.84500000000003" dy="16.900000000000002">(스킬)</tspan></text>
+</g>
+<g class="node" data-id="OMX_State" data-label=".omx/
+(상태·메모리·로그)" data-shape="rectangle">
+  <rect x="61.55750000000001" y="659.2" width="167.92" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="145.5175" y="686.1" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="145.5175" dy="-3.9000000000000012">.omx/</tspan><tspan x="145.5175" dy="16.900000000000002">(상태·메모리·로그)</tspan></text>
+</g>
+</svg>
