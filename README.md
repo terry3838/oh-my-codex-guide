@@ -63,7 +63,7 @@ graph TB
         TEAM[Team Mode<br/>omx team]
         HUD[HUD / tmux 통합]
         LIFECYCLE[생명주기 제어<br/>start / resume / cancel]
-        RECOVERY[복구 (Recovery)<br/>ralph / ultrawork]
+        RECOVERY["복구 (Recovery)<br/>ralph / ultrawork"]
     end
 
     subgraph "상태 플레인 (State Plane)"
