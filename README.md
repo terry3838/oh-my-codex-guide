@@ -6,7 +6,6 @@ OMX는 OpenAI Codex CLI를 위한 운영 런타임입니다. 이 가이드는 OM
 
 > 버전 기준
 > - 최신 published GitHub release는 `v0.9.0`이며, 공개된 Spark Initiative 릴리즈는 2026년 3월 13일에 배포되었습니다.
-> - 로컬 소스 클론 `/home/terry/guide/Yeachan-Heo/oh-my-codex` 는 이미 `0.9.1`로 올라가 있으며, 같은 날짜의 superseding hotfix 문서가 포함되어 있습니다.
 > - 따라서 이 가이드는 **`v0.9.0`의 Spark Initiative 기능**을 기본 축으로 설명하고, **`0.9.1` hotfix가 무엇을 정리했는지**도 함께 반영합니다.
 
 ---
