@@ -20,6 +20,7 @@
 - `~/.omx/agents/*.toml` — Native agent 설정 (포스처 포함)
 - `.omx/` — 프로젝트 런타임 디렉토리 (state, plans, logs)
 - `AGENTS.md` — 프로젝트 오케스트레이션 가이드 (project scope 전용)
+- Spark Initiative 이후에는 네이티브 helper 경로가 release asset hydration과도 연결됨
 
 ---
 
@@ -32,6 +33,22 @@
 - 기존 파일이 있으면 `.omx/backups/setup/{timestamp}/` 에 백업 후 업데이트
 - `--dry-run` 플래그로 실제 변경 없이 미리 확인 가능
 - `--force` 플래그로 확인 없이 강제 덮어쓰기
+
+### Spark Initiative 이후 setup/upgrade 해석
+
+`omx setup`은 네이티브 바이너리를 모두 직접 내려받아 고정하는 명령은 아니다. 대신 다음을 담당한다.
+
+- 최신 릴리스 라인에 맞는 관리형 프롬프트/스킬/config/agent 설정 refresh
+- project scope의 `AGENTS.md` 및 `.omx/` 구조 갱신
+- 새 런타임이 `omx explore` / `omx sparkshell` hydration 경로를 올바르게 찾을 수 있도록 관리 파일 정렬
+
+실무적으로는 업그레이드 후 다음 명령을 기억하면 된다.
+
+```bash
+omx setup --force --scope project
+```
+
+특히 project scope 설치를 쓰는 저장소에서는 이 refresh가 누락되면 문서/경로/agent metadata가 이전 릴리스 상태를 계속 참조할 수 있다.
 
 ---
 
@@ -71,6 +88,8 @@
     ├── planner.toml
     └── ...
 ```
+
+> 참고: Spark Initiative 이후 `~/.omx/` 주변에는 hydrated native cache가 사용될 수 있으며, 실제 네이티브 바이너리 확보는 `native-release-manifest.json` 기반 release asset hydration 계약을 따른다.
 
 ### Project Scope (`./.codex/`, `./.agents/`, `./`)
 
@@ -140,6 +159,12 @@ args = ["/path/to/dist/mcp/trace-server.js"]
 ```
 
 ### 모델 설정 상세
+
+Spark Initiative 관련 추가 운영 포인트:
+- `--spark`는 팀 워커 모델 라우팅용 플래그이지 `omx sparkshell` 바이너리 선택 플래그가 아니다.
+- `omx sparkshell`의 모델 요약 라우팅은 `OMX_SPARKSHELL_MODEL` / `OMX_DEFAULT_SPARK_MODEL` 같은 환경변수 흐름을 따른다.
+- `omx explore` / `omx sparkshell` 바이너리 경로는 각각 `OMX_EXPLORE_BIN`, `OMX_SPARKSHELL_BIN` override가 최우선이다.
+
 
 | 설정 키 | 기본값 | 설명 |
 |---------|--------|------|
@@ -253,6 +278,8 @@ OMX 런타임 동작을 제어하는 주요 환경변수:
 | `OMX_TEAM_WORKER_CLI` | `codex` | 팀 워커에 사용할 CLI (`codex` 또는 `claude`) |
 | `OMX_TEAM_WORKER_LAUNCH_ARGS` | - | 팀 워커 실행 인수 |
 | `OMX_TEAM_WORKER_LAUNCH_MODE` | `tmux` | 워커 실행 방식 (`tmux` 또는 `prompt`) |
+| `OMX_EXPLORE_BIN` | - | `omx explore`가 사용할 네이티브 harness 바이너리 override |
+| `OMX_SPARKSHELL_BIN` | - | `omx sparkshell` 네이티브 바이너리 override |
 | `OMX_BYPASS_DEFAULT_SYSTEM_PROMPT` | `0` | AGENTS.md 주입 비활성화 (`1`로 설정 시) |
 | `OMX_MCP_WORKDIR_ROOTS` | - | MCP workingDirectory 허용 루트 목록 (콜론 구분) |
 | `OMX_OPENCLAW` | - | OpenClaw 알림 파이프라인 활성화 (`1`) |

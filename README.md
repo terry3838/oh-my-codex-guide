@@ -4,6 +4,11 @@
 
 OMX는 OpenAI Codex CLI를 위한 운영 런타임입니다. 이 가이드는 OMX의 전체 아키텍처, 핵심 개념, 워크플로우를 한국어로 설명합니다.
 
+> 버전 기준
+> - 최신 published GitHub release는 `v0.9.0`이며, 공개된 Spark Initiative 릴리즈는 2026년 3월 13일에 배포되었습니다.
+> - 로컬 소스 클론 `/home/terry/guide/Yeachan-Heo/oh-my-codex` 는 이미 `0.9.1`로 올라가 있으며, 같은 날짜의 superseding hotfix 문서가 포함되어 있습니다.
+> - 따라서 이 가이드는 **`v0.9.0`의 Spark Initiative 기능**을 기본 축으로 설명하고, **`0.9.1` hotfix가 무엇을 정리했는지**도 함께 반영합니다.
+
 ---
 
 ## 개요
@@ -73,6 +78,31 @@ OMX는 3개의 플레인(plane)으로 구성된 레이어드 아키텍처를 사
 
 ---
 
+## New in v0.9.x: Spark Initiative
+
+`v0.9.0`은 OMX가 Team Mode 중심 오케스트레이션 위에, **read-only repository discovery와 shell-native inspection을 위한 native fast path**를 본격적으로 얹은 릴리즈입니다.
+
+핵심 추가점:
+
+- **`omx explore`**: 읽기 전용 탐색 전용 엔트리포인트
+- **`omx sparkshell`**: 빠른 shell-native inspection과 explicit tmux-pane summarization
+- **Explore ↔ sparkshell integration**: qualifying read-only prompt는 sparkshell backend를 사용할 수 있음
+- **Cross-platform native release assets**: `omx-explore-harness`, `omx-sparkshell`, `native-release-manifest.json`
+- **Release-oriented verification**: `npm run build:full`, `npm run test:explore`, `npm run test:sparkshell`
+
+`0.9.1`은 새 기능 릴리즈가 아니라, `v0.9.0` 이후 들어온 packed-install smoke hydration fix를 포함한 **clean superseding hotfix**입니다.
+
+빠르게 감 잡는 커맨드:
+
+```bash
+npm run build:full
+omx explore --prompt "git log --oneline -10"
+omx sparkshell git --version
+omx sparkshell --tmux-pane %12 --tail-lines 400
+```
+
+---
+
 ## 빠른 시작 (Quickstart)
 
 3분 안에 OMX를 설치하고 첫 팀을 실행할 수 있습니다.
@@ -112,6 +142,9 @@ omx setup
 
 # 설치 진단
 omx doctor --team
+
+# project scope를 쓰는 경우 업그레이드 후 재동기화 권장
+omx setup --force --scope project
 ```
 
 ### 3단계: 첫 팀 실행
@@ -128,6 +161,20 @@ omx --xhigh --madmax
 ```
 
 > **주의:** `--madmax`는 Codex 승인 및 샌드박스를 우회합니다. 신뢰된 환경에서만 사용하세요.
+
+### 4단계: Spark Initiative 빠른 연습
+
+`v0.9.0`부터 OMX는 **Spark Initiative** 릴리스 라인을 갖습니다. 학습자는 기본 Team Mode만 보지 말고 아래 두 커맨드도 초기에 익히는 것이 좋습니다.
+
+```bash
+omx explore --prompt "git log --oneline -10"
+omx sparkshell git --version
+omx sparkshell --tmux-pane %12 --tail-lines 400
+```
+
+- `omx explore`는 기본 읽기 전용 탐색 진입점입니다.
+- `omx sparkshell`은 빠른 셸 네이티브 검사와 tmux pane 요약을 위한 명시적 오퍼레이터 표면입니다.
+- 단순 읽기 전용 셸 작업은 `explore -> sparkshell` 경로로 라우팅될 수 있지만, 안전 제약이 완화되는 것은 아닙니다.
 
 ### Codex 내부에서 사용하는 첫 번째 세션
 
@@ -147,6 +194,32 @@ omx team status <team-name>
 omx team resume <team-name>
 omx team shutdown <team-name>
 ```
+
+---
+
+## 현재 릴리스 라인 이해하기
+
+2026년 3월 기준 OMX 학습 시 반드시 구분해야 하는 버전 상태는 다음과 같습니다.
+
+| 관점 | 상태 | 의미 |
+|------|------|------|
+| 최신 GitHub 게시 릴리스 | `v0.9.0` | Spark Initiative 기능이 처음 공개된 태그드 릴리스 |
+| 로컬 소스 저장소 (`/home/terry/guide/Yeachan-Heo/oh-my-codex`) | `0.9.1` | `v0.9.0` 이후의 packed-install smoke hydration hotfix가 포함된 후속 상태 |
+| 역사적 주의점 | `v0.9.0` remains red | published release 자체는 역사적으로 red 상태로 남고, `0.9.1`이 clean superseding release 역할을 함 |
+
+### Spark Initiative에서 실제로 달라진 것
+
+- **`omx explore`** — 읽기 전용 저장소 탐색용 기본 엔트리포인트
+- **`omx sparkshell`** — 빠른 셸 네이티브 검사, 적응형 요약, tmux pane 캡처를 위한 명시적 커맨드
+- **explore ↔ sparkshell 연계** — 단순 read-only shell 작업은 sparkshell 백엔드가 더 적합할 때 그쪽으로 라우팅 가능
+- **네이티브 릴리스 배포** — GitHub Release 자산에 `omx-explore-harness`, `omx-sparkshell`, `native-release-manifest.json`이 포함됨
+- **업그레이드/설치 의미 변화** — 패키지 설치는 릴리스 자산 hydration과 fallback order를 이해해야 함
+
+### 학습자가 기억할 설치/업그레이드 포인트
+
+- npm 패키지는 모든 네이티브 바이너리를 직접 번들하지 않습니다.
+- 런타임은 기본적으로 `OMX_*_BIN` override → 사용자별 hydrated native cache → repo-local 개발 산출물 순서로 바이너리를 찾습니다.
+- project scope를 쓰는 경우 업그레이드 후 `omx setup --force --scope project`로 관리 파일을 새 릴리스 라인에 맞춰 갱신하는 습관이 중요합니다.
 
 ---
 
@@ -222,6 +295,16 @@ omx team status <team-name>
 
 ---
 
+## Spark Initiative를 어디서 읽어야 하나
+
+1. 이 `README.md`의 Spark Initiative 요약
+2. `01-learning-paths.md`의 초급/중급 업데이트 포인트
+3. `02-glossary.md`의 `Spark Initiative`, `omx explore`, `omx sparkshell`, `native-release-manifest.json` 항목
+4. `sections/08-setup-config.md`의 native asset / upgrade note
+5. 원본 소스의 `README.md`, `CHANGELOG.md`, `docs/release-notes-0.9.0.md`, `docs/release-notes-0.9.1.md`
+
+---
+
 ## 주요 커맨드 참조
 
 ### 런치 커맨드
@@ -232,6 +315,12 @@ omx team <args>          # 조율된 팀 워커 시작/상태/재개/종료
 omx setup                # 프롬프트/스킬/설정 설치
 omx doctor               # 설치/런타임 진단
 omx doctor --team        # Team Mode 진단
+omx ask <provider> ...   # 로컬 provider advisor 호출 + artifact 기록
+omx explore ...          # 읽기 전용 탐색 엔트리포인트 (필요 시 sparkshell 백엔드 사용)
+omx sparkshell ...       # 빠른 셸 네이티브 검사 / tmux pane 요약
+omx hooks ...            # hooks 플러그인 init/status/validate/test
+omx tmux-hook ...        # tmux-hook init/status/validate/test
+omx hud ...              # HUD watch/json/preset
 omx ralph                # ralph 영속 모드로 Codex 실행
 omx resume               # 이전 Codex 세션 재개
 omx resume --last        # 마지막 세션 재개
@@ -296,6 +385,11 @@ omx ask gemini --agent-prompt=planner --prompt "롤아웃 계획 초안 작성"
 - `[features] multi_agent = true, child_agents_md = true`
 - MCP 서버 항목 (`omx_state`, `omx_memory`, `omx_code_intel`, `omx_trace`)
 
+Spark Initiative 이후 설치/배포 관점에서 추가로 알아둘 점:
+- `omx setup`은 네이티브 릴리스 자산 자체를 설치하는 명령은 아니지만, 새 릴리스 라인과 맞는 관리 파일·에이전트 설정을 갱신하는 핵심 진입점입니다.
+- 패키지 설치 후 `omx explore`/`omx sparkshell`이 바로 repo-local 바이너리를 쓰지 않을 수 있으며, `native-release-manifest.json` 기반 hydration을 통해 적절한 플랫폼 자산을 가져옵니다.
+- project scope 사용자는 업그레이드 후 `omx setup --force --scope project`를 다시 실행해 관리 파일과 경로를 refresh하는 편이 안전합니다.
+
 ---
 
 ## 실험적 기능: 포스처 인식 라우팅
@@ -320,4 +414,6 @@ OMX는 실험적 라우팅 레이어를 포함합니다:
 - [CLI 참조](https://yeachan-heo.github.io/oh-my-codex-website/docs.html#cli-reference)
 - [GitHub 저장소](https://github.com/Yeachan-Heo/oh-my-codex)
 - [npm 패키지](https://www.npmjs.com/package/oh-my-codex)
+- [Spark Initiative 릴리스 노트 v0.9.0](https://github.com/Yeachan-Heo/oh-my-codex/blob/main/docs/release-notes-0.9.0.md)
+- [Spark Initiative hotfix 릴리스 노트 v0.9.1](https://github.com/Yeachan-Heo/oh-my-codex/blob/main/docs/release-notes-0.9.1.md)
 - [OpenClaw 통합 가이드](https://github.com/Yeachan-Heo/oh-my-codex/blob/main/docs/openclaw-integration.md)

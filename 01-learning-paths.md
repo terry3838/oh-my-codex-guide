@@ -20,6 +20,7 @@
 - `omx setup`으로 환경 구성
 - `omx team`으로 첫 번째 멀티 에이전트 작업 실행
 - `omx doctor`로 문제 진단
+- Spark Initiative 릴리스 라인(`v0.9.0` ↔ 로컬 `0.9.1`)과 기본 탐색 커맨드 이해
 
 ### 1-1. OMX 설치 및 설정
 
@@ -75,6 +76,11 @@ omx doctor --team
 ```bash
 omx version
 ```
+
+버전 학습 포인트:
+- 공개 릴리스 기준으로는 `v0.9.0`이 Spark Initiative 기능을 처음 공개한 태그다.
+- 현재 로컬 소스 저장소는 `0.9.1` hotfix 문맥을 반영할 수 있다.
+- 학습 문서를 읽을 때는 `published release`와 `local source state`를 분리해서 해석해야 한다.
 
 ### 1-2. 기본 팀 모드 사용
 
@@ -136,12 +142,28 @@ $ralph "이 작업이 완료될 때까지 지속하라"
 $cancel
 ```
 
+**Spark Initiative 기본 실습**
+
+초급 후반에는 아래 3개 명령을 직접 실행해 보는 것을 권장한다.
+
+```bash
+omx explore --prompt "which files define team routing"
+omx sparkshell git --version
+omx sparkshell --tmux-pane %12 --tail-lines 400
+```
+
+학습 포인트:
+- `omx explore`는 읽기 전용 탐색 표면이다.
+- `omx sparkshell`은 명시적 오퍼레이터 검사 표면이다.
+- 둘은 별도 커맨드이지만, 단순 read-only shell 작업에서는 explore가 sparkshell을 백엔드로 사용할 수 있다.
+
 ### 초급 체크리스트
 
 - [ ] `omx doctor --team` 모든 항목 통과
 - [ ] `omx team 2:executor "..."` 첫 팀 실행 성공
 - [ ] `omx team status`로 진행 상태 확인
 - [ ] `omx team shutdown`으로 팀 정상 종료
+- [ ] `omx explore`와 `omx sparkshell` 기본 smoke 명령 1회 이상 실행
 
 ---
 
@@ -155,6 +177,7 @@ $cancel
 - team과 연계하여 계획 실행
 - 스킬과 역할 프롬프트를 상황에 맞게 선택
 - MCP 서버를 통한 상태와 메모리 이해
+- Spark Initiative의 배포·업그레이드 계약(`native-release-manifest.json`, hydration, fallback order) 이해
 
 ### 2-1. ralplan → team 워크플로우
 
@@ -294,6 +317,11 @@ omx hud --json
 ```
 
 ### 중급 체크리스트
+
+- [ ] `omx explore`가 read-only 제약을 가진다는 점을 설명할 수 있다
+- [ ] `omx sparkshell`의 tmux pane 요약 사용법을 안다
+- [ ] project scope 사용 시 업그레이드 후 `omx setup --force --scope project`가 왜 필요한지 설명할 수 있다
+
 
 - [ ] `ralplan`으로 계획 수립 후 `.omx/plans/`에 결과물 확인
 - [ ] `omx team`으로 계획 기반 실행 성공
@@ -574,6 +602,10 @@ $ralph "검증"
 **실수 4: `omx team`과 `omx team ralph`를 혼용**
 
 나중에 ralph를 추가하려면 `omx team ralph`로 처음부터 시작해야 합니다. 별도로 실행된 team과 ralph는 연계 생명주기를 공유하지 않습니다.
+
+**실수 5: npm 패키지에 네이티브 바이너리가 항상 직접 포함된다고 가정**
+
+Spark Initiative 이후에는 `omx explore`/`omx sparkshell`가 release asset hydration을 통해 플랫폼별 바이너리를 확보할 수 있습니다. 설치 후 바로 바이너리 파일이 repo 안에 보여야 한다고 기대하면 혼란이 생깁니다.
 
 ---
 

@@ -14,6 +14,7 @@ OMX는 다음 구성요소를 통해 Codex CLI를 하네스한다:
 | 설정 자동화 | `config/generator.ts` | `config.toml` 자동 생성 및 병합 |
 | 라이프사이클 훅 | `scripts/notify-hook.js` | Codex 이벤트 인터셉트 |
 | 플러그인 확장 | `.omx/hooks/*.mjs` | 사용자 정의 훅 플러그인 |
+| 네이티브 fast path | `omx explore` + `omx sparkshell` + hydration | 읽기 전용 탐색/셸 검사/릴리스 자산 기반 네이티브 보조 경로 |
 | 상태 백플레인 | MCP 서버 5개 | 상태/메모리/추적/팀 관리 |
 | 팀 오케스트레이션 | `cli/team.ts` + tmux | 병렬 워커 조율 |
 
@@ -34,6 +35,18 @@ OMX는 이 두 포인트를 완전히 활용한다. `omx setup`은 `config.toml`
 - **가시성**: HUD, status, trace 명령으로 실행 중인 모든 상태를 확인한다.
 - **복구 가능성**: `omx resume --last`로 중단된 세션을 재개한다.
 - **조율**: 팀 모드는 여러 워커의 라이프사이클을 단일 오퍼레이터 뷰로 통합한다.
+
+### Spark Initiative가 하네스 엔지니어링에 추가한 것
+
+`v0.9.0`의 Spark Initiative는 단순히 새 커맨드를 추가한 것이 아니라, OMX 하네스 자체에 **네이티브 fast path**를 추가했다는 의미가 있다.
+
+- `omx explore`는 제한된 allowlist와 read-only 계약을 가진 탐색 전용 표면이다.
+- `omx sparkshell`은 빠른 셸 실행/요약과 tmux pane 캡처를 위한 명시적 오퍼레이터 표면이다.
+- 단순 read-only shell 작업은 `explore -> sparkshell` 경로로 라우팅될 수 있다.
+- 패키지 설치는 GitHub Release 자산과 `native-release-manifest.json`을 통해 필요한 네이티브 도우미를 hydration한다.
+- 런타임 fallback order는 `OMX_*_BIN` override → hydrated cache → repo-local artifact 순서로 더 명확해졌다.
+
+이 변화 덕분에 OMX는 TypeScript 설정/오케스트레이션 하네스이면서도, 일부 read-only/operator workflows에 대해서는 Rust 네이티브 경로를 조합하는 혼합형 런타임이 되었다.
 
 ---
 

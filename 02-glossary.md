@@ -236,6 +236,19 @@ export OMX_MCP_WORKDIR_ROOTS="/path/to/project:/another-root"
 
 ---
 
+## N
+
+### native-release-manifest.json
+
+**정의:** Spark Initiative 이후 GitHub Release 자산과 함께 배포되는 네이티브 릴리스 매니페스트 파일. 플랫폼별 다운로드 정보와 SHA-256 체크섬을 담아 `omx explore`/`omx sparkshell`의 hydration 경로를 설명한다.
+
+**역할:**
+- packaged install에서 어떤 네이티브 자산을 가져와야 하는지 결정
+- hydration 시 무결성 검증 정보 제공
+- npm 패키지가 네이티브 바이너리를 직접 모두 번들하지 않는 배포 계약을 보완
+
+---
+
 ## O
 
 ### oh-my-codex (OMX)
@@ -257,6 +270,27 @@ npm install -g oh-my-codex
 - Node.js >= 20
 - Codex CLI (`@openai/codex`)
 - tmux (Team Mode에 필요)
+
+**Spark Initiative 이후 주의점:**
+- published release 기준으로는 `v0.9.0`이 최초 Spark Initiative 태그다.
+- 로컬 소스 저장소가 `0.9.1` hotfix 상태일 수 있으며, 이때 release note 문맥은 더 최신일 수 있다.
+
+---
+
+### omx explore
+
+**정의:** OMX의 기본 읽기 전용 탐색 엔트리포인트. 단순한 저장소 조사·파일 찾기·로그 확인 같은 작업을 더 안전하고 저렴한 경로로 처리한다.
+
+**특징:**
+- shell-only, read-only, allowlisted 제약을 가진다
+- 필요 시 `omx sparkshell`을 백엔드로 사용할 수 있다
+- 일반 Codex read-only 모드의 완전한 기능 파리티(web, MCP, 이미지)는 보장하지 않는다
+
+**예시:**
+```bash
+omx explore --prompt "git log --oneline -10"
+omx explore --prompt-file prompts/explore-task.md
+```
 
 ---
 
@@ -286,6 +320,28 @@ omx setup --scope project  # 프로젝트: ./.codex/, ./.agents/, ./.omx/
 관리된 파일이 변경될 경우 설치 전 백업 생성:
 - project 스코프: `.omx/backups/setup/<timestamp>/`
 - user 스코프: `~/.omx/backups/setup/<timestamp>/`
+
+**업그레이드 팁:**
+```bash
+omx setup --force --scope project
+```
+project scope 사용자는 릴리스 라인이 바뀐 뒤 위 명령으로 관리 파일을 refresh하는 편이 안전하다.
+
+---
+
+### omx sparkshell
+
+**정의:** Spark Initiative에서 추가된 오퍼레이터용 셸 네이티브 검사 표면. JS -> Rust sidecar bridge를 통해 빠르게 명령을 실행하고, 출력이 길면 적응형 요약을 만든다.
+
+**주요 기능:**
+- 직접 명령 실행: `omx sparkshell git --version`
+- tmux pane tail 요약: `omx sparkshell --tmux-pane %12 --tail-lines 400`
+- `omx explore`의 qualifying read-only shell task를 위한 백엔드 역할
+
+**바이너리 탐색 우선순위:**
+1. `OMX_SPARKSHELL_BIN`
+2. hydrated native cache
+3. packaged dev artifacts / repo-local build output
 
 ---
 
@@ -474,6 +530,22 @@ omx ask --agent-prompt planner "ralplan: OAuth 콜백을 워커 레인과 수용
 ---
 
 ## S
+
+### Spark Initiative
+
+**정의:** `v0.9.0` 릴리스 라인에서 도입된 OMX의 네이티브 fast-path 확장 묶음. `omx explore`, `omx sparkshell`, explore↔sparkshell 라우팅, cross-platform native release asset 배포가 핵심이다.
+
+**핵심 변화:**
+- 읽기 전용 탐색을 위한 `omx explore` 도입
+- 셸 네이티브 검사 표면 `omx sparkshell` 도입
+- `native-release-manifest.json` 기반 hydration 계약 도입
+- `build:full`, `test:explore`, `test:sparkshell` 같은 릴리스 검증 레인 강화
+
+**버전 맥락:**
+- `v0.9.0`: 기능이 처음 공개된 published release
+- `v0.9.1`: packed-install smoke hydration hotfix가 포함된 clean superseding release
+
+---
 
 ### Spark 모델 (gpt-5.3-codex-spark)
 
