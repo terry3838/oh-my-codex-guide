@@ -429,6 +429,15 @@ OMX는 실험적 라우팅 레이어를 포함합니다:
 
 이번 싸이클에서는 origin 변경이 없어 guide 본문은 유지했고, 동기화 기준점만 재확인했습니다.
 
+### 최근 upstream 커밋
+
+- `fb0f8eb chore: sync Cargo.lock for 0.11.11 release`
+- `4aaf96c Merge pull request #1088 from Yeachan-Heo/dev`
+- `e762d86 chore: sync Cargo.toml version to 0.11.11`
+- `ef91d8c chore: bump version to 0.11.11`
+- `174cb5e docs: add contributors section with maintainer HaD0Yun`
+- `19e1540 docs: add contributors section with maintainer HaD0Yun`
+
 ### 변경 파일 샘플
 
 - 이번 싸이클에서는 신규 변경 파일이 없습니다.

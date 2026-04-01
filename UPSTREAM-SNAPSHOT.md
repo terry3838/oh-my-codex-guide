@@ -11,6 +11,17 @@
 
 [![npm version](https://img.shields.io/npm/v/oh-my-codex)](https://www.npmjs.com/package/oh-my-codex) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Node.js](https://img.shields.io/badge/node-%3E%3D20-brightgreen)](https://nodejs.org)
 
+## recent upstream commits
+
+- `fb0f8eb chore: sync Cargo.lock for 0.11.11 release`
+- `4aaf96c Merge pull request #1088 from Yeachan-Heo/dev`
+- `e762d86 chore: sync Cargo.toml version to 0.11.11`
+- `ef91d8c chore: bump version to 0.11.11`
+- `174cb5e docs: add contributors section with maintainer HaD0Yun`
+- `19e1540 docs: add contributors section with maintainer HaD0Yun`
+- `8ac6ee2 chore(deps): bump @modelcontextprotocol/sdk from 1.27.1 to 1.29.0 (#1086)`
+- `b487ee4 chore(deps-dev): bump @biomejs/biome from 2.4.8 to 2.4.10 (#1087)`
+
 ## top-level structure
 
 - `AGENTS.md`
