@@ -70,8 +70,8 @@ $cancel
 **정의:** Codex CLI의 설정 파일. OMX가 `omx setup` 시 자동으로 구성합니다.
 
 **위치:**
-- user 스코프: `~/.codex/config.toml`
-- project 스코프: `./.codex/config.toml`
+- user 스코프의 Codex 설정 파일
+- project 스코프의 `.codex/config.toml`
 
 **OMX가 설정하는 주요 항목:**
 
@@ -271,9 +271,9 @@ npm install -g oh-my-codex
 - Codex CLI (`@openai/codex`)
 - tmux (Team Mode에 필요)
 
-**Spark Initiative 이후 주의점:**
-- published release 기준으로는 `v0.9.0`이 최초 Spark Initiative 태그다.
-- 로컬 소스 저장소가 `0.9.1` hotfix 상태일 수 있으며, 이때 release note 문맥은 더 최신일 수 있다.
+**현재 읽는 법:**
+- Spark Initiative는 OMX를 hybrid runtime으로 바꾼 중요한 전환점이다.
+- 다만 현재 학습 기준선은 `0.11.11`이며, Spark는 지금 버전의 배경층으로 읽는 편이 맞다.
 
 ---
 
@@ -301,25 +301,18 @@ omx explore --prompt-file prompts/explore-task.md
 **스코프:**
 
 ```bash
-omx setup               # 기본 (user 스코프, 전역 설치)
-omx setup --scope user     # 전역: ~/.codex/, ~/.agents/, ~/.omx/
-omx setup --scope project  # 프로젝트: ./.codex/, ./.agents/, ./.omx/
+omx setup
+omx setup --scope user
+omx setup --scope project
 ```
 
-**설치 항목 (user 스코프):**
-- `~/.codex/prompts/` — 역할 프롬프트 (architect, planner, executor 등)
-- `~/.agents/skills/` — 스킬 (ralph, autopilot, team 등)
-- `~/.codex/config.toml` — 기능, 알림, MCP 설정
-- `~/.omx/agents/` — 네이티브 에이전트 설정
-
-**설치 항목 (project 스코프 추가):**
-- `./AGENTS.md` — 프로젝트 오케스트레이션 브레인
+**무엇을 하냐:**
+- user 스코프에서는 Codex 프롬프트/스킬/설정과 OMX 관리 파일을 사용자 범위에 설치한다.
+- project 스코프에서는 현재 저장소에 맞는 `AGENTS.md`, 관리 설정, `.omx/` 상태 디렉터리를 정렬한다.
 
 **백업 정책:**
 
-관리된 파일이 변경될 경우 설치 전 백업 생성:
-- project 스코프: `.omx/backups/setup/<timestamp>/`
-- user 스코프: `~/.omx/backups/setup/<timestamp>/`
+관리된 파일이 변경될 경우 설치 전 백업을 만든다. 핵심은 정확한 위치를 외우는 게 아니라, **setup이 재실행 가능한 관리 표면**이라는 점을 이해하는 것이다.
 
 **업그레이드 팁:**
 ```bash
@@ -422,7 +415,7 @@ clawdbot agent --deliver --reply-channel ... --reply-to ...
 
 ### 프롬프트 (Prompt)
 
-**정의:** 특정 역할의 에이전트 행동을 정의하는 마크다운 파일. `~/.codex/prompts/*.md`에 설치됩니다.
+**정의:** 특정 역할의 에이전트 행동을 정의하는 마크다운 파일. user 스코프 또는 project 스코프의 Codex 프롬프트 디렉터리에 설치됩니다.
 
 **호출 방법:**
 ```text
@@ -533,17 +526,17 @@ omx ask --agent-prompt planner "ralplan: OAuth 콜백을 워커 레인과 수용
 
 ### Spark Initiative
 
-**정의:** `v0.9.0` 릴리스 라인에서 도입된 OMX의 네이티브 fast-path 확장 묶음. `omx explore`, `omx sparkshell`, explore↔sparkshell 라우팅, cross-platform native release asset 배포가 핵심이다.
+**정의:** OMX를 단순 TypeScript CLI에서 **native helper를 함께 배포·검증하는 hybrid runtime**으로 확장한 역사적 전환점. `omx explore`, `omx sparkshell`, hydration 계약, release-oriented verification이 핵심이다.
 
 **핵심 변화:**
-- 읽기 전용 탐색을 위한 `omx explore` 도입
-- 셸 네이티브 검사 표면 `omx sparkshell` 도입
-- `native-release-manifest.json` 기반 hydration 계약 도입
-- `build:full`, `test:explore`, `test:sparkshell` 같은 릴리스 검증 레인 강화
+- 읽기 전용 fast path인 `omx explore`
+- operator-facing shell-native inspection surface인 `omx sparkshell`
+- `native-release-manifest.json` 기반 hydration 계약
+- `build:full`, `test:explore`, `test:sparkshell`, packed install smoke 같은 릴리스 검증 표면
 
-**버전 맥락:**
-- `v0.9.0`: 기능이 처음 공개된 published release
-- `v0.9.1`: packed-install smoke hydration hotfix가 포함된 clean superseding release
+**현재 맥락:**
+- Spark Initiative 자체는 `0.9.x`에서 시작된 전환이다.
+- 하지만 현재 학습 기준선은 `0.11.11`이며, Spark는 지금 버전의 배경층으로 읽는 편이 맞다.
 
 ---
 
@@ -578,7 +571,7 @@ omx team 2:explore "분석 작업"
 
 ### 스킬 (Skill)
 
-**정의:** Codex 내에서 `$name`으로 호출 가능한 워크플로우 커맨드. `~/.agents/skills/*/SKILL.md`에 설치됩니다.
+**정의:** Codex 내에서 `$name`으로 호출 가능한 워크플로우 커맨드. user 스코프 또는 project 스코프의 스킬 디렉터리에 설치됩니다.
 
 **호출 방법:**
 ```text

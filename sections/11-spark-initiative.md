@@ -1,39 +1,25 @@
-# Spark Initiative와 v0.9.x 업데이트
+# Spark Initiative를 0.11.x에서 다시 읽기
 
-`v0.9.0`은 OMX의 **Spark Initiative** 릴리즈입니다. 이 시점부터 OMX는 Team Mode 오케스트레이션 중심 도구를 넘어서, **read-only repository discovery와 shell-native inspection을 위한 native fast path**를 함께 제공하는 런타임으로 설명하는 편이 맞습니다.
-
----
-
-## 1. 먼저 버전 상태를 구분하기
-
-2026년 3월 13일 기준으로 학습자가 봐야 할 버전 상태는 둘입니다.
-
-- **latest published GitHub release**: `v0.9.0`
-- **local source clone**: `0.9.1`
-
-즉, 공개 릴리즈 문맥에서는 `v0.9.0`이 Spark Initiative의 시작점이고, 로컬 소스 기준으로는 `0.9.1` hotfix가 이미 반영되어 있을 수 있습니다.
-
-`0.9.1`은 새 기능 릴리즈가 아니라 다음 의미를 가집니다.
-
-- `v0.9.0`은 역사적으로 red 상태로 남음
-- `0.9.1`은 packed-install smoke hydration fix를 포함한 clean superseding hotfix
+Spark Initiative는 OMX 역사에서 중요한 전환점이다. 하지만 지금은 이것을 **현재 버전의 중심 onboarding**이 아니라, **현재 0.11.x 런타임을 만든 기반 전환**으로 읽는 편이 맞다.
 
 ---
 
-## 2. 무엇이 추가되었나
+## 1. Spark Initiative가 남긴 핵심 변화
 
 ![Diagram 1](../assets/diagrams/sections__11-spark-initiative__diagram_1.svg)
 
+Spark Initiative가 만든 핵심 표면은 네 가지다.
+
 ### `omx explore`
 
-- 읽기 전용 탐색 전용 엔트리포인트
-- allowlisted shell-native path를 사용
-- 단순 repo lookup, 파일/심볼 탐색, 로그 확인에 적합
+- 읽기 전용 탐색 엔트리포인트
+- 단순 저장소 조사, 파일 찾기, 로그 확인에 적합
+- 저비용 / 안전 제약을 가진 fast path 역할
 
 ### `omx sparkshell`
 
-- JS -> Rust sidecar bridge 기반 operator surface
-- 긴 출력을 compact summary로 줄일 수 있음
+- shell-native inspection 표면
+- 긴 출력을 적응형 요약으로 압축 가능
 - tmux pane tail 요약을 명시적으로 지원
 
 예시:
@@ -42,50 +28,131 @@
 omx sparkshell --tmux-pane %12 --tail-lines 400
 ```
 
-### explore ↔ sparkshell integration
+### native helper distribution
 
-모든 `omx explore`가 sparkshell로 가는 것은 아닙니다. 다만 qualifying read-only shell-native prompt는 sparkshell backend를 사용할 수 있습니다.
-
-핵심은:
-- 속도를 높이되
-- read-only safety를 풀지 않고
-- unsupported execution은 normal path에 남겨 두는 것
-
----
-
-## 3. 설치/배포 관점에서 왜 중요한가
-
-Spark Initiative 이후에는 OMX를 TypeScript CLI만으로 보면 반만 이해한 것입니다.
-
-학습자가 함께 알아야 할 요소:
+Spark 이후 OMX는 TypeScript 코드만 배포하는 도구가 아니게 됐다.
 
 - `omx-explore-harness`
 - `omx-sparkshell`
-- `native-release-manifest.json`
-- packed-install smoke verification
+- 플랫폼별 릴리스 자산
+- hydration / fallback 계약
+
+이것들이 함께 runtime의 일부가 됐다.
+
+### release-oriented verification
+
+Spark 이후에는 릴리스 검증도 더 구조화됐다.
+
 - `npm run build:full`
+- `npm run test:explore`
+- `npm run test:sparkshell`
+- packed install smoke
 
-즉, OMX는 이제 **TypeScript orchestration + native helper distribution**이 함께 있는 하이브리드 런타임입니다.
-
----
-
-## 4. 0.9.1 hotfix가 실제로 정리한 것
-
-로컬 소스의 `docs/release-notes-0.9.1.md` 기준으로 보면, 핵심은 packed-install smoke hydration fix입니다.
-
-학습 포인트:
-
-- `v0.9.0`은 기능 릴리즈
-- `0.9.1`은 릴리즈 안정화/hydration 정리
-- 따라서 기능 설명은 `v0.9.0`, 배포 안정성 설명은 `0.9.1` 문맥으로 읽으면 가장 깔끔합니다
+즉 Spark는 단순 명령 추가가 아니라 **배포·검증 모델 자체의 확장**이었다.
 
 ---
 
-## 5. 실무적으로 기억할 다섯 가지
+## 2. 지금 왜 이걸 다시 읽어야 하나
 
-1. `omx explore`는 읽기 전용 탐색 surface다.
-2. `omx sparkshell`은 명시적 shell-native inspection surface다.
-3. Spark Initiative 이후 OMX는 native helper distribution까지 포함한다.
-4. `npm run build:full`이 release-oriented one-shot build path다.
-5. project scope 사용자는 업그레이드 후 `omx setup --force --scope project`를 다시 돌리는 편이 안전하다.
+현재 OMX는 `0.11.11` 기준으로 더 앞선 릴리스 라인에 와 있다. 그렇다면 Spark를 왜 아직 읽어야 할까?
 
+이유는 명확하다.
+
+### 첫째, hybrid runtime의 출발점이기 때문이다
+
+지금의 OMX를 이해하려면 여전히 알아야 한다.
+
+- 왜 `explore`와 `sparkshell`이 따로 있는지
+- 왜 네이티브 helper hydration 계약이 있는지
+- 왜 packed install smoke가 중요한지
+
+### 둘째, 0.11.x 운영 안정성도 그 위에서 돌아가기 때문이다
+
+최근 0.11.x가 다루는 setup refresh, supervision, release sync 문제도 결국:
+
+- 하이브리드 배포가 얼마나 덜 깨지는가
+- stateful runtime이 얼마나 안정적으로 복구되는가
+- live session / watcher / nudge가 얼마나 정확히 동작하는가
+
+라는 문제와 연결된다.
+
+즉 Spark는 지나간 옛 릴리스가 아니라, **지금의 운영 계약을 이해하는 기반층**이다.
+
+---
+
+## 3. 현재 학습자가 가져가야 할 해석
+
+예전 식 해석:
+
+- OMX의 핵심 = Spark Initiative 신기능
+
+지금 맞는 해석:
+
+- Spark Initiative = OMX를 hybrid runtime으로 바꾼 구조적 전환
+- 현재 0.11.x = 그 위에서 setup / state / supervision / release correctness를 다듬는 단계
+
+이 차이를 잡으면 문서 전체가 훨씬 덜 헷갈린다.
+
+---
+
+## 4. `omx explore`와 `omx sparkshell`을 어떻게 구분할까
+
+### `omx explore`
+
+이럴 때 먼저 떠올리면 된다.
+
+- 읽기 전용 저장소 조사
+- 파일 / 심볼 / 로그 위치 찾기
+- 빠른 lookup
+- 비교적 안전한 fast path가 유리한 작업
+
+예시:
+
+```bash
+omx explore --prompt "find where team state is written"
+```
+
+### `omx sparkshell`
+
+이럴 때 더 적합하다.
+
+- 명시적 shell-native inspection
+- 긴 출력 요약
+- tmux pane tail 분석
+- 운영자 관점의 bounded verification
+
+예시:
+
+```bash
+omx sparkshell git --version
+omx sparkshell --tmux-pane %12 --tail-lines 400
+```
+
+핵심은 둘이 경쟁 관계가 아니라는 점이다.
+
+- `explore`는 빠른 read-only 엔트리
+- `sparkshell`은 명시적 operator surface
+
+---
+
+## 5. 배포 / 업그레이드 관점에서 왜 중요한가
+
+Spark 이후 OMX는 npm 패키지 하나만 보면 반만 본 셈이다.
+
+학습자가 알아야 할 배포 관점은 다음과 같다.
+
+- 네이티브 helper는 별도 릴리스 자산 / hydration 계약과 연결된다
+- packed install smoke는 실제 배포 안전성 확인에 중요하다
+- setup / upgrade는 단순 설치가 아니라 관리 파일과 런타임 계약을 refresh하는 표면이다
+
+그래서 현재 0.11.x에서 setup refresh safety가 중요한 이유도 여기와 이어진다.
+
+---
+
+## 6. 지금 기준의 다섯 가지 요약
+
+1. Spark Initiative는 OMX를 hybrid runtime으로 바꾼 전환점이다.
+2. `omx explore`는 read-only fast path다.
+3. `omx sparkshell`은 operator-facing shell-native inspection surface다.
+4. native helper distribution과 release verification은 Spark 이후 런타임 구조의 일부가 됐다.
+5. 현재 0.11.x를 이해하려면 Spark를 “현재형 배경층”으로 다시 읽어야 한다.
