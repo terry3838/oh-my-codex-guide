@@ -3,28 +3,47 @@
 ## latest cycle
 
 - previous source sha: `fb0f8ebb95dcec7aefb3e8bf2e45d977f98b2faf`
-- current source sha: `fb0f8ebb95dcec7aefb3e8bf2e45d977f98b2faf`
-- mode: `no-change`
-- impact labels: 일반 변경
+- current source sha: `4b0e220475c86d4f74136a37bab0996d83c2c271`
+- mode: `update`
+- impact labels: README/소개, 설치/설정, CLI/명령어, 문서 구조, 소스코드
 
 ## decision
 
-이번 싸이클에서는 origin 변경이 없어 guide 본문은 유지했고, 동기화 기준점만 재확인했습니다.
+origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: README/소개, 설치/설정, CLI/명령어, 문서 구조, 소스코드.
 
 ## upstream commits reviewed
 
-- `fb0f8eb chore: sync Cargo.lock for 0.11.11 release`
-- `4aaf96c Merge pull request #1088 from Yeachan-Heo/dev`
-- `e762d86 chore: sync Cargo.toml version to 0.11.11`
-- `ef91d8c chore: bump version to 0.11.11`
-- `174cb5e docs: add contributors section with maintainer HaD0Yun`
-- `19e1540 docs: add contributors section with maintainer HaD0Yun`
-- `8ac6ee2 chore(deps): bump @modelcontextprotocol/sdk from 1.27.1 to 1.29.0 (#1086)`
-- `b487ee4 chore(deps-dev): bump @biomejs/biome from 2.4.8 to 2.4.10 (#1087)`
+- `4b0e220 Merge remote-tracking branch 'origin/dev' into main-merge/0.11.12-cargolock-conflict`
+- `b542260 Prepare an accurate 0.11.12 patch cut from the true dev tip`
+- `3170ba8 docs: align workflow docs around deep-interview -> ralplan -> team/ralph (#1132)`
+- `0467317 fix: treat linked legacy skill roots as a shared canonical root (#1128)`
+- `e22a13d fix(team): eliminate dual-write seam gaps in dispatch and mailbox transitions (fixes #1108) (#1126)`
+- `910147c docs: add Polish README translation (#1125)`
+- `89f4b30 Improve Polish README with natural language`
+- `12b620c Add a Polish onboarding path for OMX users`
 
 ## evidence
 
 - source remote: `https://github.com/Yeachan-Heo/oh-my-codex.git`
 - docs/interesting dirs: docs/, skills/, src/
 - changed file sample:
-- 변경 파일 없음
+- `AGENTS.md`
+- `CHANGELOG.md`
+- `Cargo.lock`
+- `Cargo.toml`
+- `README.de.md`
+- `README.el.md`
+- `README.es.md`
+- `README.fr.md`
+- `README.it.md`
+- `README.ja.md`
+- `README.ko.md`
+- `README.md`
+- `README.pl.md`
+- `README.pt.md`
+- `README.ru.md`
+- `README.tr.md`
+- `README.vi.md`
+- `README.zh-TW.md`
+- `README.zh.md`
+- `RELEASE_BODY.md`

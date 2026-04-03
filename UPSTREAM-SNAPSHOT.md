@@ -2,9 +2,9 @@
 
 - source repo: `https://github.com/Yeachan-Heo/oh-my-codex.git`
 - previous synced commit: `fb0f8ebb95dcec7aefb3e8bf2e45d977f98b2faf`
-- current synced commit: `fb0f8ebb95dcec7aefb3e8bf2e45d977f98b2faf`
-- sync mode: `no-change`
-- impact labels: 일반 변경
+- current synced commit: `4b0e220475c86d4f74136a37bab0996d83c2c271`
+- sync mode: `update`
+- impact labels: README/소개, 설치/설정, CLI/명령어, 문서 구조, 소스코드
 - guide repo: `oh-my-codex-guide`
 
 ## 원본 한줄 요약
@@ -13,14 +13,14 @@
 
 ## recent upstream commits
 
-- `fb0f8eb chore: sync Cargo.lock for 0.11.11 release`
-- `4aaf96c Merge pull request #1088 from Yeachan-Heo/dev`
-- `e762d86 chore: sync Cargo.toml version to 0.11.11`
-- `ef91d8c chore: bump version to 0.11.11`
-- `174cb5e docs: add contributors section with maintainer HaD0Yun`
-- `19e1540 docs: add contributors section with maintainer HaD0Yun`
-- `8ac6ee2 chore(deps): bump @modelcontextprotocol/sdk from 1.27.1 to 1.29.0 (#1086)`
-- `b487ee4 chore(deps-dev): bump @biomejs/biome from 2.4.8 to 2.4.10 (#1087)`
+- `4b0e220 Merge remote-tracking branch 'origin/dev' into main-merge/0.11.12-cargolock-conflict`
+- `b542260 Prepare an accurate 0.11.12 patch cut from the true dev tip`
+- `3170ba8 docs: align workflow docs around deep-interview -> ralplan -> team/ralph (#1132)`
+- `0467317 fix: treat linked legacy skill roots as a shared canonical root (#1128)`
+- `e22a13d fix(team): eliminate dual-write seam gaps in dispatch and mailbox transitions (fixes #1108) (#1126)`
+- `910147c docs: add Polish README translation (#1125)`
+- `89f4b30 Improve Polish README with natural language`
+- `12b620c Add a Polish onboarding path for OMX users`
 
 ## top-level structure
 
@@ -41,13 +41,32 @@
 - `playground/`
 - `prompts/`
 - `README.de.md`
+- `README.el.md`
 - `README.es.md`
 - `README.fr.md`
-- `README.it.md`
 
 ## changed files
 
-- 변경 파일 없음
+- `AGENTS.md`
+- `CHANGELOG.md`
+- `Cargo.lock`
+- `Cargo.toml`
+- `README.de.md`
+- `README.el.md`
+- `README.es.md`
+- `README.fr.md`
+- `README.it.md`
+- `README.ja.md`
+- `README.ko.md`
+- `README.md`
+- `README.pl.md`
+- `README.pt.md`
+- `README.ru.md`
+- `README.tr.md`
+- `README.vi.md`
+- `README.zh-TW.md`
+- `README.zh.md`
+- `RELEASE_BODY.md`
 
 ## README excerpt
 
@@ -72,8 +91,8 @@ OMX is a workflow layer for [OpenAI Codex CLI](https://github.com/openai/codex).
 
 It keeps Codex as the execution engine and makes it easier to:
 - start a stronger Codex session by default
-- reuse good role/task invocations with `$name` keywords
-- invoke workflows with skills like `$plan`, `$ralph`, and `$team`
+- run one consistent workflow from clarification to completion
+- invoke the canonical skills with `$deep-interview`, `$ralplan`, `$team`, and `$ralph`
 - keep project guidance, plans, logs, and state in `.omx/`
 
 ## Recommended default flow
@@ -89,18 +108,20 @@ omx --madmax --high
 Then work normally inside Codex:
 
 ```text
-$architect "analyze the authentication flow"
-$plan "ship this feature cleanly"
+$deep-interview "clarify the authentication change"
+$ralplan "approve the auth plan and review tradeoffs"
+$ralph "carry the approved plan to completion"
+$team 3:executor "execute the approved plan in parallel"
 ```
 
 That is the main path.
-Start OMX strongly, do the work in Codex, and let the agent pull in `$team` or other workflows only when the task actually needs them.
+Start OMX strongly, clarify first when needed, approve the plan, then choose `$team` for coordinated parallel execution or `$ralph` for the persistent completion loop.
 
 ## What OMX is for
 
 Use OMX if you already like Codex and want a better day-to-day runtime around it:
-- reusable role/task invocations such as `$architect` and `$executor`
-- reusable workflows such as `$plan`, `$ralph`, `$team`, and `$deep-interview`
+- a standard workflow built around `$deep-interview`, `$ralplan`, `$team`, and `$ralph`
+- specialist roles and supporting skills when the task needs them
 - project guidance through scoped `AGENTS.md`
 - durable state under `.omx/` for plans, logs, memory, and mode tracking
 
@@ -124,14 +145,16 @@ Launch OMX the recommended way:
 omx --madmax --high
 ```
 
-Then try one role keyword and one workflow skill:
+Then try the canonical workflow:
 
 ```text
-$architect "analyze the authentication flow"
-$plan "map the safest implementation path"
+$deep-interview "clarify the authentication change"
+$ralplan "approve the safest implementation path"
+$ralph "carry the approved plan to completion"
+$team 3:executor "execute the approved plan in parallel"
 ```
 
-If the task grows, the agent can escalate to heavier workflows such as `$ralph` for persistent execution or `$team` for coordinated parallel work.
+Use `$team` when the approved plan needs coordinated parallel work, or `$ralph` when one persistent owner should keep pushing to completion.
 
 ## A simple mental model
 
@@ -149,26 +172,23 @@ Most users should think of OMX as **better task routing + better workflow + bett
 
 1. Run `omx setup`
 2. Launch with `omx --madmax --high`
-3. Ask for analysis with `$architect "..."`
-4. Ask for planning with `$plan "..."`
-5. Let the agent decide when `$ralph`, `$team`, or another workflow is worth using
+3. Use `$deep-interview "..."` when the request or boundaries are still unclear
+4. Use `$ralplan "..."` to approve the plan and review tradeoffs
+5. Choose `$team` for coordinated parallel execution or `$ralph` for persistent completion loops
+
+## Recommended workflow
+
+1. `$deep-interview` — clarify scope when the request or boundaries are still vague.
+2. `$ralplan` — turn that clarified scope into an approved architecture and implementation plan.
+3. `$team` or `$ralph` — use `$team` for coordinated parallel execution, or `$ralph` when you want a persistent completion loop with one owner.
 
 ## Common in-session surfaces
 
 | Surface | Use it for |
 | --- | --- |
-| `$architect "..."` | analysis, boundaries, tradeoffs |
-| `$executor "..."` | focused implementation work |
-| `/skills` | browsing installed skills |
-| `$plan "..."` | planning before implementation |
-| `$ralph "..."` | persistent sequential execution |
-| `$team "..."` | coordinated parallel execution when the task is big enough |
-
-Use `$deep-interview` when the request is still vague, the boundaries are unclear, or you want OMX to keep pressing on intent, non-goals, and decision boundaries before it hands work off to `$plan`, `$ralph`, `$team`, or `$autopilot`.
-
-Typical cases:
-- vague greenfield ideas that still need sharper intent and scope
-- brownfield changes where OMX should inspect the repo first, then ask cited confirmation questions
-- requests where you want a one-question-at-a-time clarification loop instead of immediate planning or implementation
-## Advanced / operator surfaces
+| `$deep-interview "..."` | clarifying intent, boundaries, and non-goals |
+| `$ralplan "..."` | approving the implementation plan and tradeoffs |
+| `$ralph "..."` | persistent completion and verification loops |
+| `$team "..."` | coordinated parallel execution when the work is big enough |
+| `/skills` | browsing installed skills and supporting helpers |
 ```
