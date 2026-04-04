@@ -177,8 +177,8 @@ notepad_stats             # 노트패드 통계 조회
 ```
 .omx/
 └── logs/
-    ├── turns-2026-03-12.jsonl   # 일별 실행 로그
-    └── turns-2026-03-11.jsonl
+    ├── turns-[REDACTED_PHONE].jsonl   # 일별 실행 로그
+    └── turns-[REDACTED_PHONE].jsonl
 ```
 
 각 JSONL 파일의 항목 구조:

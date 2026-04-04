@@ -128,7 +128,7 @@ export HOOKS_TOKEN="your-openclaw-hooks-token"
       "gateways": {
         "local": {
           "type": "http",
-          "url": "http://127.0.0.1:18789/hooks/agent",
+          "url": "http://[REDACTED_PHONE]:18789/hooks/agent",
           "headers": {
             "Authorization": "Bearer ${HOOKS_TOKEN}"
           }
@@ -161,7 +161,7 @@ OpenClaw 또는 커스텀 서비스에 사용할 수 있는 범용 별칭:
     "enabled": true,
     "custom_webhook_command": {
       "enabled": true,
-      "url": "http://127.0.0.1:18789/hooks/agent",
+      "url": "http://[REDACTED_PHONE]:18789/hooks/agent",
       "method": "POST",
       "headers": {
         "Authorization": "Bearer ${HOOKS_TOKEN}"
@@ -290,7 +290,7 @@ export OMX_OPENCLAW_COMMAND=1
 
 ```bash
 # 채널 별칭(#channel-name) 대신 ID 사용
---reply-to 'channel:1234567890123456789'
+--reply-to 'channel:[REDACTED_PHONE]'
 ```
 
 채널 별칭은 bot 캐시 상태에 따라 실패할 수 있다.
@@ -299,13 +299,13 @@ export OMX_OPENCLAW_COMMAND=1
 
 ```bash
 # Wake 스모크 테스트
-curl -sS -X POST http://127.0.0.1:18789/hooks/wake \
+curl -sS -X POST http://[REDACTED_PHONE]:18789/hooks/wake \
   -H "Authorization: Bearer ${HOOKS_TOKEN}" \
   -H "Content-Type: application/json" \
   -d '{"text":"OMX wake smoke test","mode":"now"}'
 
 # 배포 검증
-curl -sS -X POST http://127.0.0.1:18789/hooks/agent \
+curl -sS -X POST http://[REDACTED_PHONE]:18789/hooks/agent \
   -H "Authorization: Bearer ${HOOKS_TOKEN}" \
   -H "Content-Type: application/json" \
   -d '{"message":"OMX delivery verification","event":"session-end","sessionId":"manual-check"}'
@@ -332,7 +332,7 @@ test "$OMX_OPENCLAW" = "1" && echo "OMX_OPENCLAW=1 ok" || echo "missing OMX_OPEN
 test "$OMX_OPENCLAW_COMMAND" = "1" && echo "OMX_OPENCLAW_COMMAND=1 ok" || echo "missing"
 
 # 게이트웨이 연결 확인
-curl -sS -o /dev/null -w "HTTP %{http_code}\n" http://127.0.0.1:18789 || echo "gateway unreachable"
+curl -sS -o /dev/null -w "HTTP %{http_code}\n" http://[REDACTED_PHONE]:18789 || echo "gateway unreachable"
 ```
 
 ### 6. 오류 진단 가이드

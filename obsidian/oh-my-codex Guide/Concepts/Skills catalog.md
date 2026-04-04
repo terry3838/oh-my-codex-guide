@@ -550,7 +550,7 @@ omx hud --preset=full       # 모든 정보
 ```bash
 /note Found auth bug in UserContext        # Working Memory에 추가
 /note --priority "Project uses pnpm"      # Priority Context (항상 로드)
-/note --manual "API team: api@company.com" # MANUAL (영구 보존)
+/note --manual "API team: [REDACTED_EMAIL]" # MANUAL (영구 보존)
 /note --show                               # 현재 notepad 표시
 /note --prune                             # 7일 이상 항목 삭제
 ```
