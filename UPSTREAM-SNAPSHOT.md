@@ -1,10 +1,10 @@
 # Upstream Snapshot — oh-my-codex
 
 - source repo: `https://github.com/Yeachan-Heo/oh-my-codex.git`
-- previous synced commit: `fb0f8ebb95dcec7aefb3e8bf2e45d977f98b2faf`
-- current synced commit: `4b0e220475c86d4f74136a37bab0996d83c2c271`
+- previous synced commit: `4b0e220475c86d4f74136a37bab0996d83c2c271`
+- current synced commit: `ed78b878e59f1d65a2f1626d63f293e8d40ebe81`
 - sync mode: `update`
-- impact labels: README/소개, 설치/설정, CLI/명령어, 문서 구조, 소스코드
+- impact labels: README/소개
 - guide repo: `oh-my-codex-guide`
 
 ## 원본 한줄 요약
@@ -13,14 +13,9 @@
 
 ## recent upstream commits
 
-- `4b0e220 Merge remote-tracking branch 'origin/dev' into main-merge/0.11.12-cargolock-conflict`
-- `b542260 Prepare an accurate 0.11.12 patch cut from the true dev tip`
-- `3170ba8 docs: align workflow docs around deep-interview -> ralplan -> team/ralph (#1132)`
-- `0467317 fix: treat linked legacy skill roots as a shared canonical root (#1128)`
-- `e22a13d fix(team): eliminate dual-write seam gaps in dispatch and mailbox transitions (fixes #1108) (#1126)`
-- `910147c docs: add Polish README translation (#1125)`
-- `89f4b30 Improve Polish README with natural language`
-- `12b620c Add a Polish onboarding path for OMX users`
+- `ed78b87 docs: align top collaborators with main-merged commit authors`
+- `8ac6fd6 docs: add top collaborators by commit count to README`
+- `5724407 docs: add maintainers and ambassadors section`
 
 ## top-level structure
 
@@ -47,26 +42,7 @@
 
 ## changed files
 
-- `AGENTS.md`
-- `CHANGELOG.md`
-- `Cargo.lock`
-- `Cargo.toml`
-- `README.de.md`
-- `README.el.md`
-- `README.es.md`
-- `README.fr.md`
-- `README.it.md`
-- `README.ja.md`
-- `README.ko.md`
 - `README.md`
-- `README.pl.md`
-- `README.pt.md`
-- `README.ru.md`
-- `README.tr.md`
-- `README.vi.md`
-- `README.zh-TW.md`
-- `README.zh.md`
-- `RELEASE_BODY.md`
 
 ## README excerpt
 
@@ -94,6 +70,29 @@ It keeps Codex as the execution engine and makes it easier to:
 - run one consistent workflow from clarification to completion
 - invoke the canonical skills with `$deep-interview`, `$ralplan`, `$team`, and `$ralph`
 - keep project guidance, plans, logs, and state in `.omx/`
+
+## Core Maintainers
+
+| Role | Name | GitHub |
+| --- | --- | --- |
+| Creator & Lead | Yeachan Heo | [@Yeachan-Heo](https://github.com/Yeachan-Heo) |
+| Maintainer | HaD0Yun | [@HaD0Yun](https://github.com/HaD0Yun) |
+
+## Ambassadors
+
+| Name | GitHub |
+| --- | --- |
+| Sigrid Jin | [@sigridjineth](https://github.com/sigridjineth) |
+
+## Top Collaborators
+
+| Name | GitHub |
+| --- | --- |
+| HaD0Yun | [@HaD0Yun](https://github.com/HaD0Yun) |
+| Junho Yeo | [@junhoyeo](https://github.com/junhoyeo) |
+| JiHongKim98 | [@JiHongKim98](https://github.com/JiHongKim98) |
+| Lor | — |
+| HyunjunJeon | [@HyunjunJeon](https://github.com/HyunjunJeon) |
 
 ## Recommended default flow
 
@@ -167,28 +166,4 @@ It adds a better working layer around it:
 - **`.omx/`** stores plans, logs, memory, and runtime state
 
 Most users should think of OMX as **better task routing + better workflow + better runtime**, not as a command surface to operate manually all day.
-
-## Start here if you are new
-
-1. Run `omx setup`
-2. Launch with `omx --madmax --high`
-3. Use `$deep-interview "..."` when the request or boundaries are still unclear
-4. Use `$ralplan "..."` to approve the plan and review tradeoffs
-5. Choose `$team` for coordinated parallel execution or `$ralph` for persistent completion loops
-
-## Recommended workflow
-
-1. `$deep-interview` — clarify scope when the request or boundaries are still vague.
-2. `$ralplan` — turn that clarified scope into an approved architecture and implementation plan.
-3. `$team` or `$ralph` — use `$team` for coordinated parallel execution, or `$ralph` when you want a persistent completion loop with one owner.
-
-## Common in-session surfaces
-
-| Surface | Use it for |
-| --- | --- |
-| `$deep-interview "..."` | clarifying intent, boundaries, and non-goals |
-| `$ralplan "..."` | approving the implementation plan and tradeoffs |
-| `$ralph "..."` | persistent completion and verification loops |
-| `$team "..."` | coordinated parallel execution when the work is big enough |
-| `/skills` | browsing installed skills and supporting helpers |
 ```
