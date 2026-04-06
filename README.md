@@ -305,12 +305,12 @@ Spark Initiative가 남긴 핵심 자산:
 
 - origin repo: `oh-my-codex`
 - latest source commit: `fabb3ce0b96e`
-- sync mode: `update`
-- 영향 분류: README/소개, 설치/설정, CLI/명령어, 문서 구조, 소스코드
+- sync mode: `no-change`
+- 영향 분류: 일반 변경
 
 ### 이번 반영 포인트
 
-origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: README/소개, 설치/설정, CLI/명령어, 문서 구조, 소스코드.
+이번 싸이클에서는 origin 변경이 없어 guide 본문은 유지했고, 동기화 기준점만 재확인했습니다.
 
 ### 최근 upstream 커밋
 
@@ -323,26 +323,7 @@ origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽
 
 ### 변경 파일 샘플
 
-- `CHANGELOG.md`
-- `Cargo.lock`
-- `Cargo.toml`
-- `README.vi.md`
-- `RELEASE_BODY.md`
-- `crates/omx-runtime-core/src/engine.rs`
-- `crates/omx-runtime-core/src/lib.rs`
-- `docs/contracts/ralph-state-contract.md`
-- `docs/qa/ralph-persistence-gate.md`
-- `docs/qa/release-readiness-0.11.13.md`
-- `docs/reference/ralph-parity-matrix.md`
-- `docs/release-notes-0.11.13.md`
-- `package-lock.json`
-- `package.json`
-- `src/cli/__tests__/autoresearch.test.ts`
-- `src/cli/__tests__/cleanup.test.ts`
-- `src/cli/__tests__/error-handling-warnings.test.ts`
-- `src/cli/__tests__/exec.test.ts`
-- `src/cli/__tests__/index.test.ts`
-- `src/cli/__tests__/launch-fallback.test.ts`
+- 이번 싸이클에서는 신규 변경 파일이 없습니다.
 
 > 이 블록은 guide sync가 자동 갱신합니다.
 <!-- GUIDE_SYNC:END -->

@@ -1,10 +1,10 @@
 # Upstream Snapshot — oh-my-codex
 
 - source repo: `https://github.com/Yeachan-Heo/oh-my-codex.git`
-- previous synced commit: `ed78b878e59f1d65a2f1626d63f293e8d40ebe81`
+- previous synced commit: `fabb3ce0b96e42c20feb2940c74f2aa5addb8cee`
 - current synced commit: `fabb3ce0b96e42c20feb2940c74f2aa5addb8cee`
-- sync mode: `update`
-- impact labels: README/소개, 설치/설정, CLI/명령어, 문서 구조, 소스코드
+- sync mode: `no-change`
+- impact labels: 일반 변경
 - guide repo: `oh-my-codex-guide`
 
 ## 원본 한줄 요약
@@ -47,26 +47,7 @@
 
 ## changed files
 
-- `CHANGELOG.md`
-- `Cargo.lock`
-- `Cargo.toml`
-- `README.vi.md`
-- `RELEASE_BODY.md`
-- `crates/omx-runtime-core/src/engine.rs`
-- `crates/omx-runtime-core/src/lib.rs`
-- `docs/contracts/ralph-state-contract.md`
-- `docs/qa/ralph-persistence-gate.md`
-- `docs/qa/release-readiness-0.11.13.md`
-- `docs/reference/ralph-parity-matrix.md`
-- `docs/release-notes-0.11.13.md`
-- `package-lock.json`
-- `package.json`
-- `src/cli/__tests__/autoresearch.test.ts`
-- `src/cli/__tests__/cleanup.test.ts`
-- `src/cli/__tests__/error-handling-warnings.test.ts`
-- `src/cli/__tests__/exec.test.ts`
-- `src/cli/__tests__/index.test.ts`
-- `src/cli/__tests__/launch-fallback.test.ts`
+- 변경 파일 없음
 
 ## README excerpt
 
