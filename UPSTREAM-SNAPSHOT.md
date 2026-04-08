@@ -2,9 +2,9 @@
 
 - source repo: `https://github.com/Yeachan-Heo/oh-my-codex.git`
 - previous synced commit: `fabb3ce0b96e42c20feb2940c74f2aa5addb8cee`
-- current synced commit: `fabb3ce0b96e42c20feb2940c74f2aa5addb8cee`
-- sync mode: `no-change`
-- impact labels: 일반 변경
+- current synced commit: `b1c39445741b8a0c4c30b22ab0db3e9491215b8b`
+- sync mode: `update`
+- impact labels: README/소개, 설치/설정, CLI/명령어, 문서 구조, 스킬/플러그인, 소스코드
 - guide repo: `oh-my-codex-guide`
 
 ## 원본 한줄 요약
@@ -13,14 +13,14 @@
 
 ## recent upstream commits
 
-- `fabb3ce Merge pull request #1241 from Yeachan-Heo/release/0.11.13`
-- `2b644d2 Keep dispatch notification tests stable across CI shadow-state lag`
-- `204c024 Keep mailbox notification assertions deterministic across full CI lanes`
-- `ce930ba Keep tmux-heal verification stable on GitHub runners`
-- `cc1b814 Make mailbox notification assertions deterministic under GitHub CI`
-- `26eaec0 Keep tmux-heal verification aligned with the active pane injection path`
-- `130a1b9 Keep CI typecheck unblocked after the live-injection fix`
-- `6300c9f Keep leader mailbox nudges injectable through the active pane path`
+- `b1c3944 Keep dev aligned after shipping 0.12.1`
+- `0ce655b Cut the 0.12.1 patch release on main`
+- `1ff91e1 Preserve release-branch guidance and mailbox accuracy before the 0.12.1 cut`
+- `38e633e chore: empty CI probe on dev`
+- `1fc66b8 Restore detached tmux launches for interactive OMX sessions (#1356)`
+- `f1e7f8b Keep PR #1349 mergeable against dev without losing native stop-hook protections`
+- `824bb60 Merge pull request #1348 from Yeachan-Heo/fix/stop-hook-misbehavior`
+- `4a6feaa Merge pull request #1352 from Yeachan-Heo/fix/release-0-12-1-metadata`
 
 ## top-level structure
 
@@ -40,14 +40,33 @@
 - `package.json`
 - `playground/`
 - `prompts/`
-- `README.de.md`
-- `README.el.md`
-- `README.es.md`
-- `README.fr.md`
+- `README.md`
+- `RELEASE_BODY.md`
+- `skills/`
+- `src/`
 
 ## changed files
 
-- 변경 파일 없음
+- `.github/ISSUE_TEMPLATE/config.yml`
+- `.gitignore`
+- `AGENTS.md`
+- `CHANGELOG.md`
+- `Cargo.lock`
+- `Cargo.toml`
+- `README.md`
+- `RELEASE_BODY.md`
+- `crates/omx-runtime/src/main.rs`
+- `docs/codex-native-hooks.md`
+- `docs/contracts/team-delivery-state-contract.md`
+- `docs/contracts/team-runtime-state-contract.md`
+- `docs/hooks-extension.md`
+- `docs/index.html`
+- `docs/integrations.html`
+- `docs/openclaw-integration.de.md`
+- `docs/openclaw-integration.es.md`
+- `docs/openclaw-integration.fr.md`
+- `docs/openclaw-integration.it.md`
+- `docs/openclaw-integration.ja.md`
 
 ## README excerpt
 
@@ -65,8 +84,9 @@
 [![Node.js](https://img.shields.io/badge/node-%3E%3D20-brightgreen)](https://nodejs.org)
 [![Discord](https://img.shields.io/discord/1452487457085063218?color=5865F2&logo=discord&logoColor=white&label=Discord)](https://discord.gg/PUwSMR9XNk)
 
-**Website:** https://yeachan-heo.github.io/oh-my-codex-website/  
+**Website:** https://yeachan-heo.github.io/oh-my-codex-website/
 **Docs:** [Getting Started](./docs/getting-started.html) · [Agents](./docs/agents.html) · [Skills](./docs/skills.html) · [Integrations](./docs/integrations.html) · [Demo](./DEMO.md) · [OpenClaw guide](./docs/openclaw-integration.md)
+**Community:** [Discord](https://discord.gg/PUwSMR9XNk) — shared OMX/community server for oh-my-codex and related tooling.
 
 OMX is a workflow layer for [OpenAI Codex CLI](https://github.com/openai/codex).
 
@@ -149,6 +169,13 @@ Launch OMX the recommended way:
 omx --madmax --high
 ```
 
+This starts the interactive leader session directly by default.
+If you explicitly want the leader session in tmux, use:
+
+```bash
+omx --tmux --madmax --high
+```
+
 Then try the canonical workflow:
 
 ```text
@@ -163,12 +190,4 @@ Use `$team` when the approved plan needs coordinated parallel work, or `$ralph` 
 ## A simple mental model
 
 OMX does **not** replace Codex.
-
-It adds a better working layer around it:
-- **Codex** does the actual agent work
-- **OMX role keywords** make useful roles reusable
-- **OMX skills** make common workflows reusable
-- **`.omx/`** stores plans, logs, memory, and runtime state
-
-Most users should think of OMX as **better task routing + better workflow + better runtime**, not as a command surface to operate manually all day.
 ```

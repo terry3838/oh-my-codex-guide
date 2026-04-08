@@ -304,26 +304,45 @@ Spark Initiative가 남긴 핵심 자산:
 ## 자동 동기화 상태
 
 - origin repo: `oh-my-codex`
-- latest source commit: `fabb3ce0b96e`
-- sync mode: `no-change`
-- 영향 분류: 일반 변경
+- latest source commit: `b1c39445741b`
+- sync mode: `update`
+- 영향 분류: README/소개, 설치/설정, CLI/명령어, 문서 구조, 스킬/플러그인, 소스코드
 
 ### 이번 반영 포인트
 
-이번 싸이클에서는 origin 변경이 없어 guide 본문은 유지했고, 동기화 기준점만 재확인했습니다.
+origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: README/소개, 설치/설정, CLI/명령어, 문서 구조, 스킬/플러그인, 소스코드.
 
 ### 최근 upstream 커밋
 
-- `fabb3ce Merge pull request #1241 from Yeachan-Heo/release/0.11.13`
-- `2b644d2 Keep dispatch notification tests stable across CI shadow-state lag`
-- `204c024 Keep mailbox notification assertions deterministic across full CI lanes`
-- `ce930ba Keep tmux-heal verification stable on GitHub runners`
-- `cc1b814 Make mailbox notification assertions deterministic under GitHub CI`
-- `26eaec0 Keep tmux-heal verification aligned with the active pane injection path`
+- `b1c3944 Keep dev aligned after shipping 0.12.1`
+- `0ce655b Cut the 0.12.1 patch release on main`
+- `1ff91e1 Preserve release-branch guidance and mailbox accuracy before the 0.12.1 cut`
+- `38e633e chore: empty CI probe on dev`
+- `1fc66b8 Restore detached tmux launches for interactive OMX sessions (#1356)`
+- `f1e7f8b Keep PR #1349 mergeable against dev without losing native stop-hook protections`
 
 ### 변경 파일 샘플
 
-- 이번 싸이클에서는 신규 변경 파일이 없습니다.
+- `.github/ISSUE_TEMPLATE/config.yml`
+- `.gitignore`
+- `AGENTS.md`
+- `CHANGELOG.md`
+- `Cargo.lock`
+- `Cargo.toml`
+- `README.md`
+- `RELEASE_BODY.md`
+- `crates/omx-runtime/src/main.rs`
+- `docs/codex-native-hooks.md`
+- `docs/contracts/team-delivery-state-contract.md`
+- `docs/contracts/team-runtime-state-contract.md`
+- `docs/hooks-extension.md`
+- `docs/index.html`
+- `docs/integrations.html`
+- `docs/openclaw-integration.de.md`
+- `docs/openclaw-integration.es.md`
+- `docs/openclaw-integration.fr.md`
+- `docs/openclaw-integration.it.md`
+- `docs/openclaw-integration.ja.md`
 
 > 이 블록은 guide sync가 자동 갱신합니다.
 <!-- GUIDE_SYNC:END -->
