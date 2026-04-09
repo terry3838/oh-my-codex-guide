@@ -1,10 +1,10 @@
 # Upstream Snapshot — oh-my-codex
 
 - source repo: `https://github.com/Yeachan-Heo/oh-my-codex.git`
-- previous synced commit: `fabb3ce0b96e42c20feb2940c74f2aa5addb8cee`
-- current synced commit: `b1c39445741b8a0c4c30b22ab0db3e9491215b8b`
+- previous synced commit: `b1c39445741b8a0c4c30b22ab0db3e9491215b8b`
+- current synced commit: `c364f617eccfe3783b8708f5ef53cd11396f76cf`
 - sync mode: `update`
-- impact labels: README/소개, 설치/설정, CLI/명령어, 문서 구조, 스킬/플러그인, 소스코드
+- impact labels: CLI/명령어, 문서 구조, 소스코드
 - guide repo: `oh-my-codex-guide`
 
 ## 원본 한줄 요약
@@ -13,14 +13,14 @@
 
 ## recent upstream commits
 
-- `b1c3944 Keep dev aligned after shipping 0.12.1`
-- `0ce655b Cut the 0.12.1 patch release on main`
-- `1ff91e1 Preserve release-branch guidance and mailbox accuracy before the 0.12.1 cut`
-- `38e633e chore: empty CI probe on dev`
-- `1fc66b8 Restore detached tmux launches for interactive OMX sessions (#1356)`
-- `f1e7f8b Keep PR #1349 mergeable against dev without losing native stop-hook protections`
-- `824bb60 Merge pull request #1348 from Yeachan-Heo/fix/stop-hook-misbehavior`
-- `4a6feaa Merge pull request #1352 from Yeachan-Heo/fix/release-0-12-1-metadata`
+- `c364f61 Cut the 0.12.3 patch release on main`
+- `010068e Cut the 0.12.3 patch release`
+- `9513cc3 Merge pull request #1364 from Yeachan-Heo/hotfix/team-keyword-detector`
+- `cacc7f7 Merge remote-tracking branch 'origin/dev' into hotfix/team-keyword-detector`
+- `0003a4f Cut the 0.12.2 patch release on main`
+- `13b680c Cut the 0.12.2 patch release`
+- `93dc6f6 Merge pull request #1369 from Yeachan-Heo/fix/team-silently-delted`
+- `98b90ad Merge pull request #1367 from Yeachan-Heo/fix/stale-state-hud`
 
 ## top-level structure
 
@@ -47,26 +47,26 @@
 
 ## changed files
 
-- `.github/ISSUE_TEMPLATE/config.yml`
-- `.gitignore`
-- `AGENTS.md`
 - `CHANGELOG.md`
 - `Cargo.lock`
 - `Cargo.toml`
-- `README.md`
 - `RELEASE_BODY.md`
-- `crates/omx-runtime/src/main.rs`
-- `docs/codex-native-hooks.md`
-- `docs/contracts/team-delivery-state-contract.md`
-- `docs/contracts/team-runtime-state-contract.md`
-- `docs/hooks-extension.md`
-- `docs/index.html`
-- `docs/integrations.html`
-- `docs/openclaw-integration.de.md`
-- `docs/openclaw-integration.es.md`
-- `docs/openclaw-integration.fr.md`
-- `docs/openclaw-integration.it.md`
-- `docs/openclaw-integration.ja.md`
+- `docs/qa/release-readiness-0.12.2.md`
+- `docs/qa/release-readiness-0.12.3.md`
+- `docs/release-notes-0.12.2.md`
+- `docs/release-notes-0.12.3.md`
+- `package-lock.json`
+- `package.json`
+- `src/cli/__tests__/index.test.ts`
+- `src/cli/index.ts`
+- `src/hooks/__tests__/agents-overlay.test.ts`
+- `src/hooks/__tests__/keyword-detector.test.ts`
+- `src/hooks/agents-overlay.ts`
+- `src/hooks/keyword-detector.ts`
+- `src/hud/__tests__/render.test.ts`
+- `src/hud/__tests__/state.test.ts`
+- `src/hud/render.ts`
+- `src/hud/state.ts`
 
 ## README excerpt
 

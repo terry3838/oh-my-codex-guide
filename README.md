@@ -304,45 +304,45 @@ Spark Initiative가 남긴 핵심 자산:
 ## 자동 동기화 상태
 
 - origin repo: `oh-my-codex`
-- latest source commit: `b1c39445741b`
+- latest source commit: `c364f617eccf`
 - sync mode: `update`
-- 영향 분류: README/소개, 설치/설정, CLI/명령어, 문서 구조, 스킬/플러그인, 소스코드
+- 영향 분류: CLI/명령어, 문서 구조, 소스코드
 
 ### 이번 반영 포인트
 
-origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: README/소개, 설치/설정, CLI/명령어, 문서 구조, 스킬/플러그인, 소스코드.
+origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: CLI/명령어, 문서 구조, 소스코드.
 
 ### 최근 upstream 커밋
 
-- `b1c3944 Keep dev aligned after shipping 0.12.1`
-- `0ce655b Cut the 0.12.1 patch release on main`
-- `1ff91e1 Preserve release-branch guidance and mailbox accuracy before the 0.12.1 cut`
-- `38e633e chore: empty CI probe on dev`
-- `1fc66b8 Restore detached tmux launches for interactive OMX sessions (#1356)`
-- `f1e7f8b Keep PR #1349 mergeable against dev without losing native stop-hook protections`
+- `c364f61 Cut the 0.12.3 patch release on main`
+- `010068e Cut the 0.12.3 patch release`
+- `9513cc3 Merge pull request #1364 from Yeachan-Heo/hotfix/team-keyword-detector`
+- `cacc7f7 Merge remote-tracking branch 'origin/dev' into hotfix/team-keyword-detector`
+- `0003a4f Cut the 0.12.2 patch release on main`
+- `13b680c Cut the 0.12.2 patch release`
 
 ### 변경 파일 샘플
 
-- `.github/ISSUE_TEMPLATE/config.yml`
-- `.gitignore`
-- `AGENTS.md`
 - `CHANGELOG.md`
 - `Cargo.lock`
 - `Cargo.toml`
-- `README.md`
 - `RELEASE_BODY.md`
-- `crates/omx-runtime/src/main.rs`
-- `docs/codex-native-hooks.md`
-- `docs/contracts/team-delivery-state-contract.md`
-- `docs/contracts/team-runtime-state-contract.md`
-- `docs/hooks-extension.md`
-- `docs/index.html`
-- `docs/integrations.html`
-- `docs/openclaw-integration.de.md`
-- `docs/openclaw-integration.es.md`
-- `docs/openclaw-integration.fr.md`
-- `docs/openclaw-integration.it.md`
-- `docs/openclaw-integration.ja.md`
+- `docs/qa/release-readiness-0.12.2.md`
+- `docs/qa/release-readiness-0.12.3.md`
+- `docs/release-notes-0.12.2.md`
+- `docs/release-notes-0.12.3.md`
+- `package-lock.json`
+- `package.json`
+- `src/cli/__tests__/index.test.ts`
+- `src/cli/index.ts`
+- `src/hooks/__tests__/agents-overlay.test.ts`
+- `src/hooks/__tests__/keyword-detector.test.ts`
+- `src/hooks/agents-overlay.ts`
+- `src/hooks/keyword-detector.ts`
+- `src/hud/__tests__/render.test.ts`
+- `src/hud/__tests__/state.test.ts`
+- `src/hud/render.ts`
+- `src/hud/state.ts`
 
 > 이 블록은 guide sync가 자동 갱신합니다.
 <!-- GUIDE_SYNC:END -->
