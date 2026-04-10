@@ -304,45 +304,45 @@ Spark Initiative가 남긴 핵심 자산:
 ## 자동 동기화 상태
 
 - origin repo: `oh-my-codex`
-- latest source commit: `c364f617eccf`
+- latest source commit: `6d737879e8c1`
 - sync mode: `update`
-- 영향 분류: CLI/명령어, 문서 구조, 소스코드
+- 영향 분류: README/소개, 설치/설정, CLI/명령어, 문서 구조, 소스코드, 테스트/검증
 
 ### 이번 반영 포인트
 
-origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: CLI/명령어, 문서 구조, 소스코드.
+origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: README/소개, 설치/설정, CLI/명령어, 문서 구조, 소스코드, 테스트/검증.
 
 ### 최근 upstream 커밋
 
-- `c364f61 Cut the 0.12.3 patch release on main`
-- `010068e Cut the 0.12.3 patch release`
-- `9513cc3 Merge pull request #1364 from Yeachan-Heo/hotfix/team-keyword-detector`
-- `cacc7f7 Merge remote-tracking branch 'origin/dev' into hotfix/team-keyword-detector`
-- `0003a4f Cut the 0.12.2 patch release on main`
-- `13b680c Cut the 0.12.2 patch release`
+- `6d737879 Revert "fix: fully strip multiline root notify arrays during setup merge (#1430)"`
+- `a588326b Revert "fix: enforce session authority for ownerless Stop Ralph gating (#1431)"`
+- `2f4a11a3 Revert "fix: honor active tmux context before availability probe (#1432)"`
+- `6f832d07 docs(readme): add strong default environment caution`
+- `223085c1 fix: honor active tmux context before availability probe (#1432)`
+- `cabb8c57 fix: enforce session authority for ownerless Stop Ralph gating (#1431)`
 
 ### 변경 파일 샘플
 
+- `.github/workflows/ci.yml`
 - `CHANGELOG.md`
 - `Cargo.lock`
 - `Cargo.toml`
+- `README.md`
 - `RELEASE_BODY.md`
-- `docs/qa/release-readiness-0.12.2.md`
-- `docs/qa/release-readiness-0.12.3.md`
-- `docs/release-notes-0.12.2.md`
-- `docs/release-notes-0.12.3.md`
+- `docs/codex-native-hooks.md`
+- `docs/hooks-extension.md`
+- `docs/qa/ci-speedups-after-prompt-worker-fix.md`
+- `docs/release-notes-0.12.4.md`
+- `docs/reports/open-prs-dev-readiness-2026-04-09.md`
 - `package-lock.json`
 - `package.json`
 - `src/cli/__tests__/index.test.ts`
-- `src/cli/index.ts`
-- `src/hooks/__tests__/agents-overlay.test.ts`
-- `src/hooks/__tests__/keyword-detector.test.ts`
-- `src/hooks/agents-overlay.ts`
-- `src/hooks/keyword-detector.ts`
-- `src/hud/__tests__/render.test.ts`
-- `src/hud/__tests__/state.test.ts`
-- `src/hud/render.ts`
-- `src/hud/state.ts`
+- `src/cli/__tests__/launch-fallback.test.ts`
+- `src/cli/__tests__/mcp-parity.test.ts`
+- `src/cli/__tests__/nested-help-routing.test.ts`
+- `src/cli/__tests__/package-bin-contract.test.ts`
+- `src/cli/__tests__/setup-hooks-shared-ownership.test.ts`
+- `src/cli/__tests__/setup-scope.test.ts`
 
 > 이 블록은 guide sync가 자동 갱신합니다.
 <!-- GUIDE_SYNC:END -->

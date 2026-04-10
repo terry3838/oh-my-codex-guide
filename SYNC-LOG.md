@@ -2,48 +2,48 @@
 
 ## latest cycle
 
-- previous source sha: `b1c39445741b8a0c4c30b22ab0db3e9491215b8b`
-- current source sha: `c364f617eccfe3783b8708f5ef53cd11396f76cf`
+- previous source sha: `c364f617eccfe3783b8708f5ef53cd11396f76cf`
+- current source sha: `6d737879e8c1992ef045db387044c7dd156cc78d`
 - mode: `update`
-- impact labels: CLI/명령어, 문서 구조, 소스코드
+- impact labels: README/소개, 설치/설정, CLI/명령어, 문서 구조, 소스코드, 테스트/검증
 
 ## decision
 
-origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: CLI/명령어, 문서 구조, 소스코드.
+origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: README/소개, 설치/설정, CLI/명령어, 문서 구조, 소스코드, 테스트/검증.
 
 ## upstream commits reviewed
 
-- `c364f61 Cut the 0.12.3 patch release on main`
-- `010068e Cut the 0.12.3 patch release`
-- `9513cc3 Merge pull request #1364 from Yeachan-Heo/hotfix/team-keyword-detector`
-- `cacc7f7 Merge remote-tracking branch 'origin/dev' into hotfix/team-keyword-detector`
-- `0003a4f Cut the 0.12.2 patch release on main`
-- `13b680c Cut the 0.12.2 patch release`
-- `93dc6f6 Merge pull request #1369 from Yeachan-Heo/fix/team-silently-delted`
-- `98b90ad Merge pull request #1367 from Yeachan-Heo/fix/stale-state-hud`
+- `6d737879 Revert "fix: fully strip multiline root notify arrays during setup merge (#1430)"`
+- `a588326b Revert "fix: enforce session authority for ownerless Stop Ralph gating (#1431)"`
+- `2f4a11a3 Revert "fix: honor active tmux context before availability probe (#1432)"`
+- `6f832d07 docs(readme): add strong default environment caution`
+- `223085c1 fix: honor active tmux context before availability probe (#1432)`
+- `cabb8c57 fix: enforce session authority for ownerless Stop Ralph gating (#1431)`
+- `5d979b35 fix: fully strip multiline root notify arrays during setup merge (#1430)`
+- `e0f67399 Ship 0.12.4 with release metadata sync and dispatch receipt fix`
 
 ## evidence
 
 - source remote: `https://github.com/Yeachan-Heo/oh-my-codex.git`
 - docs/interesting dirs: docs/, skills/, src/
 - changed file sample:
+- `.github/workflows/ci.yml`
 - `CHANGELOG.md`
 - `Cargo.lock`
 - `Cargo.toml`
+- `README.md`
 - `RELEASE_BODY.md`
-- `docs/qa/release-readiness-0.12.2.md`
-- `docs/qa/release-readiness-0.12.3.md`
-- `docs/release-notes-0.12.2.md`
-- `docs/release-notes-0.12.3.md`
+- `docs/codex-native-hooks.md`
+- `docs/hooks-extension.md`
+- `docs/qa/ci-speedups-after-prompt-worker-fix.md`
+- `docs/release-notes-0.12.4.md`
+- `docs/reports/open-prs-dev-readiness-2026-04-09.md`
 - `package-lock.json`
 - `package.json`
 - `src/cli/__tests__/index.test.ts`
-- `src/cli/index.ts`
-- `src/hooks/__tests__/agents-overlay.test.ts`
-- `src/hooks/__tests__/keyword-detector.test.ts`
-- `src/hooks/agents-overlay.ts`
-- `src/hooks/keyword-detector.ts`
-- `src/hud/__tests__/render.test.ts`
-- `src/hud/__tests__/state.test.ts`
-- `src/hud/render.ts`
-- `src/hud/state.ts`
+- `src/cli/__tests__/launch-fallback.test.ts`
+- `src/cli/__tests__/mcp-parity.test.ts`
+- `src/cli/__tests__/nested-help-routing.test.ts`
+- `src/cli/__tests__/package-bin-contract.test.ts`
+- `src/cli/__tests__/setup-hooks-shared-ownership.test.ts`
+- `src/cli/__tests__/setup-scope.test.ts`
