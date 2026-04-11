@@ -1,9 +1,9 @@
 # Upstream Snapshot — oh-my-codex
 
 - source repo: `https://github.com/Yeachan-Heo/oh-my-codex.git`
-- previous synced commit: `6d737879e8c1992ef045db387044c7dd156cc78d`
+- previous synced commit: `982a7546b7b42518d47de2ac53fa2b47ebd670a4`
 - current synced commit: `982a7546b7b42518d47de2ac53fa2b47ebd670a4`
-- sync mode: `update`
+- sync mode: `no-change`
 - impact labels: 일반 변경
 - guide repo: `oh-my-codex-guide`
 
@@ -16,7 +16,11 @@
 - `982a7546 Merge pull request #1456 from Yeachan-Heo/revert/pr-1454-main`
 - `9a4171f6 Remove the Windows ps fallback from main after landing on the wrong base branch`
 - `c884326d Merge pull request #1454 from Gujiassh/fix/windows-ps-fallback`
-- `a250fdab fix(notifications): tolerate missing ps on Windows`
+- `6d737879 Revert "fix: fully strip multiline root notify arrays during setup merge (#1430)"`
+- `a588326b Revert "fix: enforce session authority for ownerless Stop Ralph gating (#1431)"`
+- `2f4a11a3 Revert "fix: honor active tmux context before availability probe (#1432)"`
+- `6f832d07 docs(readme): add strong default environment caution`
+- `223085c1 fix: honor active tmux context before availability probe (#1432)`
 
 ## top-level structure
 
