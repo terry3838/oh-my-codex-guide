@@ -1,10 +1,10 @@
 # Upstream Snapshot — oh-my-codex
 
 - source repo: `https://github.com/Yeachan-Heo/oh-my-codex.git`
-- previous synced commit: `c364f617eccfe3783b8708f5ef53cd11396f76cf`
-- current synced commit: `6d737879e8c1992ef045db387044c7dd156cc78d`
+- previous synced commit: `6d737879e8c1992ef045db387044c7dd156cc78d`
+- current synced commit: `982a7546b7b42518d47de2ac53fa2b47ebd670a4`
 - sync mode: `update`
-- impact labels: README/소개, 설치/설정, CLI/명령어, 문서 구조, 소스코드, 테스트/검증
+- impact labels: 일반 변경
 - guide repo: `oh-my-codex-guide`
 
 ## 원본 한줄 요약
@@ -13,14 +13,10 @@
 
 ## recent upstream commits
 
-- `6d737879 Revert "fix: fully strip multiline root notify arrays during setup merge (#1430)"`
-- `a588326b Revert "fix: enforce session authority for ownerless Stop Ralph gating (#1431)"`
-- `2f4a11a3 Revert "fix: honor active tmux context before availability probe (#1432)"`
-- `6f832d07 docs(readme): add strong default environment caution`
-- `223085c1 fix: honor active tmux context before availability probe (#1432)`
-- `cabb8c57 fix: enforce session authority for ownerless Stop Ralph gating (#1431)`
-- `5d979b35 fix: fully strip multiline root notify arrays during setup merge (#1430)`
-- `e0f67399 Ship 0.12.4 with release metadata sync and dispatch receipt fix`
+- `982a7546 Merge pull request #1456 from Yeachan-Heo/revert/pr-1454-main`
+- `9a4171f6 Remove the Windows ps fallback from main after landing on the wrong base branch`
+- `c884326d Merge pull request #1454 from Gujiassh/fix/windows-ps-fallback`
+- `a250fdab fix(notifications): tolerate missing ps on Windows`
 
 ## top-level structure
 
@@ -47,26 +43,7 @@
 
 ## changed files
 
-- `.github/workflows/ci.yml`
-- `CHANGELOG.md`
-- `Cargo.lock`
-- `Cargo.toml`
-- `README.md`
-- `RELEASE_BODY.md`
-- `docs/codex-native-hooks.md`
-- `docs/hooks-extension.md`
-- `docs/qa/ci-speedups-after-prompt-worker-fix.md`
-- `docs/release-notes-0.12.4.md`
-- `docs/reports/open-prs-dev-readiness-2026-04-09.md`
-- `package-lock.json`
-- `package.json`
-- `src/cli/__tests__/index.test.ts`
-- `src/cli/__tests__/launch-fallback.test.ts`
-- `src/cli/__tests__/mcp-parity.test.ts`
-- `src/cli/__tests__/nested-help-routing.test.ts`
-- `src/cli/__tests__/package-bin-contract.test.ts`
-- `src/cli/__tests__/setup-hooks-shared-ownership.test.ts`
-- `src/cli/__tests__/setup-scope.test.ts`
+- 변경 파일 없음
 
 ## README excerpt
 
