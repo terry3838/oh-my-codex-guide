@@ -2,9 +2,9 @@
 
 - source repo: `https://github.com/Yeachan-Heo/oh-my-codex.git`
 - previous synced commit: `982a7546b7b42518d47de2ac53fa2b47ebd670a4`
-- current synced commit: `982a7546b7b42518d47de2ac53fa2b47ebd670a4`
-- sync mode: `no-change`
-- impact labels: 일반 변경
+- current synced commit: `d5975af01a4bb8a7d3c68d4131b31029566380ac`
+- sync mode: `update`
+- impact labels: 설치/설정, CLI/명령어, 문서 구조, 소스코드
 - guide repo: `oh-my-codex-guide`
 
 ## 원본 한줄 요약
@@ -13,14 +13,14 @@
 
 ## recent upstream commits
 
-- `982a7546 Merge pull request #1456 from Yeachan-Heo/revert/pr-1454-main`
-- `9a4171f6 Remove the Windows ps fallback from main after landing on the wrong base branch`
-- `c884326d Merge pull request #1454 from Gujiassh/fix/windows-ps-fallback`
-- `6d737879 Revert "fix: fully strip multiline root notify arrays during setup merge (#1430)"`
-- `a588326b Revert "fix: enforce session authority for ownerless Stop Ralph gating (#1431)"`
-- `2f4a11a3 Revert "fix: honor active tmux context before availability probe (#1432)"`
-- `6f832d07 docs(readme): add strong default environment caution`
-- `223085c1 fix: honor active tmux context before availability probe (#1432)`
+- `d5975af0 Release 0.12.5`
+- `ed38bd17 Add #1473 deep-interview Stop regression to 0.12.5 release notes`
+- `17e94583 Merge pull request #1473 from Yeachan-Heo/fix/issue-1472-deep-interview-stop-wait`
+- `6912fe59 Cut the 0.12.5 patch release`
+- `966263cf Let deep-interview questions stop for user input`
+- `fddeece2 Merge pull request #1471 from Yeachan-Heo/fix/multi-skill-state-invoke-state-inits`
+- `213675e5 Keep planning state authoritative during multi-skill prompt routing`
+- `38a0a414 Merge pull request #1470 from Yeachan-Heo/fix/issue-1353-windows-split-shutdown`
 
 ## top-level structure
 
@@ -47,7 +47,26 @@
 
 ## changed files
 
-- 변경 파일 없음
+- `CHANGELOG.md`
+- `Cargo.lock`
+- `Cargo.toml`
+- `RELEASE_BODY.md`
+- `docs/STATE_MODEL.md`
+- `docs/codex-native-hooks.md`
+- `docs/contracts/multi-state-transition-contract.md`
+- `docs/contracts/multi-state-transition-review.md`
+- `docs/contracts/ralph-state-contract.md`
+- `docs/prompt-guidance-contract.md`
+- `docs/qa/release-readiness-0.12.5.md`
+- `docs/release-notes-0.12.5.md`
+- `package-lock.json`
+- `package.json`
+- `src/cli/__tests__/doctor-warning-copy.test.ts`
+- `src/cli/__tests__/index.test.ts`
+- `src/cli/__tests__/setup-refresh.test.ts`
+- `src/cli/__tests__/team.test.ts`
+- `src/cli/doctor.ts`
+- `src/cli/explore.ts`
 
 ## README excerpt
 

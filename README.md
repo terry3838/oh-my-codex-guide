@@ -98,3 +98,50 @@ $ralph "carry the approved plan to completion"
 
 - 처음 쓰면 `01-learning-paths.md`를 보고 그대로 첫 세션을 한 번 따라 하세요.
 - 운영자면 `sections/08-setup-config.md`, `sections/07-mcp-state.md`를 먼저 보세요.
+
+<!-- GUIDE_SYNC:START -->
+## 자동 동기화 상태
+
+- origin repo: `oh-my-codex`
+- latest source commit: `d5975af01a4b`
+- sync mode: `update`
+- 영향 분류: 설치/설정, CLI/명령어, 문서 구조, 소스코드
+
+### 이번 반영 포인트
+
+origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: 설치/설정, CLI/명령어, 문서 구조, 소스코드.
+
+### 최근 upstream 커밋
+
+- `d5975af0 Release 0.12.5`
+- `ed38bd17 Add #1473 deep-interview Stop regression to 0.12.5 release notes`
+- `17e94583 Merge pull request #1473 from Yeachan-Heo/fix/issue-1472-deep-interview-stop-wait`
+- `6912fe59 Cut the 0.12.5 patch release`
+- `966263cf Let deep-interview questions stop for user input`
+- `fddeece2 Merge pull request #1471 from Yeachan-Heo/fix/multi-skill-state-invoke-state-inits`
+
+### 변경 파일 샘플
+
+- `CHANGELOG.md`
+- `Cargo.lock`
+- `Cargo.toml`
+- `RELEASE_BODY.md`
+- `docs/STATE_MODEL.md`
+- `docs/codex-native-hooks.md`
+- `docs/contracts/multi-state-transition-contract.md`
+- `docs/contracts/multi-state-transition-review.md`
+- `docs/contracts/ralph-state-contract.md`
+- `docs/prompt-guidance-contract.md`
+- `docs/qa/release-readiness-0.12.5.md`
+- `docs/release-notes-0.12.5.md`
+- `package-lock.json`
+- `package.json`
+- `src/cli/__tests__/doctor-warning-copy.test.ts`
+- `src/cli/__tests__/index.test.ts`
+- `src/cli/__tests__/setup-refresh.test.ts`
+- `src/cli/__tests__/team.test.ts`
+- `src/cli/doctor.ts`
+- `src/cli/explore.ts`
+
+> 이 블록은 guide sync가 자동 갱신합니다.
+<!-- GUIDE_SYNC:END -->
