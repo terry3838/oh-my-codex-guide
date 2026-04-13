@@ -1,10 +1,10 @@
 # Upstream Snapshot — oh-my-codex
 
 - source repo: `https://github.com/Yeachan-Heo/oh-my-codex.git`
-- previous synced commit: `982a7546b7b42518d47de2ac53fa2b47ebd670a4`
+- previous synced commit: `d5975af01a4bb8a7d3c68d4131b31029566380ac`
 - current synced commit: `d5975af01a4bb8a7d3c68d4131b31029566380ac`
-- sync mode: `update`
-- impact labels: 설치/설정, CLI/명령어, 문서 구조, 소스코드
+- sync mode: `no-change`
+- impact labels: 일반 변경
 - guide repo: `oh-my-codex-guide`
 
 ## 원본 한줄 요약
@@ -47,26 +47,7 @@
 
 ## changed files
 
-- `CHANGELOG.md`
-- `Cargo.lock`
-- `Cargo.toml`
-- `RELEASE_BODY.md`
-- `docs/STATE_MODEL.md`
-- `docs/codex-native-hooks.md`
-- `docs/contracts/multi-state-transition-contract.md`
-- `docs/contracts/multi-state-transition-review.md`
-- `docs/contracts/ralph-state-contract.md`
-- `docs/prompt-guidance-contract.md`
-- `docs/qa/release-readiness-0.12.5.md`
-- `docs/release-notes-0.12.5.md`
-- `package-lock.json`
-- `package.json`
-- `src/cli/__tests__/doctor-warning-copy.test.ts`
-- `src/cli/__tests__/index.test.ts`
-- `src/cli/__tests__/setup-refresh.test.ts`
-- `src/cli/__tests__/team.test.ts`
-- `src/cli/doctor.ts`
-- `src/cli/explore.ts`
+- 변경 파일 없음
 
 ## README excerpt
 

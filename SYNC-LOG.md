@@ -2,14 +2,14 @@
 
 ## latest cycle
 
-- previous source sha: `982a7546b7b42518d47de2ac53fa2b47ebd670a4`
+- previous source sha: `d5975af01a4bb8a7d3c68d4131b31029566380ac`
 - current source sha: `d5975af01a4bb8a7d3c68d4131b31029566380ac`
-- mode: `update`
-- impact labels: 설치/설정, CLI/명령어, 문서 구조, 소스코드
+- mode: `no-change`
+- impact labels: 일반 변경
 
 ## decision
 
-origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: 설치/설정, CLI/명령어, 문서 구조, 소스코드.
+이번 싸이클에서는 origin 변경이 없어 guide 본문은 유지했고, 동기화 기준점만 재확인했습니다.
 
 ## upstream commits reviewed
 
@@ -27,23 +27,4 @@ origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽
 - source remote: `https://github.com/Yeachan-Heo/oh-my-codex.git`
 - docs/interesting dirs: docs/, skills/, src/
 - changed file sample:
-- `CHANGELOG.md`
-- `Cargo.lock`
-- `Cargo.toml`
-- `RELEASE_BODY.md`
-- `docs/STATE_MODEL.md`
-- `docs/codex-native-hooks.md`
-- `docs/contracts/multi-state-transition-contract.md`
-- `docs/contracts/multi-state-transition-review.md`
-- `docs/contracts/ralph-state-contract.md`
-- `docs/prompt-guidance-contract.md`
-- `docs/qa/release-readiness-0.12.5.md`
-- `docs/release-notes-0.12.5.md`
-- `package-lock.json`
-- `package.json`
-- `src/cli/__tests__/doctor-warning-copy.test.ts`
-- `src/cli/__tests__/index.test.ts`
-- `src/cli/__tests__/setup-refresh.test.ts`
-- `src/cli/__tests__/team.test.ts`
-- `src/cli/doctor.ts`
-- `src/cli/explore.ts`
+- 변경 파일 없음
