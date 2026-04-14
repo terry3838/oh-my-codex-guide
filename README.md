@@ -103,26 +103,40 @@ $ralph "carry the approved plan to completion"
 ## 자동 동기화 상태
 
 - origin repo: `oh-my-codex`
-- latest source commit: `d5975af01a4b`
-- sync mode: `no-change`
-- 영향 분류: 일반 변경
+- latest source commit: `5892224fd684`
+- sync mode: `update`
+- 영향 분류: README/소개, 설치/설정, CLI/명령어, 문서 구조, 스킬/플러그인, 소스코드, 테스트/검증
 
 ### 이번 반영 포인트
 
-이번 싸이클에서는 origin 변경이 없어 guide 본문은 유지했고, 동기화 기준점만 재확인했습니다.
+origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: README/소개, 설치/설정, CLI/명령어, 문서 구조, 스킬/플러그인, 소스코드, 테스트/검증.
 
 ### 최근 upstream 커밋
 
-- `d5975af0 Release 0.12.5`
-- `ed38bd17 Add #1473 deep-interview Stop regression to 0.12.5 release notes`
-- `17e94583 Merge pull request #1473 from Yeachan-Heo/fix/issue-1472-deep-interview-stop-wait`
-- `6912fe59 Cut the 0.12.5 patch release`
-- `966263cf Let deep-interview questions stop for user input`
-- `fddeece2 Merge pull request #1471 from Yeachan-Heo/fix/multi-skill-state-invoke-state-inits`
+- `5892224f Release 0.12.6`
 
 ### 변경 파일 샘플
 
-- 이번 싸이클에서는 신규 변경 파일이 없습니다.
+- `.github/scripts/dev-merge-issue-close.cjs`
+- `.github/workflows/dev-merge-issue-close.yml`
+- `CHANGELOG.md`
+- `Cargo.lock`
+- `Cargo.toml`
+- `README.md`
+- `RELEASE_BODY.md`
+- `docs/codex-native-hooks.md`
+- `docs/qa/recent-bug-regression-hardening-2026-04-11.md`
+- `docs/qa/release-readiness-0.12.6.md`
+- `docs/readme/README.de.md`
+- `docs/readme/README.es.md`
+- `docs/readme/README.fr.md`
+- `docs/readme/README.it.md`
+- `docs/readme/README.ko.md`
+- `docs/readme/README.pt.md`
+- `docs/readme/README.ru.md`
+- `docs/readme/README.tr.md`
+- `docs/reference/project-wiki.md`
+- `docs/release-notes-0.12.6.md`
 
 > 이 블록은 guide sync가 자동 갱신합니다.
 <!-- GUIDE_SYNC:END -->
