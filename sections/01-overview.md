@@ -9,9 +9,9 @@
 
 ## 이번 싸이클 판단
 
-- sync mode: `update`
-- impact labels: README/소개, 설치/설정, CLI/명령어, 문서 구조, 스킬/플러그인, 소스코드, 테스트/검증
-- 판단: origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: README/소개, 설치/설정, CLI/명령어, 문서 구조, 스킬/플러그인, 소스코드, 테스트/검증.
+- sync mode: `no-change`
+- impact labels: 일반 변경
+- 판단: 이번 싸이클에서는 origin 변경이 없어 guide 본문은 유지했고, 동기화 기준점만 재확인했습니다.
 
 ## 최근 upstream 커밋
 
@@ -54,23 +54,4 @@
 
 ## 변경 파일 샘플
 
-- `.github/PULL_REQUEST_TEMPLATE.md`
-- `.github/workflows/dev-merge-issue-close.yml`
-- `.github/workflows/pr-check.yml`
-- `.github/workflows/release.yml`
-- `AGENTS.md`
-- `CHANGELOG.md`
-- `CONTRIBUTING.md`
-- `Cargo.lock`
-- `Cargo.toml`
-- `README.md`
-- `RELEASE_BODY.md`
-- `crates/omx-explore/src/main.rs`
-- `docs/adapt.md`
-- `docs/codex-native-hooks.md`
-- `docs/contracts/ralph-state-contract.md`
-- `docs/prompt-guidance-contract.md`
-- `docs/prompt-guidance-fragments/core-operating-principles.md`
-- `docs/qa/release-readiness-0.13.0.md`
-- `docs/qa/release-readiness-0.13.1.md`
-- `docs/release-notes-0.13.0.md`
+- 변경 파일 없음
