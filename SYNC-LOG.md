@@ -2,14 +2,14 @@
 
 ## latest cycle
 
-- previous source sha: `09d2126204a605b23cb37d72e3005dd4b571ad12`
+- previous source sha: `435a3399732268f39e3d1f6f357cc9f7c66b744b`
 - current source sha: `435a3399732268f39e3d1f6f357cc9f7c66b744b`
-- mode: `update`
-- impact labels: README/소개, 설치/설정, CLI/명령어, 문서 구조, 스킬/플러그인, 소스코드, 테스트/검증
+- mode: `no-change`
+- impact labels: 일반 변경
 
 ## decision
 
-origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: README/소개, 설치/설정, CLI/명령어, 문서 구조, 스킬/플러그인, 소스코드, 테스트/검증.
+이번 싸이클에서는 origin 변경이 없어 guide 본문은 유지했고, 동기화 기준점만 재확인했습니다.
 
 ## upstream commits reviewed
 
@@ -27,23 +27,4 @@ origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽
 - source remote: `https://github.com/Yeachan-Heo/oh-my-codex.git`
 - docs/interesting dirs: docs/, skills/, src/
 - changed file sample:
-- `.github/workflows/release.yml`
-- `AGENTS.md`
-- `CHANGELOG.md`
-- `Cargo.lock`
-- `Cargo.toml`
-- `README.md`
-- `RELEASE_BODY.md`
-- `crates/omx-explore/src/main.rs`
-- `docs/codex-native-hooks.md`
-- `docs/getting-started.html`
-- `docs/integrations.html`
-- `docs/troubleshooting.md`
-- `package-lock.json`
-- `package.json`
-- `skills/analyze/SKILL.md`
-- `src/catalog/__tests__/generator.test.ts`
-- `src/catalog/generated/public-catalog.json`
-- `src/catalog/manifest.json`
-- `src/cli/__tests__/index.test.ts`
-- `src/cli/__tests__/setup-skills-overwrite.test.ts`
+- 변경 파일 없음

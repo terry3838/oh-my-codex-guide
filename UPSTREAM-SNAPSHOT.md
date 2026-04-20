@@ -1,10 +1,10 @@
 # Upstream Snapshot — oh-my-codex
 
 - source repo: `https://github.com/Yeachan-Heo/oh-my-codex.git`
-- previous synced commit: `09d2126204a605b23cb37d72e3005dd4b571ad12`
+- previous synced commit: `435a3399732268f39e3d1f6f357cc9f7c66b744b`
 - current synced commit: `435a3399732268f39e3d1f6f357cc9f7c66b744b`
-- sync mode: `update`
-- impact labels: README/소개, 설치/설정, CLI/명령어, 문서 구조, 스킬/플러그인, 소스코드, 테스트/검증
+- sync mode: `no-change`
+- impact labels: 일반 변경
 - guide repo: `oh-my-codex-guide`
 
 ## 원본 한줄 요약
@@ -47,26 +47,7 @@
 
 ## changed files
 
-- `.github/workflows/release.yml`
-- `AGENTS.md`
-- `CHANGELOG.md`
-- `Cargo.lock`
-- `Cargo.toml`
-- `README.md`
-- `RELEASE_BODY.md`
-- `crates/omx-explore/src/main.rs`
-- `docs/codex-native-hooks.md`
-- `docs/getting-started.html`
-- `docs/integrations.html`
-- `docs/troubleshooting.md`
-- `package-lock.json`
-- `package.json`
-- `skills/analyze/SKILL.md`
-- `src/catalog/__tests__/generator.test.ts`
-- `src/catalog/generated/public-catalog.json`
-- `src/catalog/manifest.json`
-- `src/cli/__tests__/index.test.ts`
-- `src/cli/__tests__/setup-skills-overwrite.test.ts`
+- 변경 파일 없음
 
 ## README excerpt
 
